@@ -66,7 +66,7 @@ Standard errors are ~3x larger when accounting for group-level variance (i.e., v
 
 **Figure 4** plots each country by GDP (x-axis) and AI usage (y-axis). Point size reflects influence on the regression (Cook's Distance). Red points are above the line (more AI usage than GDP predicts); blue points are below.
 
-Several countries have outsized influence: Tanzania and Angola (large blue points, far below line) and Israel (red, far above). The estimated relationship depends heavily on these few unusual countries. Remove them and the slope changes substantially.
+Several countries have outsized influence: Tanzania and Angola (large blue points, far below line) and Israel (red, far above). Remove Tanzania alone and the slope drops from 0.69 to 0.67 (−2.4%). Remove Tanzania, Angola, and Israel together and it falls to 0.65 (−5.6%). A handful of unusual countries shift the estimated elasticity by meaningful amounts.
 
 Six countries exceed Cook's D threshold (4/n = 0.035):
 

@@ -51,6 +51,58 @@ Partial pooling adaptively regularizes: groups with little data are shrunk heavi
 
 **Proper Uncertainty Quantification**: Gelman et al. (2013) emphasize in *Bayesian Data Analysis* that hierarchical models correctly propagate uncertainty from the group level to the population level. OLS standard errors assume fixed, known group effects—partial pooling acknowledges they are estimated with error, yielding appropriately wider confidence intervals.
 
+### 2.2 Why OLS Standard Errors Are Wrong Here (Theory)
+
+Anthropic's OLS approach assumes:
+
+$$\text{Var}(\hat{\beta}_{OLS}) = \frac{\sigma^2}{(n-1)S_x^2}$$
+
+where observations are **independent and identically distributed** with a **constant slope**. Both assumptions fail with grouped data when slopes vary.
+
+**The Problem: Slope Heterogeneity**
+
+When the true data-generating process has group-varying slopes:
+
+$$y_{ij} = \alpha + \alpha_j + (\beta + \beta_j)x_{ij} + \varepsilon_{ij}$$
+
+where $\beta_j \sim N(0, \tau^2_\beta)$ are random slope deviations, the variance of the pooled OLS estimator is:
+
+$$\text{Var}(\hat{\beta}_{pooled}) = \text{Var}(\hat{\beta}|slopes) + \text{Var}(slopes)$$
+
+OLS only captures the first term—the **sampling variance** given fixed slopes. It completely ignores the second term—the **between-group variance in slopes** ($\tau^2_\beta$).
+
+**Decomposing Our Results**
+
+In our analysis:
+- OLS SE = 0.042 (captures only within-group sampling variance)
+- Partial pooling SE = 0.116 (captures both sampling variance AND slope heterogeneity)
+- Ratio = 2.76x
+
+The slope varies substantially across income terciles:
+- Low income: β = 0.76
+- Mid income: β = 0.44
+- High income: β = 0.63
+- Standard deviation of slopes: ~0.16
+
+This between-group slope variance **adds directly** to the uncertainty of the pooled estimate. OLS treats this heterogeneity as noise around a "true" single slope, when in fact there is no single slope—the relationship genuinely differs across development levels.
+
+**Why This Matters**
+
+Moulton (1990) showed that ignoring group structure leads to:
+- Standard errors biased downward
+- t-statistics inflated
+- Spuriously significant results
+- Confidence intervals that are **too narrow** and **exclude the true value** too often
+
+Anthropic's CI of [0.61, 0.77] appears precise but reflects only sampling uncertainty, ignoring the fundamental question: *which population's slope are we estimating?* The true CI of [0.43, 0.89] properly reflects that:
+1. We're uncertain about each group's slope (sampling variance)
+2. The groups genuinely differ (slope heterogeneity)
+3. The "average" slope depends on how we weight groups
+
+**The Moulton Problem in Economics**
+
+This is a well-known issue when regressing micro outcomes on macro predictors. Bertrand, Duflo & Mullainathan (2004) showed that difference-in-differences studies routinely understate standard errors by 2-3x when ignoring group clustering—exactly what we find here.
+
 **Empirical Performance**: McElreath's blog posts on multilevel models demonstrate that partial pooling consistently outperforms both alternatives in prediction tasks, particularly when groups have unequal sample sizes—exactly our situation with country-level data.
 
 In our context: Anthropic's complete pooling assumes all countries share identical GDP-usage relationships. This is empirically false (slopes range from 0.44 to 0.76) and theoretically unjustified. Partial pooling reveals both the heterogeneity and the appropriate uncertainty.
@@ -210,6 +262,12 @@ For middle-income countries—home to most of the world's population—GDP growt
 7. Stein, C. (1956). "Inadmissibility of the usual estimator for the mean of a multivariate normal distribution." *Proceedings of the Third Berkeley Symposium on Mathematical Statistics and Probability*, 1, 197-206.
 
 8. Efron, B., & Morris, C. (1977). "Stein's Paradox in Statistics." *Scientific American*, 236(5), 119-127.
+
+9. Moulton, B. R. (1990). "An Illustration of a Pitfall in Estimating the Effects of Aggregate Variables on Micro Units." *The Review of Economics and Statistics*, 72(2), 334-338.
+
+10. Kish, L. (1965). *Survey Sampling*. John Wiley & Sons. [Design effect concept]
+
+11. Bertrand, M., Duflo, E., & Mullainathan, S. (2004). "How Much Should We Trust Differences-in-Differences Estimates?" *The Quarterly Journal of Economics*, 119(1), 249-275.
 
 ---
 

@@ -14,6 +14,8 @@ If GDP drives AI adoption, productivity gains concentrate in wealthy nations. As
 
 The policy implication: countries must grow GDP first, then AI follows. Education, infrastructure, language access—secondary.
 
+Anthropic uses GDP to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between GDP and AI adoption is the same everywhere—a single parameter applies to Nigeria and Norway alike.
+
 We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex). The 0.7 elasticity doesn't hold universally.
 
 ---

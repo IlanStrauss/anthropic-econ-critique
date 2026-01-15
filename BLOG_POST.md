@@ -8,7 +8,25 @@ Anthropic recently released their [Economic Index January 2026 Report](https://w
 
 > "At the country level, a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita."
 
+## Why This Claim Matters
+
+This isn't just an academic finding—it shapes how we think about AI's global future. If GDP truly drives AI adoption with a 0.7 elasticity, the implications are profound:
+
+**For global inequality**: AI benefits would naturally flow to rich countries, compounding existing advantages. Poor countries would need to get richer *first* before they could benefit from AI—a development ladder where AI sits at the top.
+
+**For policy**: Governments wanting to boost AI adoption should focus on economic growth. Education programs, digital infrastructure, language access? Secondary concerns. GDP is the bottleneck.
+
+**For AI companies**: Emerging markets are a waiting game. Don't invest heavily in localization or access programs—just wait for GDP to rise and adoption will follow automatically.
+
+**For convergence debates**: If the relationship is strong and universal, we'd expect AI adoption gaps to mirror income gaps indefinitely. The digital divide becomes a permanent feature of the global economy.
+
+## The Problem
+
 This sounds like a clean story: richer countries use more AI. But when we dug into [their publicly available data](https://huggingface.co/datasets/Anthropic/EconomicIndex), we found that this simple narrative masks important complexity—complexity that matters for policy.
+
+**What if the 0.7 elasticity doesn't hold everywhere?** What if middle-income countries—home to most of the world's population—show a much weaker relationship? That would fundamentally change the policy prescription: instead of waiting for GDP growth, these countries could accelerate AI adoption through education, infrastructure, and language access.
+
+That's exactly what we found.
 
 **TL;DR**: Using the same data but better statistical methods, we find:
 1. The GDP-AI relationship varies dramatically by income level (from 0.44 to 0.76)

@@ -148,6 +148,14 @@ where `j` indexes income groups, and `α_j`, `β_j` are random effects shrunk to
 
 **Subsample Analysis**: Separate OLS within income terciles.
 
+### 2.4 Estimation
+
+For partial pooling, we use **Maximum Likelihood Estimation (MLE)** via `statsmodels.MixedLM` in Python. This estimates the fixed effect (global slope) and random effects (group deviations) jointly by maximizing the likelihood of the observed data given the hierarchical structure.
+
+The model assumes random effects are normally distributed with mean zero and variance estimated from the data. This yields **empirical Bayes** estimates: group-specific slopes are shrunk toward the global mean, with the degree of shrinkage determined by the estimated between-group variance relative to within-group variance.
+
+For researchers preferring full Bayesian inference, we provide `analysis_brms.R` which uses [brms](https://paul-buerkner.github.io/brms/) (Bürkner 2017) with either MCMC sampling or ADVI (Automatic Differentiation Variational Inference) for faster approximate posteriors. The qualitative conclusions are robust to estimation method.
+
 ---
 
 ## 3. Results
@@ -281,6 +289,8 @@ For middle-income countries—home to most of the world's population—GDP growt
 10. Kish, L. (1965). *Survey Sampling*. John Wiley & Sons. [Design effect concept]
 
 11. Bertrand, M., Duflo, E., & Mullainathan, S. (2004). "How Much Should We Trust Differences-in-Differences Estimates?" *The Quarterly Journal of Economics*, 119(1), 249-275.
+
+12. Bürkner, P.-C. (2017). "brms: An R Package for Bayesian Multilevel Models Using Stan." *Journal of Statistical Software*, 80(1), 1-28. https://doi.org/10.18637/jss.v080.i01
 
 ---
 

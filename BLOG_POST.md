@@ -18,7 +18,7 @@ Anthropic's divergence scenario is less clear-cut than they suggest. The head of
 
 But a cross-sectional regression looking at how income (GDP per capita) impacts AI adoption doesn't imply divergence in living standards. Impacts on living standards from AI adoption cannot be estimated. This requires estimating how AI adoption impacts productivity, which Anthropic cannot and does not do.
 
-Moreover, as we show below, our findings suggest more reason to predict convergence in AI adoption at least: middle-income countries are already adopting AI beyond what their income predicts, when estimating effects of GDP per capita on AI adoption that are allowed to vary by a country's starting income level.
+Moreover, as we show below, our findings suggest more reason to predict convergence in AI adoption at least: middle-income countries are already adopting AI beyond what their income predicts, when allowing for how GDP per capita impacts AI adoption to vary by a country's starting income level.
 
 Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between income level and AI adoption is the same everywhere—a single parameter applies to Nigeria and Norway alike.
 

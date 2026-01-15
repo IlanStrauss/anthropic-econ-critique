@@ -18,7 +18,7 @@ Anthropic's January 2026 Economic Index report presents a simple, compelling sto
 
 > "At the country level, a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita." (Chapter 3: How Claude is used varies by geography)
 
-They further claim to "replicate the finding from our prior report that GDP is strongly correlated with the AUI" and note this relationship "holds for both countries and US states" (Figures 3.3 and 3.4).
+They further claim to "replicate the finding from our prior report that GDP is strongly correlated with the AUI (Anthropic AI Usage Index)" and note this relationship "holds for both countries and US states" (Figures 3.3 and 3.4).
 
 However, the report presents a **single global elasticity** without examining whether this relationship varies systematically across development levels. While they acknowledge that "the primitives themselves are not necessarily causal factors—we don't know if income or education are truly driving adoption, or if they're proxies for other underlying conditions," they do not test for heterogeneity in the GDP-usage relationship itself.
 
@@ -210,7 +210,7 @@ where `j` indexes income groups, and `α_j`, `β_j` are random effects shrunk to
 | Anthropic's Claim | Our Finding |
 |-------------------|-------------|
 | "a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage" | Elasticity is 0.66 with partial pooling; ranges from 0.44 to 0.76 by income level |
-| "GDP is strongly correlated with the AUI" | Correlation is weak (R²=0.14) in middle-income countries |
+| "GDP is strongly correlated with the AUI (Anthropic AI Usage Index)" | Correlation is weak (R²=0.14) in middle-income countries |
 | Relationship "holds for both countries and US states" | Relationship varies dramatically: near-zero effect for middle-income nations |
 | Single elasticity presented without uncertainty discussion | True 95% CI is [0.43, 0.89], not [0.61, 0.77] |
 

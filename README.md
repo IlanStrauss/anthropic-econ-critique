@@ -32,6 +32,47 @@ See [CRITIQUE.md](CRITIQUE.md) for full write-up.
 | **Mid income** | **0.44** | 0.18 | 38 |
 | High income | 0.63 | 0.20 | 38 |
 
+## Why This Matters: Policy Implications
+
+Anthropic's analysis implies a simple policy story: **grow GDP → get AI adoption**. Our findings reveal this is dangerously oversimplified.
+
+### Their Story vs. Our Story
+
+| Anthropic's Claim | Our Finding | Implication |
+|-------------------|-------------|-------------|
+| "GDP strongly predicts AI usage" | Relationship is weak (R²=0.14) in middle-income countries | GDP growth alone won't close the AI gap for most of the world's population |
+| Single global elasticity of 0.70 | Elasticity varies from 0.44 to 0.76 | One-size-fits-all policy is inappropriate |
+| Tight confidence interval [0.61, 0.77] | True interval is [0.43, 0.89] | We're far less certain about this relationship than they suggest |
+
+### What Should Policymakers Actually Do?
+
+**For low-income countries (β = 0.76):**
+- GDP growth IS strongly associated with AI adoption
+- Economic development may be a necessary precondition
+- Focus: basic infrastructure, connectivity, economic fundamentals
+
+**For middle-income countries (β = 0.44):**
+- **GDP barely matters** — this is the critical finding
+- Other factors dominate: education, English proficiency, digital literacy, tech infrastructure, regulatory environment
+- Focus: human capital investment, not just GDP growth
+- Examples: Brazil, Mexico, Thailand, Indonesia — telling these countries to "grow GDP for AI" misses the point
+
+**For high-income countries (β = 0.63):**
+- Massive variation unexplained by GDP
+- Israel is a 7x over-adopter; Gulf states are under-adopters despite wealth
+- Cultural, linguistic, and policy factors likely dominate
+- Focus: understand what makes Israel succeed vs. why wealth alone doesn't predict adoption
+
+### The Middle-Income AI Trap
+
+Our most striking finding is that middle-income countries face a kind of **AI adoption trap**. Unlike low-income countries (where GDP growth helps) or high-income countries (where adoption is already high), middle-income nations can't simply grow their way to AI adoption.
+
+This has echoes of the broader "middle-income trap" in development economics — and suggests AI policy for these countries needs to be fundamentally different from the "GDP drives everything" narrative.
+
+### Uncertainty Matters for Policy
+
+Anthropic's narrow confidence interval [0.61, 0.77] excludes 0.44 as implausible. But 0.44 is exactly the elasticity we observe in middle-income countries. Their overconfidence could lead policymakers to dismiss evidence that contradicts the "GDP → AI" story — when that evidence is exactly what should inform middle-income country strategy.
+
 ## Repository Structure
 
 ```

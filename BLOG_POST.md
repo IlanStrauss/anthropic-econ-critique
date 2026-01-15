@@ -18,7 +18,9 @@ Anthropic's divergence scenario is less clear-cut than they suggest. The head of
 
 But a cross-sectional income-AI elasticity doesn't imply divergence. Anthropic's regression compares countries at a point in time: richer countries use more AI. This says nothing about dynamics. Divergence requires a feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic estimates levels, not growth. The divergence claim is speculation beyond their data.
 
-Moreover, high-income countries typically have *slower* GDP growth than developing countries. If anything, faster-growing developing countries should catch up on AI adoption, not fall behind.
+Moreover, high-income countries typically have *slower* GDP growth than developing countries. If anything, our findings suggest more reason to predict convergence: middle-income countries are already adopting AI beyond what their income predicts.
+
+The real question for divergence is whether AI adoption translates into productivity gains, and how those gains are distributed. Anthropic does not and cannot estimate this second-order effect with their data.
 
 Even accepting their framework, we show the income-AI adoption link varies dramatically—and middle-income countries are adopting beyond what their wealth predicts.
 

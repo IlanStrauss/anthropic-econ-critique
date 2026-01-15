@@ -1,6 +1,6 @@
 # Does GDP Really Predict AI Adoption? A Closer Look at Anthropic's Data
 
-**Ilan Strauss & Tim O'Reilly | AI Disclosures Project | January 2026**
+**Ilan Strauss | AI Disclosures Project | January 2026**
 
 ---
 

@@ -1,6 +1,6 @@
 # Critique of Anthropic Economic Index
 
-**Authors**: Ilan Strauss & Tim O'Reilly
+**Authors**: Ilan Strauss
 **AI Disclosures Project**
 
 ---

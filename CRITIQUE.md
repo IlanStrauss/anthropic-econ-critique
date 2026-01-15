@@ -1,6 +1,6 @@
 # Methodological Critique of Anthropic's Economic Index
 
-**Ilan Strauss & Tim O'Reilly**
+**Ilan Strauss**
 **AI Disclosures Project**
 **January 2026**
 
@@ -266,7 +266,7 @@ For middle-income countries—home to most of the world's population—GDP growt
 
 5. McElreath, R. (2020). *Statistical Rethinking: A Bayesian Course with Examples in R and Stan* (2nd ed.). Chapman and Hall/CRC.
 
-6. McElreath, R. (2015). "Multilevel Regression as Default." Statistical Rethinking Blog. https://elevanth.org/blog/
+6. McElreath, R. (2017). ["Multilevel Regression as Default."](https://elevanth.org/blog/2017/08/24/multilevel-regression-as-default/) Elevanth.org Blog.
 
 7. Stein, C. (1956). "Inadmissibility of the usual estimator for the mean of a multivariate normal distribution." *Proceedings of the Third Berkeley Symposium on Mathematical Statistics and Probability*, 1, 197-206.
 

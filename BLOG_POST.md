@@ -30,7 +30,7 @@ We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/Econ
 
 We find the relationship breaks down mostly for middle-income countries. This matters because middle-income countries contain most of the world's population. For them, income level is a weak predictor of AI adoption—they're adopting AI beyond what their wealth would predict.
 
-The implication: middle-income countries like Brazil, Mexico, Thailand, and Indonesia don't need to wait to get richer. Education, digital infrastructure, English proficiency, and regulatory environment are driving adoption now. These are actionable policy levers.
+The implication: middle-income countries like Brazil, Mexico, Thailand, and Indonesia don't need to wait to get richer. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
 ---
 
@@ -59,7 +59,7 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 
 This matters because middle-income countries contain most of the world's population. For them, income level is a weak predictor of AI adoption—they're adopting AI beyond what their wealth would predict.
 
-The implication: middle-income countries like Brazil, Mexico, Thailand, and Indonesia don't need to wait to get richer. Education, digital infrastructure, English proficiency, and regulatory environment are driving adoption now. These are actionable policy levers.
+The implication: middle-income countries like Brazil, Mexico, Thailand, and Indonesia don't need to wait to get richer. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
 ### 2. Uncertainty is underestimated
 

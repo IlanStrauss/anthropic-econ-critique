@@ -20,7 +20,7 @@
 
 Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims "Worldwide, uneven adoption remains well-explained by GDP per capita."
 
-**This is not true for most of the world's population.**
+**Using their own data, we show this is not true for middle-income countries—where most of the world's population lives.**
 
 Using Anthropic's own data with partial pooling models, we show:
 1. **The income-AI adoption relationship varies dramatically by income level** — from 0.44 (middle-income) to 0.76 (low-income)

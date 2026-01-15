@@ -8,7 +8,7 @@
 
 ## Abstract
 
-Anthropic's Economic Index claims "Worldwide, uneven adoption remains well-explained by GDP per capita." This is not true for most of the world's population.
+Anthropic's Economic Index claims "Worldwide, uneven adoption remains well-explained by GDP per capita." Using their own data, we show this is not true for middle-income countries—where most of the world's population lives.
 
 Using Anthropic's own data with partial pooling models, we show the GDP per capita-AI adoption relationship varies dramatically by income level: from 0.76 in low-income countries to just 0.44 in middle-income countries. Middle-income countries—home to most of the world's population—are adopting AI beyond what their income level alone would predict.
 

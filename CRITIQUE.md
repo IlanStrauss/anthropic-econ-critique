@@ -215,7 +215,7 @@ For middle-income countries—home to most of the world's population—GDP growt
 
 ## Appendix: Code Availability
 
-All code and data are available at: [GitHub repository URL]
+All code and data are available at: https://github.com/IlanStrauss/anthropic-econ-critique
 
 - `analysis_full.py`: Python analysis using statsmodels
 - `analysis_brms.R`: R analysis using brms (Bayesian)

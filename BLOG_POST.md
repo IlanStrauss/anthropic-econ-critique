@@ -56,7 +56,7 @@ Six countries exceed Cook's D threshold (4/n = 0.035):
 |---------|----------|-------|
 | Tanzania | 0.106 | Under-adopter |
 | Angola | 0.097 | Under-adopter |
-| Israel | 0.042 | Over-adopter (7x expected) |
+| Israel | 0.042 | Over-adopter (3x predicted) |
 | Qatar | 0.048 | Rich, low adoption |
 | Kuwait | 0.037 | Rich, low adoption |
 

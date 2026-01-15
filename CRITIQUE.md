@@ -67,7 +67,7 @@ where observations are **independent and identically distributed** with a **cons
 
 **The Problem: Slope Heterogeneity**
 
-When the true data-generating process has group-varying slopes:
+When the true data-generating process has group-varying slopes (see [Moulton 1990](https://www.jstor.org/stable/2109724); [Bertrand, Duflo & Mullainathan 2004](https://academic.oup.com/qje/article/119/1/249/1876068)):
 
 ```
 y_ij = α + α_j + (β + β_j) * x_ij + ε_ij

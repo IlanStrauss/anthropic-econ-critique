@@ -12,9 +12,11 @@ Anthropic's Economic Index claims "Worldwide, uneven adoption remains well-expla
 
 Using Anthropic's own data with partial pooling models, we show the GDP per capita-AI adoption relationship varies dramatically by income level: from 0.76 in low-income countries to just 0.44 in middle-income countries. Middle-income countries—home to most of the world's population—are adopting AI beyond what their income level alone would predict.
 
-Anthropic's divergence scenario is less clear-cut than they suggest. The head of economics at Anthropic, Peter McCrory, warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." But a cross-sectional income-AI elasticity doesn't imply divergence. Divergence requires a dynamic feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic only estimates the first link (income → AI). The divergence claim is speculation beyond their data.
+Anthropic's divergence scenario is less clear-cut than they suggest. The head of economics at Anthropic, Peter McCrory, warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
-If anything, our findings suggest more reason to predict convergence: middle-income countries are already adopting AI beyond what their income predicts. The real question for divergence is whether AI adoption translates into productivity gains, and how those gains are distributed. Anthropic does not and cannot estimate this second-order effect with their data.
+But a cross-sectional regression looking at how income (GDP per capita) impacts AI adoption doesn't imply divergence in living standards. Impacts on living standards from AI adoption cannot be estimated. This requires estimating how AI adoption impacts productivity, which Anthropic cannot and does not do.
+
+Moreover, our findings suggest more reason to predict convergence in AI adoption at least: middle-income countries are already adopting AI beyond what their income predicts, when estimating effects of GDP per capita on AI adoption that are allowed to vary by a country's starting income level.
 
 For middle-income countries, income level is a weak predictor of AI adoption. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers—divergence is not inevitable.
 

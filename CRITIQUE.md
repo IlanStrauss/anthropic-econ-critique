@@ -171,7 +171,7 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 
 **Implication**: The true 95% CI includes values as low as 0.43—almost half the point estimate. The relationship between GDP and AI usage is **far less precisely estimated** than Anthropic suggests.
 
-### 3.2 The Relationship Varies by Income Level
+### 3.2 The Relationship Between GDP and AI Usage Varies by Income Level
 
 | Income Tercile | Slope (β) | SE | R² | N |
 |----------------|-----------|-----|-----|---|
@@ -179,13 +179,13 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 | **Middle income** | **0.44** | 0.18 | 0.14 | 38 |
 | High income | 0.63 | 0.20 | 0.21 | 38 |
 
-**Finding**: The GDP-usage elasticity varies by **73%** across income levels (0.44 to 0.76).
+**Finding**: The elasticity of AI usage with respect to GDP varies by **73%** across income levels (0.44 to 0.76).
 
-**Key insight**: Middle-income countries show a **dramatically weaker** relationship (0.44 vs 0.70 global average). This suggests:
+**Key insight**: Middle-income countries show a **much weaker** relationship between GDP per capita and AI usage (β = 0.44 vs 0.70 global average). This suggests:
 
-1. GDP is a **binding constraint** in low-income countries—basic economic development is necessary for AI adoption
-2. In middle-income countries, **other factors dominate**: education, English proficiency, tech infrastructure, regulatory environment
-3. Among high-income countries, there is **substantial variation** unexplained by GDP (Israel vs Gulf states)
+1. In low-income countries, GDP is a **binding constraint**—basic economic development is necessary before AI adoption can increase
+2. In middle-income countries, **other factors dominate AI adoption**: education, English proficiency, tech infrastructure, regulatory environment—not GDP
+3. Among high-income countries, there is **substantial variation in AI usage** unexplained by GDP (e.g., Israel has 3x the AI usage predicted by its GDP; Gulf states have far less than predicted)
 
 **Policy implication**: Anthropic's recommendation that GDP growth drives AI adoption is **misleading for middle-income countries**. For Brazil, Mexico, Thailand, and similar nations, focusing on GDP growth alone will not close the AI adoption gap. Policy should target education and infrastructure.
 
@@ -199,17 +199,17 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 | Angola | Severe under-adopter | 0.097 |
 | Uzbekistan | Under-adopter | 0.050 |
 | Qatar | Rich but low usage | 0.048 |
-| Israel | Massive over-adopter (7x index) | 0.042 |
+| Israel | Over-adopter (3x predicted usage) | 0.042 |
 | Kuwait | Rich but low usage | 0.037 |
 
-**Finding**: Six countries have outsized influence. Removing them would substantially change the slope estimate.
+**Finding**: Six countries have outsized influence on the estimated GDP-AI usage relationship. Removing them would substantially change the estimated elasticity.
 
 **Pattern**:
-- **Israel** is a massive outlier—7x the expected usage for its GDP. This pulls the slope up.
-- **Gulf states** (Qatar, Kuwait, Saudi Arabia) are rich but have low AI adoption. Cultural, linguistic, or regulatory factors likely explain this.
-- **African under-adopters** (Tanzania, Angola) pull the regression line steeper to accommodate them.
+- **Israel** has 3x the AI usage predicted by its GDP level. This pulls the estimated elasticity upward.
+- **Gulf states** (Qatar, Kuwait, Saudi Arabia) are rich but have low AI adoption. Cultural, linguistic, or regulatory factors likely explain this. These pull the elasticity downward.
+- **African under-adopters** (Tanzania, Angola) have far less AI usage than their GDP predicts. These pull the regression line steeper (higher elasticity) to accommodate them.
 
-**Robust regression** (downweighting outliers) gives $\hat{\beta} = 0.67$, confirming the OLS estimate is inflated.
+**Robust regression** (downweighting these outliers) gives β = 0.67, lower than OLS (0.69), confirming outliers inflate the estimate.
 
 ---
 

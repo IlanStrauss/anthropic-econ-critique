@@ -31,6 +31,26 @@ We examine whether this conclusion is robust to:
 - Heterogeneity in the GDP-usage relationship across development levels
 - Influence of outlier countries
 
+### Core Findings
+
+**Their Claim vs Our Finding:**
+
+| Anthropic's Claim | Our Finding |
+|-------------------|-------------|
+| "a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage" | Elasticity is 0.66 with partial pooling; ranges from 0.44 to 0.76 by income level |
+| "GDP is strongly correlated with the AUI" | Correlation between GDP and AI usage is weak (R²=0.14) in middle-income countries |
+| Single elasticity presented without uncertainty discussion | True 95% CI is [0.43, 0.89], not [0.61, 0.77] |
+
+**Policy Implications:**
+
+Anthropic's implicit recommendation is: grow GDP → get AI adoption. Our findings suggest this is incomplete:
+
+- **Low-income countries**: GDP is a binding constraint. Anthropic's story is approximately correct.
+- **Middle-income countries**: GDP growth has weak association with AI adoption (β = 0.44). Education, digital literacy, English proficiency, and tech infrastructure likely matter more.
+- **High-income countries**: Variation in AI usage is large and unexplained by GDP. Israel has 3x the AI usage predicted by its GDP; Gulf states have far less. Cultural and policy factors dominate.
+
+The "divergence in living standards" that Anthropic warns of is not inevitable—it depends on policy choices that their pooled analysis obscures.
+
 ---
 
 ## 2. Data and Methods

@@ -24,6 +24,8 @@ We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/Econ
 
 ![Figure 1](figures/fig1_their_view_vs_ours.png)
 
+**Figure 1** shows the GDP-AI usage relationship. Left panel: Anthropic's approach—one regression line through all countries. Right panel: separate lines by income tercile. The slopes differ substantially. Low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one. Anthropic's single line averages over this heterogeneity, obscuring that GDP matters much less for middle-income countries.
+
 | Income Level | GDP Elasticity (β) |
 |--------------|-------------------|
 | Low income | 0.76 |
@@ -35,20 +37,26 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 
 ![Figure 2](figures/fig2_slope_by_income.png)
 
+**Figure 2** shows the estimated elasticity (with standard errors) for each income group. The middle-income bar is notably shorter than Anthropic's global estimate. This matters because middle-income countries contain most of the world's population. For them, GDP growth is a weak predictor of AI adoption—other factors dominate.
+
 ### 2. Uncertainty is underestimated
 
 ![Figure 3](figures/fig3_confidence_intervals.png)
+
+**Figure 3** compares confidence intervals. The top bar (Anthropic's OLS) shows a narrow interval [0.61, 0.77]. The bottom bar (partial pooling) shows a wider interval [0.43, 0.89]. Anthropic's narrow interval suggests false precision. It excludes 0.44—the elasticity we actually observe in middle-income countries. Proper accounting for group-level variance reveals we are far less certain about the GDP-AI usage relationship than Anthropic implies.
 
 | Method | Slope | SE | 95% CI |
 |--------|-------|-----|--------|
 | Anthropic (OLS) | 0.69 | 0.042 | [0.61, 0.77] |
 | Partial pooling | 0.66 | 0.116 | [0.43, 0.89] |
 
-Standard errors are ~3x larger when accounting for group-level variance. Their confidence interval excludes 0.44—the actual middle-income elasticity.
+Standard errors are ~3x larger when accounting for group-level variance.
 
 ### 3. Outliers drive results
 
 ![Figure 4](figures/fig4_outliers.png)
+
+**Figure 4** plots each country by GDP (x-axis) and AI usage (y-axis). Point size reflects influence on the regression (Cook's Distance). Red points are above the line (more AI usage than GDP predicts); blue points are below. Several countries have outsized influence: Tanzania and Angola (large blue points, far below line) and Israel (red, far above). The estimated relationship depends heavily on these few unusual countries. Remove them and the slope changes substantially.
 
 Six countries exceed Cook's D threshold (4/n = 0.035):
 

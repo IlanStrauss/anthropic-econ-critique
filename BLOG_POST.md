@@ -50,7 +50,7 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 | Anthropic (OLS) | 0.69 | 0.042 | [0.61, 0.77] |
 | Partial pooling | 0.66 | 0.116 | [0.43, 0.89] |
 
-Standard errors are ~3x larger when accounting for group-level variance.
+Standard errors are ~3x larger when accounting for group-level variance (i.e., variation across income groups: low, middle, high).
 
 ### 3. Outliers drive results
 

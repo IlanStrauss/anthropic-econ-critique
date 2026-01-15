@@ -209,27 +209,11 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 
 **Policy implication**: Anthropic's recommendation that GDP growth drives AI adoption is **misleading for middle-income countries**. For Brazil, Mexico, Thailand, and similar nations, focusing on GDP growth alone will not close the AI adoption gap. Policy should target education and infrastructure.
 
-### 3.3 Outliers Drive Results
+### 3.3 Outliers
 
-**Top influential observations (Cook's Distance > 4/n):**
+Some countries deviate substantially from the GDP-AI usage relationship: Israel has 3x the AI usage predicted by its GDP; Gulf states (Qatar, Kuwait) have far less than predicted; several African countries (Tanzania, Angola) fall well below the regression line.
 
-| Country | Issue | Cook's D |
-|---------|-------|----------|
-| Tanzania | Severe under-adopter | 0.106 |
-| Angola | Severe under-adopter | 0.097 |
-| Uzbekistan | Under-adopter | 0.050 |
-| Qatar | Rich but low usage | 0.048 |
-| Israel | Over-adopter (3x predicted usage) | 0.042 |
-| Kuwait | Rich but low usage | 0.037 |
-
-**Finding**: Six countries have outsized influence on the estimated GDP-AI usage relationship. Removing them would substantially change the estimated elasticity.
-
-**Pattern**:
-- **Israel** has 3x the AI usage predicted by its GDP level. This pulls the estimated elasticity upward.
-- **Gulf states** (Qatar, Kuwait, Saudi Arabia) are rich but have low AI adoption. Cultural, linguistic, or regulatory factors likely explain this. These pull the elasticity downward.
-- **African under-adopters** (Tanzania, Angola) have far less AI usage than their GDP predicts. These pull the regression line steeper (higher elasticity) to accommodate them.
-
-**Robust regression** (downweighting these outliers) gives β = 0.67, lower than OLS (0.69), confirming outliers inflate the estimate.
+However, removing outliers only shifts the slope by ~5% (see Appendix B for details). The main findings—heterogeneity by income level and underestimated uncertainty—are not driven by outliers.
 
 ---
 
@@ -314,10 +298,45 @@ For middle-income countries—home to most of the world's population—GDP growt
 
 ---
 
-## Appendix: Code Availability
+## Appendix A: Code Availability
 
 All code and data are available at: https://github.com/IlanStrauss/anthropic-econ-critique
 
 - `analysis_full.py`: Python analysis using statsmodels
 - `analysis_brms.R`: R analysis using brms (Bayesian)
 - `data/`: Anthropic's original data
+
+## Appendix B: Outlier Analysis
+
+### Influential Observations
+
+Six countries exceed the Cook's Distance threshold (4/n = 0.035):
+
+| Country | Cook's D | Residual Direction | Description |
+|---------|----------|-------------------|-------------|
+| Tanzania | 0.106 | Below line | Far less AI usage than GDP predicts |
+| Angola | 0.097 | Below line | Far less AI usage than GDP predicts |
+| Uzbekistan | 0.050 | Below line | Less AI usage than GDP predicts |
+| Qatar | 0.048 | Below line | Rich but low AI adoption |
+| Israel | 0.042 | Above line | 3x the AI usage predicted by GDP |
+| Kuwait | 0.037 | Below line | Rich but low AI adoption |
+
+### Sensitivity to Outlier Removal
+
+| Countries Removed | Slope (β) | Change from Full Sample |
+|-------------------|-----------|------------------------|
+| None (full sample, n=114) | 0.689 | — |
+| Israel only | 0.680 | −1.4% |
+| Tanzania only | 0.673 | −2.4% |
+| Tanzania + Angola + Israel | 0.651 | −5.6% |
+| All 6 outliers | 0.658 | −4.6% |
+
+### Interpretation
+
+Removing influential outliers shifts the estimated elasticity by at most ~6%. This is meaningful but does not overturn the main findings:
+
+1. The heterogeneity by income level (slopes ranging from 0.44 to 0.76) remains the dominant issue
+2. The uncertainty underestimation (~3x) is driven by group-level variance, not outliers
+3. Robust regression (Huber M-estimation) gives β = 0.67, consistent with outlier removal
+
+The outliers do, however, highlight that country-specific factors beyond GDP—language, culture, regulatory environment, tech infrastructure—substantially affect AI adoption. Israel's over-adoption and the Gulf states' under-adoption relative to their GDP levels warrant further investigation.

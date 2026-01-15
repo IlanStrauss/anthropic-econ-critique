@@ -62,23 +62,11 @@ Anthropic's narrow interval suggests false precision. It excludes 0.44—the ela
 
 Standard errors are ~3x larger when accounting for group-level variance (i.e., variation across income groups: low, middle, high).
 
-### 3. Outliers drive results
+### 3. Notable outliers
 
-![Figure 4](figures/fig4_outliers.png)
+Some countries deviate substantially from the GDP-AI usage relationship. Israel has 3x the AI usage predicted by its GDP. Gulf states (Qatar, Kuwait, Saudi Arabia) have far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.
 
-**Figure 4** plots each country by GDP (x-axis) and AI usage (y-axis). Point size reflects influence on the regression (Cook's Distance). Red points are above the line (more AI usage than GDP predicts); blue points are below.
-
-Several countries have outsized influence: Tanzania and Angola (large blue points, far below line) and Israel (red, far above). Remove Tanzania alone and the slope drops from 0.69 to 0.67 (−2.4%). Remove Tanzania, Angola, and Israel together and it falls to 0.65 (−5.6%). A handful of unusual countries shift the estimated elasticity by meaningful amounts.
-
-Six countries exceed Cook's D threshold (4/n = 0.035):
-
-| Country | Cook's D | Issue |
-|---------|----------|-------|
-| Tanzania | 0.106 | Under-adopter |
-| Angola | 0.097 | Under-adopter |
-| Israel | 0.042 | Over-adopter (3x predicted) |
-| Qatar | 0.048 | Rich, low adoption |
-| Kuwait | 0.037 | Rich, low adoption |
+These outliers suggest country-specific factors—language, culture, regulation, tech infrastructure—matter beyond GDP. However, removing outliers only shifts the slope by ~5%, so the main critique (heterogeneity by income level) stands regardless. See [CRITIQUE.md](CRITIQUE.md) for detailed outlier analysis.
 
 ---
 

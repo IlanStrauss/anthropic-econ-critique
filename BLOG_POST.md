@@ -14,7 +14,7 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 ## Why This Matters
 
-Anthropic's divergence scenario is less clear-cut than they suggest. As their head of economics Peter McCrory told the *Financial Times*: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
+Anthropic's divergence scenario is less clear-cut than they suggest. The head of economics at Anthropic, Peter McCrory, told the *Financial Times*: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
 But a cross-sectional income-AI elasticity doesn't imply divergence. Anthropic's regression compares countries at a point in time: richer countries use more AI. This says nothing about dynamics. Divergence requires a feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic estimates levels, not growth. The divergence claim is speculation beyond their data.
 

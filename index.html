@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Does GDP Really Predict AI Adoption? | AI Disclosures Project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #111;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 2.5rem;
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #444;
+            margin-top: 1.5rem;
+        }
+        .authors {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .tldr {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .tldr h3 {
+            color: white;
+            margin-top: 0;
+        }
+        .tldr ul {
+            margin-bottom: 0;
+        }
+        blockquote {
+            border-left: 4px solid #e74c3c;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #fff;
+            font-style: italic;
+            color: #555;
+        }
+        .finding-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .finding-box.critical {
+            border-left: 5px solid #e74c3c;
+        }
+        .finding-box.key {
+            border-left: 5px solid #f39c12;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #f9f9f9;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        .stat {
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 1.5rem 0;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .comparison > div {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .comparison .theirs {
+            border-top: 4px solid #3498db;
+        }
+        .comparison .ours {
+            border-top: 4px solid #9b59b6;
+        }
+        .policy-box {
+            background: #e8f5e9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .policy-box.warning {
+            background: #fff3e0;
+        }
+        .policy-box h4 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+        .policy-box.warning h4 {
+            color: #e65100;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        a {
+            color: #3498db;
+        }
+        @media print {
+            body {
+                max-width: 100%;
+                padding: 1rem;
+            }
+            .tldr {
+                background: #f0f0f0 !important;
+                color: #333 !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        @media (max-width: 600px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Does GDP Really Predict AI Adoption?</h1>
+    <p class="authors">
+        <strong>Ilan Strauss & Tim O'Reilly</strong><br>
+        AI Disclosures Project | January 2026
+    </p>
+
+    <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>Anthropic claims GDP strongly predicts AI adoption (0.7 elasticity). Using their own data with better methods, we find:</p>
+        <ul>
+            <li><strong>The relationship varies dramatically</strong> — from 0.44 (middle-income) to 0.76 (low-income)</li>
+            <li><strong>For middle-income countries, GDP barely matters</strong> — other factors dominate</li>
+            <li><strong>Their confidence is overstated by ~3x</strong> — true uncertainty is much higher</li>
+            <li><strong>A handful of outliers drive their results</strong> — Israel, Gulf states, African countries</li>
+        </ul>
+    </div>
+
+    <h2>The Claim</h2>
+    <p>Anthropic's <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report">Economic Index January 2026 Report</a> makes a striking claim:</p>
+
+    <blockquote>
+        "At the country level, a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita."
+    </blockquote>
+
+    <p>This sounds like a clean story: richer countries use more AI. But when we analyzed <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex">their publicly available data</a>, we found this simple narrative masks crucial complexity.</p>
+
+    <h2>Finding #1: The Relationship Varies by Income Level</h2>
+
+    <img src="figures/fig1_their_view_vs_ours.png" alt="Their view vs our view">
+
+    <p>The left panel shows Anthropic's approach: one line through all countries. The right panel shows what happens when we allow the relationship to vary. <strong>The slopes are dramatically different.</strong></p>
+
+    <div class="finding-box critical">
+        <h3>The Numbers</h3>
+        <table>
+            <tr>
+                <th>Income Level</th>
+                <th>GDP Elasticity (β)</th>
+                <th>What It Means</th>
+            </tr>
+            <tr>
+                <td>Low income</td>
+                <td><span class="stat">0.76</span></td>
+                <td>GDP growth strongly linked to AI adoption</td>
+            </tr>
+            <tr>
+                <td><strong>Middle income</strong></td>
+                <td><span class="stat highlight">0.44</span></td>
+                <td><strong>GDP barely matters!</strong></td>
+            </tr>
+            <tr>
+                <td>High income</td>
+                <td><span class="stat">0.63</span></td>
+                <td>Moderate relationship, high variation</td>
+            </tr>
+            <tr>
+                <td>Anthropic (global)</td>
+                <td><span class="stat">0.70</span></td>
+                <td>Masks all this heterogeneity</td>
+            </tr>
+        </table>
+    </div>
+
+    <img src="figures/fig2_slope_by_income.png" alt="Slopes by income level">
+
+    <h2>Finding #2: They're Overconfident</h2>
+
+    <img src="figures/fig3_confidence_intervals.png" alt="Confidence interval comparison">
+
+    <div class="finding-box key">
+        <h3>The Uncertainty Problem</h3>
+        <p>Anthropic reports a confidence interval of <span class="stat">[0.61, 0.77]</span> — looks precise!</p>
+        <p>But this ignores that the relationship varies across country groups. When we properly account for this using partial pooling, the interval widens to <span class="stat">[0.43, 0.89]</span>.</p>
+        <p><strong>That's nearly 3x wider.</strong> Their interval excludes 0.44 as implausible — but 0.44 is exactly what we see in middle-income countries.</p>
+    </div>
+
+    <h2>Finding #3: Outliers Drive Their Results</h2>
+
+    <img src="figures/fig4_outliers.png" alt="Influential outliers">
+
+    <p>A handful of unusual countries have outsized influence:</p>
+    <ul>
+        <li><strong>Israel</strong> — Massive over-adopter (7x expected usage). Pulls slope UP.</li>
+        <li><strong>Tanzania, Angola</strong> — Severe under-adopters. Pull slope UP.</li>
+        <li><strong>Qatar, Kuwait, Saudi Arabia</strong> — Rich but low AI usage. Pull slope DOWN.</li>
+    </ul>
+    <p>The "global relationship" is really a compromise driven by ~6 unusual countries.</p>
+
+    <h2>Why This Matters: Policy Implications</h2>
+
+    <div class="comparison">
+        <div class="theirs">
+            <h3>Anthropic's Story</h3>
+            <p><strong>GDP → AI Adoption</strong></p>
+            <p>Simple policy: grow GDP to increase AI adoption.</p>
+            <p>One global elasticity applies everywhere.</p>
+        </div>
+        <div class="ours">
+            <h3>Our Finding</h3>
+            <p><strong>It Depends on Context</strong></p>
+            <p>The relationship varies 2x across income levels.</p>
+            <p>Different countries need different strategies.</p>
+        </div>
+    </div>
+
+    <div class="policy-box">
+        <h4>For Low-Income Countries</h4>
+        <p>GDP growth IS strongly associated with AI adoption. Economic development may be a necessary precondition. <strong>Anthropic's story is roughly correct here.</strong></p>
+    </div>
+
+    <div class="policy-box warning">
+        <h4>For Middle-Income Countries (The Critical Finding)</h4>
+        <p><strong>GDP barely matters.</strong> Telling Brazil, Mexico, Thailand, or Indonesia to "grow GDP for AI adoption" misses the point.</p>
+        <p>Focus instead on: education, English proficiency, digital literacy, tech infrastructure, regulatory environment.</p>
+        <p>This is where most of the world's population lives — and where Anthropic's story fails.</p>
+    </div>
+
+    <div class="policy-box">
+        <h4>For High-Income Countries</h4>
+        <p>Massive variation unexplained by GDP. Israel is a 7x over-adopter; Gulf states lag despite wealth.</p>
+        <p>Cultural, linguistic, and policy factors likely dominate. Wealth alone doesn't predict adoption.</p>
+    </div>
+
+    <h2>The Middle-Income AI Trap</h2>
+    <p>Our most striking finding: middle-income countries face a kind of <strong>AI adoption trap</strong>. Unlike low-income countries (where GDP growth helps) or high-income countries (where adoption is already high), middle-income nations can't simply grow their way to AI adoption.</p>
+    <p>This echoes the broader "middle-income trap" in development economics — and suggests AI policy for these countries needs to be fundamentally different.</p>
+
+    <h2>Reproduce Our Analysis</h2>
+    <p>All code and data are available at: <a href="https://github.com/IlanStrauss/anthropic-econ-critique">github.com/IlanStrauss/anthropic-econ-critique</a></p>
+    <ul>
+        <li><code>analysis_full.py</code> — Python (statsmodels)</li>
+        <li><code>analysis_brms.R</code> — R (brms for Bayesian)</li>
+        <li><code>CRITIQUE.md</code> — Full technical write-up</li>
+    </ul>
+
+    <footer>
+        <p><strong>AI Disclosures Project</strong></p>
+        <p>Contact: <a href="mailto:ilan@aidisclosures.org">ilan@aidisclosures.org</a></p>
+        <p>
+            <a href="CRITIQUE.md">Full Technical Paper</a> |
+            <a href="https://github.com/IlanStrauss/anthropic-econ-critique">GitHub Repository</a> |
+            <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex">Original Data</a>
+        </p>
+    </footer>
+</body>
+</html>

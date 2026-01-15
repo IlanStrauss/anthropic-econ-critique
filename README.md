@@ -3,6 +3,19 @@
 **Authors**: Ilan Strauss & Tim O'Reilly
 **AI Disclosures Project**
 
+---
+
+## 📖 Read Our Analysis
+
+| Format | Link | Description |
+|--------|------|-------------|
+| **🌐 Blog (Easy Read)** | [**View Online**](https://ilanstrauss.github.io/anthropic-econ-critique/) | Visual, accessible version with figures |
+| **📄 PDF** | [**Download PDF**](https://ilanstrauss.github.io/anthropic-econ-critique/?print) | Print the blog page (Ctrl/Cmd+P) |
+| **📝 Full Technical Paper** | [CRITIQUE.md](CRITIQUE.md) | Detailed methodology, equations, citations |
+| **✍️ Blog Post (Markdown)** | [BLOG_POST.md](BLOG_POST.md) | Markdown version of the blog |
+
+---
+
 ## Overview
 
 This repository contains a methodological critique of Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report), focusing on their claim that "a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita."

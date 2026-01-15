@@ -41,7 +41,7 @@ Anthropic faces a fundamental choice when estimating the GDP-usage relationship:
 
 Partial pooling is theoretically preferred for several reasons:
 
-**James-Stein Estimator Properties**: Stein (1956) proved a remarkable result: when estimating three or more means simultaneously, the MLE (no pooling) is *inadmissible*—there always exists a shrinkage estimator with lower mean squared error. The James-Stein estimator shrinks individual estimates toward the grand mean, and this "borrowing of strength" across groups reduces total estimation error. Partial pooling implements this principle: noisy group estimates are pulled toward the global estimate, with the degree of shrinkage determined by relative sample sizes and variance.
+**James-Stein Estimator Properties**: [Stein (1956)](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) proved a remarkable result: when estimating three or more means simultaneously, the MLE (no pooling) is *inadmissible*—there always exists a shrinkage estimator with lower mean squared error. The [James-Stein estimator](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) shrinks individual estimates toward the grand mean, and this "borrowing of strength" across groups reduces total estimation error. Partial pooling implements this principle: noisy group estimates are pulled toward the global estimate, with the degree of shrinkage determined by relative sample sizes and variance. As [Efron and Morris (1977)](https://statweb.stanford.edu/~ckirby/brad/other/Article1977.pdf) explained in their famous *Scientific American* article, this "Stein's Paradox" shows that combining information across groups is almost always better than treating them independently.
 
 **Bias-Variance Tradeoff**: As McElreath (2020) explains in *Statistical Rethinking*, partial pooling navigates between two failure modes:
 - Complete pooling *underfits*: it ignores real heterogeneity across groups
@@ -55,7 +55,9 @@ Partial pooling adaptively regularizes: groups with little data are shrunk heavi
 
 Anthropic's OLS approach assumes:
 
-$$\text{Var}(\hat{\beta}_{OLS}) = \frac{\sigma^2}{(n-1)S_x^2}$$
+```
+Var(β̂_OLS) = σ² / [(n-1) * Var(x)]
+```
 
 where observations are **independent and identically distributed** with a **constant slope**. Both assumptions fail with grouped data when slopes vary.
 
@@ -63,13 +65,17 @@ where observations are **independent and identically distributed** with a **cons
 
 When the true data-generating process has group-varying slopes:
 
-$$y_{ij} = \alpha + \alpha_j + (\beta + \beta_j)x_{ij} + \varepsilon_{ij}$$
+```
+y_ij = α + α_j + (β + β_j) * x_ij + ε_ij
+```
 
-where $\beta_j \sim N(0, \tau^2_\beta)$ are random slope deviations, the variance of the pooled OLS estimator is:
+where `β_j ~ N(0, τ²_β)` are random slope deviations, the variance of the pooled OLS estimator is:
 
-$$\text{Var}(\hat{\beta}_{pooled}) = \text{Var}(\hat{\beta}|slopes) + \text{Var}(slopes)$$
+```
+Var(β̂_pooled) = Var(β̂ | slopes fixed) + Var(slopes across groups)
+```
 
-OLS only captures the first term—the **sampling variance** given fixed slopes. It completely ignores the second term—the **between-group variance in slopes** ($\tau^2_\beta$).
+OLS only captures the first term—the **sampling variance** given fixed slopes. It completely ignores the second term—the **between-group variance in slopes** (`τ²_β`).
 
 **Decomposing Our Results**
 
@@ -103,7 +109,7 @@ Anthropic's CI of [0.61, 0.77] appears precise but reflects only sampling uncert
 
 This is a well-known issue when regressing micro outcomes on macro predictors. Bertrand, Duflo & Mullainathan (2004) showed that difference-in-differences studies routinely understate standard errors by 2-3x when ignoring group clustering—exactly what we find here.
 
-**Empirical Performance**: McElreath's blog posts on multilevel models demonstrate that partial pooling consistently outperforms both alternatives in prediction tasks, particularly when groups have unequal sample sizes—exactly our situation with country-level data.
+**Empirical Performance**: McElreath's [Statistical Rethinking lectures](https://github.com/rmcelreath/stat_rethinking_2023) and [Chapter 13 on multilevel models](https://bookdown.org/content/4857/models-with-memory.html) demonstrate that partial pooling consistently outperforms both alternatives in prediction tasks, particularly when groups have unequal sample sizes—exactly our situation with country-level data. As he notes: "Varying intercepts are just regularized estimates, but adaptively regularized by estimating how diverse the clusters are while estimating the features of each cluster."
 
 In our context: Anthropic's complete pooling assumes all countries share identical GDP-usage relationships. This is empirically false (slopes range from 0.44 to 0.76) and theoretically unjustified. Partial pooling reveals both the heterogeneity and the appropriate uncertainty.
 
@@ -127,9 +133,12 @@ This yields $\hat{\beta} = 0.69$ with SE = 0.042, which they round to "0.7".
 We employ three alternatives:
 
 **Partial Pooling (Mixed Effects)**:
-$$\ln(\text{Usage}_{ij}) = \alpha + \alpha_j + (\beta + \beta_j) \ln(\text{GDP}_{ij}) + \varepsilon_{ij}$$
 
-where $j$ indexes income groups, and $\alpha_j$, $\beta_j$ are random effects shrunk toward zero.
+```
+ln(Usage_ij) = α + α_j + (β + β_j) * ln(GDP_ij) + ε_ij
+```
+
+where `j` indexes income groups, and `α_j`, `β_j` are random effects shrunk toward zero.
 
 **Robust Regression**: Huber M-estimation to downweight outliers.
 

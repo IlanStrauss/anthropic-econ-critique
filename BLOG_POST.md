@@ -22,7 +22,7 @@ Moreover, as we show below, our findings suggest more reason to predict converge
 
 Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between income level and AI adoption is the same everywhere—a single parameter applies to Nigeria and Norway alike.
 
-Anthropic also finds that human education—the sophistication of user prompts—correlates with AI adoption. We focus on their GDP per capita claim, which drives the headline, but their education finding supports our argument: middle-income countries can invest in education rather than waiting to get richer.
+Anthropic also finds that human education—the sophistication of user prompts—correlates with AI adoption. We focus on their GDP per capita claim, which drives the headline, but their education finding supports our argument: middle-income countries can invest in education rather than waiting to get richer to drive AI adoption.
 
 We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex). The 0.7 elasticity doesn't hold universally.
 

@@ -10,9 +10,13 @@ Anthropic recently released their [Economic Index January 2026 Report](https://w
 
 ## Why This Claim Matters
 
-This isn't just an academic finding—it shapes how we think about AI's global future. If GDP truly drives AI adoption with a 0.7 elasticity, the implications are profound:
+This isn't just an academic finding—it shapes how we think about AI's global future. Anthropic knows this. As Peter McCrory, Anthropic's head of economics, told the *Financial Times*:
 
-**For global inequality**: AI benefits would naturally flow to rich countries, compounding existing advantages. Poor countries would need to get richer *first* before they could benefit from AI—a development ladder where AI sits at the top.
+> "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
+
+If GDP truly drives AI adoption with a 0.7 elasticity, the implications are profound:
+
+**For global inequality**: AI benefits would naturally flow to rich countries, compounding existing advantages. Poor countries would need to get richer *first* before they could benefit from AI—a development ladder where AI sits at the top. And as McCrory warns, this could mean **diverging living standards**—the rich get richer, AI-powered productivity compounds their advantage.
 
 **For policy**: Governments wanting to boost AI adoption should focus on economic growth. Education programs, digital infrastructure, language access? Secondary concerns. GDP is the bottleneck.
 

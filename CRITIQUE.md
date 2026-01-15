@@ -10,7 +10,7 @@
 
 Anthropic's Economic Index claims that "a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita." This finding matters: if GDP strongly predicts AI adoption, then AI's productivity benefits will flow disproportionately to wealthy nations, potentially widening global inequality. As Anthropic's head of economics Peter McCrory warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
-We show this estimate (1) has underestimated uncertainty due to ignoring hierarchical data structure, (2) masks substantial heterogeneity across income levels, and (3) is driven by a handful of influential outliers. Using partial pooling models, we find the true uncertainty is ~3x larger than reported, and the GDP-usage relationship varies from 0.44 in middle-income countries to 0.76 in low-income countries.
+We show this estimate: (1) has underestimated uncertainty due to ignoring hierarchical data structure, (2) masks substantial heterogeneity across income levels, and (3) is driven by a handful of influential outliers. Using partial pooling models, we find the true uncertainty is ~3x larger than reported, and the GDP-usage relationship varies from 0.44 in middle-income countries to 0.76 in low-income countries.
 
 The policy implications differ sharply from Anthropic's narrative. For middle-income countries—home to most of the world's population—GDP growth alone will not drive AI adoption. Factors like education, digital infrastructure, and language access may matter more. The "divergence in living standards" that Anthropic warns of is not inevitable; it depends on policy choices that their analysis obscures.
 

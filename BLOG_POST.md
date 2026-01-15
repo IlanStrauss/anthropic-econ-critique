@@ -37,7 +37,7 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 
 ![Figure 2](figures/fig2_slope_by_income.png)
 
-**Figure 2** shows the estimated elasticity (with standard errors) for each income group. The middle-income bar is notably shorter than Anthropic's global estimate. This matters because middle-income countries contain most of the world's population. For them, GDP growth is a weak predictor of AI adoption—other factors dominate.
+**Figure 2** shows the estimated elasticity (with standard errors) for each income group. The middle-income bar is notably shorter than Anthropic's global estimate. This matters because middle-income countries contain most of the world's population. For them, GDP growth is a weak predictor of AI adoption. The implication: policies focused on GDP growth alone won't substantially increase AI adoption in countries like Brazil, Mexico, Thailand, or Indonesia. Instead, education, digital infrastructure, English proficiency, and regulatory environment likely matter more. These are actionable policy levers—unlike waiting for GDP to rise.
 
 ### 2. Uncertainty is underestimated
 

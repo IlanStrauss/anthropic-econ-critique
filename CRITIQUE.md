@@ -8,11 +8,13 @@
 
 ## Abstract
 
-Anthropic's Economic Index claims that "a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita." This finding matters: if GDP strongly predicts AI adoption, then AI's productivity benefits will flow disproportionately to wealthy nations, potentially widening global inequality. As Anthropic's head of economics Peter McCrory warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
+Anthropic's Economic Index claims "Worldwide, uneven adoption remains well-explained by GDP per capita." This is not true for most of the world's population.
 
-We show this estimate: (1) has underestimated uncertainty due to ignoring hierarchical data structure, (2) masks substantial heterogeneity across income levels, and (3) is driven by a handful of influential outliers. Using partial pooling models, we find the true uncertainty is ~3x larger than reported, and the GDP-usage relationship varies from 0.44 in middle-income countries to 0.76 in low-income countries.
+Using Anthropic's own data with partial pooling models, we show the GDP per capita-AI adoption relationship varies dramatically by income level: from 0.76 in low-income countries to just 0.44 in middle-income countries. Middle-income countries—home to most of the world's population—are adopting AI beyond what their income level alone would predict.
 
-The policy implications differ sharply from Anthropic's narrative. For middle-income countries—home to most of the world's population—GDP growth alone will not drive AI adoption. Factors like education, digital infrastructure, and language access may matter more. The "divergence in living standards" that Anthropic warns of is not inevitable; it depends on policy choices that their analysis obscures.
+Anthropic's divergence scenario is less clear-cut than they suggest. As their head of economics Peter McCrory warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." But a cross-sectional income-AI elasticity doesn't imply divergence. Divergence requires a dynamic feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic only estimates the first link (income → AI). The divergence claim is speculation beyond their data.
+
+For middle-income countries, income level is a weak predictor of AI adoption. Education, digital infrastructure, English proficiency, and regulatory environment are driving adoption now. These are actionable policy levers—divergence is not inevitable.
 
 ---
 
@@ -24,11 +26,13 @@ Anthropic's January 2026 Economic Index report presents a simple, compelling sto
 
 They further claim to "replicate the finding from our prior report that GDP is strongly correlated with the AUI (Anthropic AI Usage Index)" and note this relationship "holds for both countries and US states" (Figures 3.3 and 3.4).
 
-However, the report presents a **single global elasticity** without examining whether this relationship varies systematically across development levels. While they acknowledge that "the primitives themselves are not necessarily causal factors—we don't know if income or education are truly driving adoption, or if they're proxies for other underlying conditions," they do not test for heterogeneity in the GDP-usage relationship itself.
+Note: Anthropic uses "GDP" and "GDP per capita" interchangeably throughout their report (e.g., "GDP and human education predict adoption globally" followed immediately by "A 1% increase in GDP per capita..."). These are not the same: GDP is total national output; GDP per capita is income per person. Their regression is on GDP per capita, not GDP. We use "GDP per capita" or "income level" throughout for precision.
+
+However, the report presents a **single global elasticity** without examining whether this relationship varies systematically across development levels. While they acknowledge that "the primitives themselves are not necessarily causal factors—we don't know if income or education are truly driving adoption, or if they're proxies for other underlying conditions," they do not test for heterogeneity in the GDP per capita-AI adoption relationship itself.
 
 We examine whether this conclusion is robust to:
 - Proper uncertainty quantification using hierarchical models
-- Heterogeneity in the GDP-usage relationship across development levels
+- Heterogeneity in the GDP per capita-AI adoption relationship across development levels
 - Influence of outlier countries
 
 ### Core Findings
@@ -38,18 +42,18 @@ We examine whether this conclusion is robust to:
 | Anthropic's Claim | Our Finding |
 |-------------------|-------------|
 | "a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage" | Elasticity is 0.66 with partial pooling; ranges from 0.44 to 0.76 by income level |
-| "GDP is strongly correlated with the AUI" | Correlation between GDP and AI usage is weak (R²=0.14) in middle-income countries |
+| "Worldwide, uneven adoption remains well-explained by GDP per capita" | Not true for middle-income countries (R²=0.14)—most of the world's population |
 | Single elasticity presented without uncertainty discussion | True 95% CI is [0.43, 0.89], not [0.61, 0.77] |
 
 **Policy Implications:**
 
-Anthropic's implicit recommendation is: grow GDP → get AI adoption. Our findings suggest this is incomplete:
+Anthropic's implicit story is: higher income → more AI adoption. Our findings show this varies dramatically:
 
-- **Low-income countries**: GDP is a binding constraint. Anthropic's story is approximately correct.
-- **Middle-income countries**: GDP growth has weak association with AI adoption (β = 0.44). Education, digital literacy, English proficiency, and tech infrastructure likely matter more.
-- **High-income countries**: Variation in AI usage is large and unexplained by GDP. Israel has 3x the AI usage predicted by its GDP; Gulf states have far less. Cultural and policy factors dominate.
+- **Low-income countries**: Income level is a strong predictor of AI adoption. Anthropic's story is approximately correct.
+- **Middle-income countries**: These countries are adopting AI beyond what their income level predicts (β = 0.44). Education, digital literacy, English proficiency, and tech infrastructure are driving adoption now.
+- **High-income countries**: Variation in AI usage is large and unexplained by income. Israel has 3x the AI usage predicted by its income level; Gulf states have far less. Cultural and policy factors dominate.
 
-The "divergence in living standards" that Anthropic warns of is not inevitable—it depends on policy choices that their pooled analysis obscures.
+The "divergence in living standards" that Anthropic warns of is not inevitable—middle-income countries are already finding pathways to AI adoption beyond wealth.
 
 ---
 
@@ -57,7 +61,7 @@ The "divergence in living standards" that Anthropic warns of is not inevitable�
 
 ### 2.1 Why Partial Pooling?
 
-Anthropic faces a fundamental choice when estimating the GDP-usage relationship:
+Anthropic faces a fundamental choice when estimating the GDP per capita-AI adoption relationship:
 
 1. **Complete pooling** (their approach): Estimate one global slope, ignoring country/region differences
 2. **No pooling**: Estimate separate slopes for each group, ignoring shared information
@@ -135,7 +139,7 @@ This is a well-known issue when regressing micro outcomes on macro predictors. B
 
 **Empirical Performance**: McElreath's [Statistical Rethinking lectures](https://github.com/rmcelreath/stat_rethinking_2023) and [Chapter 13 on multilevel models](https://bookdown.org/content/4857/models-with-memory.html) demonstrate that partial pooling consistently outperforms both alternatives in prediction tasks, particularly when groups have unequal sample sizes—exactly our situation with country-level data. As he notes: "Varying intercepts are just regularized estimates, but adaptively regularized by estimating how diverse the clusters are while estimating the features of each cluster."
 
-In our context: Anthropic's complete pooling assumes all countries share identical GDP-usage relationships. This is empirically false (slopes range from 0.44 to 0.76) and theoretically unjustified. Partial pooling reveals both the heterogeneity and the appropriate uncertainty.
+In our context: Anthropic's complete pooling assumes all countries share identical GDP per capita-AI adoption relationships. This is empirically false (slopes range from 0.44 to 0.76) and theoretically unjustified. Partial pooling reveals both the heterogeneity and the appropriate uncertainty.
 
 ### 2.2 Data
 
@@ -203,15 +207,15 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 
 **Key insight**: Middle-income countries show a **much weaker** relationship between GDP per capita and AI usage (β = 0.44 vs 0.70 global average). This suggests:
 
-1. In low-income countries, GDP is a **binding constraint**—basic economic development is necessary before AI adoption can increase
-2. In middle-income countries, **other factors dominate AI adoption**: education, English proficiency, tech infrastructure, regulatory environment—not GDP
-3. Among high-income countries, there is **substantial variation in AI usage** unexplained by GDP (e.g., Israel has 3x the AI usage predicted by its GDP; Gulf states have far less than predicted)
+1. In low-income countries, income level is a **binding constraint**—basic economic development is necessary before AI adoption can increase
+2. In middle-income countries, **these countries are adopting AI beyond what their income predicts**. Education, English proficiency, tech infrastructure, and regulatory environment are driving adoption—not income level
+3. Among high-income countries, there is **substantial variation in AI usage** unexplained by income (e.g., Israel has 3x the AI usage predicted by its income level; Gulf states have far less than predicted)
 
-**Policy implication**: Anthropic's recommendation that GDP growth drives AI adoption is **misleading for middle-income countries**. For Brazil, Mexico, Thailand, and similar nations, focusing on GDP growth alone will not close the AI adoption gap. Policy should target education and infrastructure.
+**Policy implication**: Middle-income countries don't need to wait to get richer. For Brazil, Mexico, Thailand, and similar nations, education, infrastructure, and policy are already driving AI adoption beyond what income alone predicts.
 
 ### 3.3 Outliers
 
-Some countries deviate substantially from the GDP-AI usage relationship: Israel has 3x the AI usage predicted by its GDP; Gulf states (Qatar, Kuwait) have far less than predicted; several African countries (Tanzania, Angola) fall well below the regression line.
+Some countries deviate substantially from the income-AI adoption relationship: Israel has 3x the AI usage predicted by its income level; Gulf states (Qatar, Kuwait) have far less than predicted; several African countries (Tanzania, Angola) fall well below the regression line.
 
 However, removing outliers only shifts the slope by ~5% (see Appendix B for details). The main findings—heterogeneity by income level and underestimated uncertainty—are not driven by outliers.
 
@@ -226,13 +230,13 @@ However, removing outliers only shifts the slope by ~5% (see Appendix B for deta
 | Anthropic's Claim | Our Finding |
 |-------------------|-------------|
 | "a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage" | Elasticity is 0.66 with partial pooling; ranges from 0.44 to 0.76 by income level |
-| "GDP is strongly correlated with the AUI (Anthropic AI Usage Index)" | Correlation is weak (R²=0.14) in middle-income countries |
+| "Worldwide, uneven adoption remains well-explained by GDP per capita" | Not for middle-income countries (R²=0.14)—most of world's population |
 | Relationship "holds for both countries and US states" | Relationship varies dramatically: near-zero effect for middle-income nations |
 | Single elasticity presented without uncertainty discussion | True 95% CI is [0.43, 0.89], not [0.61, 0.77] |
 
 **Specific Methodological Issues:**
 
-1. **Treats heterogeneity as noise**: By pooling all countries into one regression, they assume the GDP-usage relationship is constant globally. It is not. The slope varies by 73% across income terciles (0.44 to 0.76).
+1. **Treats heterogeneity as noise**: By pooling all countries into one regression, they assume the GDP per capita-AI adoption relationship is constant globally. It is not. The slope varies by 73% across income terciles (0.44 to 0.76).
 
 2. **Underestimates uncertainty**: OLS standard errors assume independent observations with constant variance. Country-level data has hierarchical structure that inflates true uncertainty by ~3x.
 
@@ -243,8 +247,8 @@ However, removing outliers only shifts the slope by ~5% (see Appendix B for deta
 **Anthropic's implicit recommendation**: "Grow GDP → Get AI adoption"
 
 **Our correction**:
-- For **low-income countries**: This is approximately correct. GDP is a binding constraint.
-- For **middle-income countries**: **Wrong**. GDP growth has weak association with AI adoption (0.44 elasticity). Focus instead on:
+- For **low-income countries**: This is approximately correct. Income level is a binding constraint.
+- For **middle-income countries**: **These countries are adopting beyond their income.** The 0.44 elasticity shows income level is a weak predictor. What's driving adoption:
   - Education and digital literacy
   - English language proficiency
   - Tech infrastructure
@@ -266,7 +270,7 @@ Anthropic's headline finding—0.7 elasticity between GDP and AI usage—is:
 2. **Heterogeneous** across income levels (0.44 to 0.76)
 3. **Driven by outliers** (Israel, Gulf states, African countries)
 
-For middle-income countries—home to most of the world's population—GDP growth alone will not drive AI adoption. Policymakers should focus on education, infrastructure, and enabling environments rather than assuming economic growth automatically translates to AI diffusion.
+For middle-income countries—home to most of the world's population—income level is a weak predictor of AI adoption. These countries are already adopting AI beyond what their wealth predicts, driven by education, infrastructure, and policy. The "divergence in living standards" that Anthropic warns of is not inevitable.
 
 ---
 

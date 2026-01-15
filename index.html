@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Does GDP Really Predict AI Adoption? | AI Disclosures Project</title>
+    <title>Does GDP per Capita Really Predict AI Adoption? Adjusting Anthropic's Estimates | AI Disclosures Project</title>
     <style>
         * {
             box-sizing: border-box;
@@ -182,7 +182,7 @@
     </style>
 </head>
 <body>
-    <h1>Does GDP Really Predict AI Adoption?</h1>
+    <h1>Does GDP per Capita Really Predict AI Adoption? Adjusting Anthropic's Estimates</h1>
     <p class="authors">
         <strong>Ilan Strauss</strong><br>
         AI Disclosures Project | January 2026
@@ -190,44 +190,53 @@
 
     <div class="tldr">
         <h3>TL;DR</h3>
-        <p>Anthropic claims GDP strongly predicts AI adoption (0.7 elasticity). Using their own data with better methods, we find:</p>
+        <p>Anthropic claims "Worldwide, uneven adoption remains well-explained by GDP per capita." This is not true for most of the world's population. Using their own data:</p>
         <ul>
             <li><strong>The relationship varies dramatically</strong> — from 0.44 (middle-income) to 0.76 (low-income)</li>
-            <li><strong>For middle-income countries, GDP barely matters</strong> — other factors dominate</li>
+            <li><strong>Middle-income countries adopt AI beyond what their income predicts</strong> — education, infrastructure, and policy are driving adoption now</li>
             <li><strong>Their confidence is overstated by ~3x</strong> — true uncertainty is much higher</li>
-            <li><strong>A handful of outliers drive their results</strong> — Israel, Gulf states, African countries</li>
+            <li><strong>Divergence is not inevitable</strong> — their cross-sectional estimate doesn't imply dynamics</li>
         </ul>
     </div>
 
     <h2>The Claim</h2>
-    <p>Anthropic's <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report">Economic Index January 2026 Report</a> makes a striking claim:</p>
+    <p>Anthropic's <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report">Economic Index January 2026 Report</a> claims:</p>
+
+    <blockquote>
+        "Worldwide, uneven adoption remains well-explained by GDP per capita."
+    </blockquote>
 
     <blockquote>
         "At the country level, a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita."
     </blockquote>
 
+    <p><strong>This is not true for most of the world's population.</strong></p>
+
     <h2>Why This Claim Matters</h2>
-    <p>This isn't just an academic finding—it shapes how we think about AI's global future. Anthropic knows this. As Peter McCrory, Anthropic's head of economics, told the <em>Financial Times</em>:</p>
+    <p>Anthropic's divergence scenario is less clear-cut than they suggest. As their head of economics Peter McCrory told the <em>Financial Times</em>:</p>
 
     <blockquote>
         "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
     </blockquote>
 
-    <p>If GDP truly drives AI adoption with a 0.7 elasticity, the implications are profound:</p>
-
-    <div class="finding-box">
-        <p><strong>For global inequality:</strong> AI benefits would naturally flow to rich countries, compounding existing advantages. Poor countries would need to get richer <em>first</em> before they could benefit from AI. And as McCrory warns, this could mean <strong>diverging living standards</strong>—the rich get richer, AI-powered productivity compounds their advantage.</p>
-        <p><strong>For policy:</strong> Governments wanting to boost AI adoption should focus on economic growth. Education, infrastructure, language access? Secondary concerns.</p>
-        <p><strong>For AI companies:</strong> Emerging markets are a waiting game. Don't invest in localization—just wait for GDP to rise.</p>
-        <p><strong>For convergence:</strong> AI adoption gaps would mirror income gaps indefinitely. The digital divide becomes permanent.</p>
+    <div class="finding-box critical">
+        <p><strong>But a cross-sectional income-AI elasticity doesn't imply divergence.</strong> Anthropic's regression compares countries at a point in time: richer countries use more AI. This says nothing about dynamics. Divergence requires a feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic estimates levels, not growth. The divergence claim is speculation beyond their data.</p>
+        <p><strong>Moreover, high-income countries typically have <em>slower</em> GDP growth than developing countries.</strong> If anything, faster-growing developing countries should catch up on AI adoption, not fall behind.</p>
+        <p><strong>Even accepting their framework</strong>, we show the income-AI adoption link varies dramatically—and middle-income countries are adopting beyond what their wealth predicts.</p>
     </div>
 
     <h2>The Problem</h2>
     <p>This sounds like a clean story: richer countries use more AI. But when we analyzed <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex">their publicly available data</a>, we found this simple narrative masks crucial complexity.</p>
 
-    <p><strong>What if the 0.7 elasticity doesn't hold everywhere?</strong> What if middle-income countries—home to most of the world's population—show a much weaker relationship? That would fundamentally change the policy prescription: instead of waiting for GDP growth, these countries could accelerate AI adoption through education, infrastructure, and language access.</p>
+    <p>Anthropic also finds that human education—the sophistication of user prompts—correlates with AI adoption. We focus on their GDP per capita claim, which drives the headline, but their education finding supports our argument: middle-income countries can invest in education rather than waiting to get richer.</p>
+
+    <p><strong>What if the 0.7 elasticity doesn't hold everywhere?</strong> What if middle-income countries—home to most of the world's population—show a much weaker relationship? That would fundamentally change the policy prescription: these countries don't need to wait to get richer—they can accelerate AI adoption through education, infrastructure, and language access.</p>
 
     <p><strong>That's exactly what we found.</strong></p>
+
+    <p>The relationship breaks down mostly for middle-income countries. This matters because middle-income countries contain most of the world's population. For them, income level is a weak predictor of AI adoption—they're adopting AI beyond what their wealth would predict.</p>
+
+    <p>The implication: middle-income countries like Brazil, Mexico, Thailand, and Indonesia don't need to wait to get richer. Education, digital infrastructure, English proficiency, and regulatory environment are driving adoption now. These are actionable policy levers.</p>
 
     <h2>Finding #1: The Relationship Varies by Income Level</h2>
 
@@ -246,12 +255,12 @@
             <tr>
                 <td>Low income</td>
                 <td><span class="stat">0.76</span></td>
-                <td>GDP growth strongly linked to AI adoption</td>
+                <td>Income strongly linked to AI adoption</td>
             </tr>
             <tr>
                 <td><strong>Middle income</strong></td>
                 <td><span class="stat highlight">0.44</span></td>
-                <td><strong>GDP barely matters!</strong></td>
+                <td><strong>Adopting beyond what wealth predicts</strong></td>
             </tr>
             <tr>
                 <td>High income</td>
@@ -285,7 +294,7 @@
 
     <p>A handful of unusual countries have outsized influence:</p>
     <ul>
-        <li><strong>Israel</strong> — Over-adopter (3x predicted for its GDP). Pulls slope UP.</li>
+        <li><strong>Israel</strong> — Over-adopter (3x predicted for its income level). Pulls slope UP.</li>
         <li><strong>Tanzania, Angola</strong> — Severe under-adopters. Pull slope UP.</li>
         <li><strong>Qatar, Kuwait, Saudi Arabia</strong> — Rich but low AI usage. Pull slope DOWN.</li>
     </ul>
@@ -296,39 +305,39 @@
     <div class="comparison">
         <div class="theirs">
             <h3>Anthropic's Story</h3>
-            <p><strong>GDP → AI Adoption</strong></p>
-            <p>Simple policy: grow GDP to increase AI adoption.</p>
+            <p><strong>Higher Income → More AI Adoption</strong></p>
+            <p>Simple story: richer countries adopt more AI.</p>
             <p>One global elasticity applies everywhere.</p>
         </div>
         <div class="ours">
             <h3>Our Finding</h3>
             <p><strong>It Depends on Context</strong></p>
             <p>The relationship varies 2x across income levels.</p>
-            <p>Different countries need different strategies.</p>
+            <p>Middle-income countries adopt beyond their wealth.</p>
         </div>
     </div>
 
     <div class="policy-box">
         <h4>For Low-Income Countries</h4>
-        <p>GDP growth IS strongly associated with AI adoption. Economic development may be a necessary precondition. <strong>Anthropic's story is roughly correct here.</strong></p>
+        <p>Income level IS strongly associated with AI adoption. Economic development may be a necessary precondition. <strong>Anthropic's story is roughly correct here.</strong></p>
     </div>
 
     <div class="policy-box warning">
         <h4>For Middle-Income Countries (The Critical Finding)</h4>
-        <p><strong>GDP barely matters.</strong> Telling Brazil, Mexico, Thailand, or Indonesia to "grow GDP for AI adoption" misses the point.</p>
-        <p>Focus instead on: education, English proficiency, digital literacy, tech infrastructure, regulatory environment.</p>
-        <p>This is where most of the world's population lives — and where Anthropic's story fails.</p>
+        <p><strong>These countries are adopting AI beyond what their income predicts.</strong> Brazil, Mexico, Thailand, Indonesia don't need to wait to get richer.</p>
+        <p>Education, English proficiency, digital literacy, tech infrastructure, and regulatory environment are driving adoption now.</p>
+        <p>This is where most of the world's population lives — and where Anthropic's simple story breaks down.</p>
     </div>
 
     <div class="policy-box">
         <h4>For High-Income Countries</h4>
-        <p>Massive variation unexplained by GDP. Israel is a 7x over-adopter; Gulf states lag despite wealth.</p>
+        <p>Massive variation unexplained by income. Israel is a 3x over-adopter; Gulf states lag despite wealth.</p>
         <p>Cultural, linguistic, and policy factors likely dominate. Wealth alone doesn't predict adoption.</p>
     </div>
 
-    <h2>The Middle-Income AI Trap</h2>
-    <p>Our most striking finding: middle-income countries face a kind of <strong>AI adoption trap</strong>. Unlike low-income countries (where GDP growth helps) or high-income countries (where adoption is already high), middle-income nations can't simply grow their way to AI adoption.</p>
-    <p>This echoes the broader "middle-income trap" in development economics — and suggests AI policy for these countries needs to be fundamentally different.</p>
+    <h2>The Middle-Income Story</h2>
+    <p>Our most striking finding: middle-income countries are adopting AI beyond what their wealth would predict. Unlike low-income countries (where income level strongly predicts adoption) or high-income countries (where adoption is already high), middle-income nations are finding other pathways to AI adoption.</p>
+    <p>This is good news: these countries don't need to wait to get richer. Education, infrastructure, and policy can drive adoption now.</p>
 
     <h2>Reproduce Our Analysis</h2>
     <p>All code and data are available at: <a href="https://github.com/IlanStrauss/anthropic-econ-critique">github.com/IlanStrauss/anthropic-econ-critique</a></p>

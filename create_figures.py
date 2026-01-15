@@ -210,8 +210,8 @@ our_box = dict(boxstyle='round,pad=0.5', facecolor='#9b59b6', alpha=0.3)
 # Anthropic side
 ax.text(0.25, 0.85, "ANTHROPIC'S STORY", fontsize=14, fontweight='bold', ha='center',
         transform=ax.transAxes, bbox=anthropic_box)
-ax.text(0.25, 0.65, "GDP → AI Adoption\n(β = 0.70)", fontsize=12, ha='center', transform=ax.transAxes)
-ax.text(0.25, 0.45, "Policy: Grow GDP\nto increase AI adoption", fontsize=11, ha='center',
+ax.text(0.25, 0.65, "Income → AI Adoption\n(β = 0.70)", fontsize=12, ha='center', transform=ax.transAxes)
+ax.text(0.25, 0.45, "Story: Richer countries\nadopt more AI", fontsize=11, ha='center',
         transform=ax.transAxes, style='italic')
 ax.text(0.25, 0.25, "✓ Low-income: Correct\n✗ Mid-income: WRONG\n~ High-income: Varies",
         fontsize=11, ha='center', transform=ax.transAxes)

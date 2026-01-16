@@ -8,7 +8,7 @@
 
 ## Abstract
 
-This technical document presents a Bayesian hierarchical analysis of Anthropic's GDP per capita-AI adoption relationship. Using partial pooling with 7 country groups, we estimate a global elasticity of **β = 0.54** with 95% CI **[0.33, 0.74]**—substantially lower than Anthropic's OLS estimate of 0.70 (which falls outside our credible interval).
+This technical document presents a Bayesian hierarchical analysis of Anthropic's GDP per capita-AI adoption relationship. Using partial pooling with 7 country groups, we estimate a global elasticity of **β = 0.54** with 95% CI **[0.33, 0.74]** — substantially lower than Anthropic's OLS estimate of 0.70 (which falls outside our credible interval).
 
 The Bayesian approach properly accounts for group-level heterogeneity and yields appropriately wider uncertainty bounds. Anthropic's standard error of 0.042 underestimates true uncertainty by approximately 2.4x (our SE = 0.10).
 
@@ -28,19 +28,19 @@ Partial pooling is theoretically preferred for several reasons:
 
 ### James-Stein Estimator Properties
 
-[Stein (1956)](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) proved a remarkable result: when estimating three or more means simultaneously, the MLE (no pooling) is *inadmissible*—there always exists a shrinkage estimator with lower mean squared error. The [James-Stein estimator](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) shrinks individual estimates toward the grand mean, and this "borrowing of strength" across groups reduces total estimation error. Partial pooling implements this principle: noisy group estimates are pulled toward the global estimate, with the degree of shrinkage determined by relative sample sizes and variance. As [Efron and Morris (1977)](https://statweb.stanford.edu/~ckirby/brad/other/Article1977.pdf) explained in their famous *Scientific American* article, this "Stein's Paradox" shows that combining information across groups is almost always better than treating them independently.
+[Stein (1956)](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) proved a remarkable result: when estimating three or more means simultaneously, the MLE (no pooling) is *inadmissible* — there always exists a shrinkage estimator with lower mean squared error. The [James-Stein estimator](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) shrinks individual estimates toward the grand mean, and this "borrowing of strength" across groups reduces total estimation error. Partial pooling implements this principle: noisy group estimates are pulled toward the global estimate, with the degree of shrinkage determined by relative sample sizes and variance. As [Efron and Morris (1977)](https://statweb.stanford.edu/~ckirby/brad/other/Article1977.pdf) explained in their famous *Scientific American* article, this "Stein's Paradox" shows that combining information across groups is almost always better than treating them independently.
 
 ### Bias-Variance Tradeoff
 
 As McElreath (2020) explains in *Statistical Rethinking*, partial pooling navigates between two failure modes:
-- Complete pooling *underfits*: it ignores real heterogeneity across groups
-- No pooling *overfits*: it treats noise as signal, especially in small groups
+- Complete pooling *underfits*: low variance (one estimate for all) but high bias (ignores real group differences)
+- No pooling *overfits*: low bias (estimates each group separately) but high variance (noisy estimates, especially for small groups)
 
-Partial pooling adaptively regularizes: groups with little data are shrunk heavily toward the global mean (regularization dominates), while groups with abundant data retain their individual estimates (data dominates).
+Partial pooling introduces some bias (by shrinking group estimates toward the global mean) in exchange for reduced variance. This tradeoff is beneficial when groups are noisy: groups with little data are shrunk heavily toward the global mean (regularization dominates), while groups with abundant data retain their individual estimates (data dominates).
 
 ### Proper Uncertainty Quantification
 
-Gelman et al. (2013) emphasize in *Bayesian Data Analysis* that hierarchical models correctly propagate uncertainty from the group level to the population level. OLS standard errors assume fixed, known group effects—partial pooling acknowledges they are estimated with error, yielding appropriately wider confidence intervals.
+Gelman et al. (2013) emphasize in *Bayesian Data Analysis* that hierarchical models correctly propagate uncertainty from the group level to the population level. OLS standard errors assume fixed, known group effects — partial pooling acknowledges they are estimated with error, yielding appropriately wider confidence intervals.
 
 ---
 
@@ -52,21 +52,17 @@ Anthropic's OLS approach assumes observations are **independent and identically 
 
 When the true data-generating process has group-varying slopes (see [Moulton 1990](https://www.jstor.org/stable/2109724); [Bertrand, Duflo & Mullainathan 2004](https://academic.oup.com/qje/article/119/1/249/1876068)):
 
-```
-y_ij = α + α_j + (β + β_j) * x_ij + ε_ij
-```
+**y<sub>ij</sub> = α + α<sub>j</sub> + (β + β<sub>j</sub>) × x<sub>ij</sub> + ε<sub>ij</sub>**
 
-where `β_j ~ N(0, τ²_β)` are random slope deviations, the variance of the pooled OLS estimator is:
+where β<sub>j</sub> ~ N(0, τ²<sub>β</sub>) are random slope deviations, the variance of the pooled OLS estimator is:
 
-```
-Var(β̂_pooled) = Var(β̂ | slopes fixed) + Var(slopes across groups)
-```
+**Var(β̂<sub>pooled</sub>) = Var(β̂ | slopes fixed) + Var(slopes across groups)**
 
-OLS only captures the first term—the **sampling variance** given fixed slopes. It completely ignores the second term—the **between-group variance in slopes** (`τ²_β`).
+OLS only captures the first term — the **sampling variance** given fixed slopes. It completely ignores the second term — the **between-group variance in slopes** (`τ²_β`).
 
 ### The Moulton Problem in Economics
 
-This is a well-known issue when regressing micro outcomes on macro predictors. Bertrand, Duflo & Mullainathan (2004) showed that difference-in-differences studies routinely understate standard errors by 2-3x when ignoring group clustering—exactly what we find here.
+This is a well-known issue when regressing micro outcomes on macro predictors. Bertrand, Duflo & Mullainathan (2004) showed that difference-in-differences studies routinely understate standard errors by 2-3x when ignoring group clustering — exactly what we find here.
 
 ---
 
@@ -83,15 +79,13 @@ We use Anthropic's publicly released data from their [HuggingFace repository](ht
 
 We fit a Bayesian hierarchical model using `brms` (Bürkner 2017) with random intercepts and slopes by country group:
 
-```
-log(AUI)_i = α + α_g[i] + (β + β_g[i]) × log(GDP)_i + ε_i
+**log(AUI)<sub>i</sub> = α + α<sub>g[i]</sub> + (β + β<sub>g[i]</sub>) × log(GDP)<sub>i</sub> + ε<sub>i</sub>**
 
 where:
-  g[i] = group for country i (7 groups)
-  α_g ~ N(0, σ_α)  [random intercepts by group]
-  β_g ~ N(0, σ_β)  [random slopes by group]
-  ε_i ~ N(0, σ)    [residual error]
-```
+- g[i] = group for country i (7 groups)
+- α<sub>g</sub> ~ N(0, σ<sub>α</sub>) — random intercepts by group
+- β<sub>g</sub> ~ N(0, σ<sub>β</sub>) — random slopes by group
+- ε<sub>i</sub> ~ N(0, σ) — residual error
 
 ### Group Construction
 
@@ -152,7 +146,7 @@ Anthropic's estimate is outside our 95% CI upper bound of 0.74 and well above ou
 
 ### 2. Slopes cluster around 0.49–0.61
 
-After proper shrinkage, all groups have similar slopes—less heterogeneity than unpooled OLS suggests, but consistently lower than Anthropic's 0.70.
+After proper shrinkage, all groups have similar slopes — less heterogeneity than unpooled OLS suggests, but consistently lower than Anthropic's 0.70.
 
 ### 3. SE is 2.4x larger than Anthropic's
 
@@ -171,7 +165,7 @@ This is close to our partial pooling estimate of 0.54. Anthropic's pooled OLS of
 
 ## 7. Implications
 
-Anthropic's headline finding—0.7 elasticity between GDP and AI usage—is:
+Anthropic's headline finding — 0.7 elasticity between GDP and AI usage — is:
 1. **Overstated**: True global estimate is ~0.54, not 0.70
 2. **Overconfident**: True uncertainty is ~2.4x larger than reported
 3. **Inflated by composition effects**: Simpson's paradox makes the global slope steeper than any within-group slope

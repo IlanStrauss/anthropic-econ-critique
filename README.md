@@ -36,8 +36,6 @@ The real question of divergence in economic growth between countries arising fro
 
 ## Key Findings
 
-See [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full write-up.
-
 ### Effect Size Comparison
 
 | Method | GDP Elasticity (β) | Std. Error | 95% CI |

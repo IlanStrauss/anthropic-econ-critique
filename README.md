@@ -71,13 +71,13 @@ The United States has a GDP per capita of $132,532 — **2.6 times** South Korea
 
 **For middle-income countries (β = 0.44):**
 - **These countries adopt AI beyond what their income predicts** — this is the critical finding
-- Education, English proficiency, digital literacy, tech infrastructure, and regulatory environment are driving adoption now
+- Education, English proficiency, digital literacy, tech infrastructure, and regulatory environment may be driving adoption. Need for extended estimation.
 - Examples: Brazil, Mexico, Thailand, Malaysia don't need to wait to get richer
 
 **For high-income countries (β = 0.63):**
 - Massive variation unexplained by income
 - Israel is a 3x over-adopter; Gulf states are under-adopters despite wealth
-- Cultural, linguistic, and policy factors likely dominate
+- Cultural, linguistic, and policy factors may dominate
 
 ### The Middle-Income Story
 

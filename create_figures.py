@@ -148,13 +148,13 @@ ax.set_xlim(-0.5, 3.5)
 
 # Add value labels above error bars
 for x, slope, err in zip(x_pos, slopes, errors):
-    ax.text(x, slope + err + 0.05, f'{slope:.2f}', ha='center', va='bottom', fontsize=12, fontweight='bold')
+    ax.text(x, slope + err + 0.05, f'{slope:.2f}', ha='center', va='bottom', fontsize=15, fontweight='bold')
 
 # Annotation
 ax.annotate('Middle-income countries:\nGDP per capita barely predicts AI usage!',
             xy=(1, 0.44), xytext=(1.8, 0.15),
             fontsize=11, ha='left',
-            arrowprops=dict(arrowstyle='->', color='gray', lw=2))
+            arrowprops=dict(arrowstyle='->', color='gray', lw=1, alpha=0.5))
 
 # Legend for reference lines
 ax.legend(loc='upper right', fontsize=10)

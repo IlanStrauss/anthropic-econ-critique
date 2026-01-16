@@ -113,7 +113,7 @@ The Bayesian model's lower estimate (0.54 vs 0.69) reflects a composition effect
 | Middle | Higher income → more AI adoption | Weak link (β = 0.44) — adopting beyond wealth |
 | High | Higher income → more AI adoption | Variable; outliers dominate |
 
-For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level alone doesn't determine AI adoption. Education, infrastructure, and language access are already driving adoption beyond what wealth predicts.
+For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level alone does not determine AI adoption. Education, infrastructure, and language access are already driving adoption beyond what wealth predicts.
 
 The "divergence in living standards" Anthropic warns of is not inevitable. It depends on policy — policy their analysis obscures by pooling heterogeneous relationships.
 
@@ -127,7 +127,7 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 ## Method
 
-Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally. As [Hsiao (2022, p. 12)](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) notes in *Analysis of Panel Data*, pooled regression "implicitly assumes that the average values of variables and the relationships between variables are constant over time and across all cross-sectional units" — an assumption we test and find wanting.
+Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally. But as [Hsiao (2022, p. 12)](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) notes in *Analysis of Panel Data*, pooled regression "implicitly assumes that the average values of variables and the relationships between variables are constant over time and across all cross-sectional units" — an assumption we test and find wanting.
 
 We run **three separate OLS regressions** — one for each income tercile (low, middle, high):
 
@@ -135,10 +135,10 @@ We run **three separate OLS regressions** — one for each income tercile (low, 
 ln(AUI) = α + β × ln(GDP per capita) + ε
 ```
 
-This reveals the heterogeneity that Anthropic's pooled estimate obscures:
-- Low-income: β = 0.76, SE = 0.19
-- Middle-income: β = 0.44, SE = 0.18
-- High-income: β = 0.63, SE = 0.20
+This highlights the heterogeneity that Anthropic's pooled estimate obscures:
+- Low-income: β = 0.76 (SE = 0.19)
+- Middle-income: β = 0.44 (SE = 0.18)
+- High-income: β = 0.63 (SE = 0.20)
 
 For a more rigorous analysis using Bayesian hierarchical models with partial pooling (which allows slopes to vary by group while shrinking toward a global mean), see [PARTIAL_POOLING.md](PARTIAL_POOLING.md).
 

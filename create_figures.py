@@ -235,7 +235,7 @@ for _, row in influential.iterrows():
 
 ax.set_xlabel('ln(GDP per capita)', fontsize=12)
 ax.set_ylabel('ln(AI Usage Index)', fontsize=12)
-ax.set_title('Outliers Reveal Missing Explanatory Factors\nPoint size = influence (Cook\'s D), Red = above prediction, Blue = below prediction',
+ax.set_title('Outliers Highlight Missing Explanatory Factors\nPoint size = influence (Cook\'s D), Red = above prediction, Blue = below prediction',
              fontsize=13, fontweight='bold')
 
 # Legend

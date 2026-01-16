@@ -26,7 +26,7 @@ Using Anthropic's own data with partial pooling models, we show:
 1. **The income-AI adoption relationship varies dramatically by income level** — from 0.44 (middle-income) to 0.76 (low-income)
 2. **Middle-income countries adopt AI beyond what their income predicts** — education, infrastructure, and policy drive adoption
 3. **Their uncertainty is underestimated** (~3x) due to ignoring country-level heterogeneity
-4. **Divergence is not inevitable** — their cross-sectional estimate doesn't imply dynamics
+4. **Divergence is not inevitable** — their cross-sectional estimate does not imply dynamics
 
 ## Key Findings
 
@@ -56,13 +56,13 @@ Anthropic's analysis implies a simple story: **higher income → more AI adoptio
 
 | Anthropic's Claim | Our Finding | Implication |
 |-------------------|-------------|-------------|
-| "Worldwide, uneven adoption remains well-explained by GDP per capita" | Not true for middle-income countries (R²=0.14) | Most of the world's population doesn't fit their story |
+| "Worldwide, uneven adoption remains well-explained by GDP per capita" | Not true for middle-income countries (R²=0.14) | Most of the world's population does not fit their story |
 | Single global elasticity of 0.70 | Elasticity varies from 0.44 to 0.76 | One-size-fits-all policy is inappropriate |
 | Tight confidence interval [0.61, 0.77] | True interval is [0.43, 0.89] | We're far less certain about this relationship than they suggest |
 
 ### A Striking Example: South Korea vs USA
 
-The United States has a GDP per capita of $132,532—**2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, the USA should have dramatically higher adoption. It doesn't. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
+The United States has a GDP per capita of $132,532—**2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, the USA should have dramatically higher adoption. It does not. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
 
 ### What Should Policymakers Know?
 
@@ -89,7 +89,7 @@ This is good news: these countries don't need to wait to get richer. Education, 
 
 ### Divergence Is Not Inevitable
 
-Anthropic warns of "divergence in living standards." But a cross-sectional income-AI elasticity doesn't imply divergence. Divergence requires a dynamic feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic only estimates the first link (income levels → AI adoption levels). The divergence claim is speculation beyond their data.
+Anthropic warns of "divergence in living standards." But a cross-sectional income-AI elasticity does not imply divergence. Divergence requires a dynamic feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic only estimates the first link (income levels → AI adoption levels). The divergence claim is speculation beyond their data.
 
 ## Repository Structure
 

@@ -56,7 +56,7 @@ Anthropic's analysis implies a simple story: **higher income → more AI adoptio
 |-------------------|-------------|-------------|
 | "Worldwide, uneven adoption remains well-explained by GDP per capita" | Not true for middle-income countries (R²=0.14) | Most of the world's population does not fit their story |
 | Single global elasticity of 0.70 | Elasticity varies from 0.44 to 0.76 | One-size-fits-all policy is inappropriate |
-| Tight confidence interval [0.61, 0.77] | True interval is [0.43, 0.89] | We're far less certain about this relationship than they suggest |
+| Tight confidence interval [0.61, 0.77] | True interval is [0.33, 0.74] | We're far less certain about this relationship than they suggest |
 
 ### A Striking Example: South Korea vs USA
 

@@ -17,7 +17,7 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 ## Why This Matters
 
-The head of economics at Anthropic, Peter McCrory, told the *Financial Times*: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." However, Anthropic's latest research does not provide much evidence (if any) on the question of if AI will create more or less convergence in global income levels between countries.
+The head of economics at Anthropic, Peter McCrory, told the *Financial Times*: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." However, Anthropic's latest research does not provide much evidence (if any) on the question of whether AI will create more or less convergence in global income levels between countries.
 
 1) Anthropic's cross-country regression, estimating how income level (GDP per capita) impacts AI adoption, does not by itself imply growing divergence in global living standards between countries. Impacts on living standards from AI adoption cannot be estimated from this relationship. This requires estimating the **second order effect** of how AI adoption impacts a country's productivity, which Anthropic does not do here.
 

@@ -25,7 +25,7 @@ Using Anthropic's own data with partial pooling models, we show:
 1. **The income-AI adoption relationship varies dramatically by income level** — from 0.44 (middle-income) to 0.76 (low-income)
 2. **Middle-income countries adopt AI beyond what their income predicts** — education, infrastructure, and policy drive adoption
 3. **Their uncertainty is underestimated** (~3x) due to ignoring country-level heterogeneity
-4. **Divergence is not inevitable** — their cross-sectional estimate does not imply dynamics
+4. **No evidence supporting divergence is provided** — their cross-sectional estimate does not imply dynamics
 
 ## Key Findings
 
@@ -86,7 +86,7 @@ Our most striking finding: middle-income countries are adopting AI beyond what t
 
 This is good news: these countries don't need to wait to get richer. Education, infrastructure, and policy can drive adoption now.
 
-### Divergence Is Not Inevitable
+### No Evidence Supporting Divergence Is Provided
 
 Anthropic warns of "divergence in living standards." But a cross-sectional income-AI elasticity does not imply divergence. Divergence requires a dynamic feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic only estimates the first link (income levels → AI adoption levels). The divergence claim is speculation beyond their data.
 

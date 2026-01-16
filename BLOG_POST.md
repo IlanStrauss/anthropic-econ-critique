@@ -8,11 +8,11 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 > "Worldwide, uneven adoption remains well-explained by GDP per capita."
 
-> "At the country level, a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita."
+> "At the country level, a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita."[^1][^2]
 
-**How Anthropic measures AI adoption:** Anthropic's "AI Usage Index" (AUI) is based on Claude.ai usage per capita—the number of conversations users in each country have with Claude, normalized by working-age population. This measures adoption of *one* AI assistant (Claude), not AI adoption broadly. The data comes from November 2025.
+**Using their own data, we show this is not true for middle-income countries — where much of the world's population resides.**
 
-**Using their own data, we show this is not true for middle-income countries—where much of the world's population resides.**
+**A striking example: South Korea vs USA.** The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, the USA should have dramatically higher adoption. It doesn't. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
 
 ## Why This Matters
 
@@ -22,15 +22,15 @@ But a cross-sectional regression looking at how income (GDP per capita) impacts 
 
 Moreover, as we show below, our findings suggest more reason to predict convergence in AI adoption at least: middle-income countries are already adopting AI beyond what their income predicts, when allowing for how GDP per capita impacts AI adoption to vary by a country's starting income level.
 
-Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between income level and AI adoption is the same everywhere—a single parameter applies to Nigeria and Norway alike.
+Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between income level and AI adoption is the same everywhere — a single parameter applies to Nigeria and Norway alike.
 
 We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex). The 0.7 elasticity doesn't hold universally.
 
-We find the relationship breaks down mostly for middle-income countries. This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption—they're adopting AI beyond what their wealth would predict.
+We find the relationship breaks down mostly for middle-income countries. This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they're adopting AI beyond what their wealth would predict.
 
-The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia don't need to wait for more GDP growth in order to get more AI adoption—and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
+The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia don't need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
-Anthropic also finds that human education—the sophistication of user prompts—correlates with AI adoption. We focus on their GDP per capita claim, which drives the headline, but their education finding supports our argument: middle-income countries can invest in education rather than waiting to get richer to drive AI adoption.
+Anthropic also finds that human education — the sophistication of user prompts — correlates with AI adoption. We focus on their GDP per capita claim, which drives the headline, but their education finding supports our argument: middle-income countries can invest in education rather than waiting to get richer to drive AI adoption.
 
 ---
 
@@ -40,11 +40,11 @@ Anthropic also finds that human education—the sophistication of user prompts�
 
 ![Figure 1](figures/fig1_their_view_vs_ours.png)
 
-**Figure 1** shows the relationship between GDP per capita (income level) and AI usage. Left panel: Anthropic's approach—one regression line through all countries. Right panel: separate lines by income tercile.
+**Figure 1** shows the relationship between GDP per capita (income level) and AI usage. Left panel: Anthropic's approach — one regression line through all countries. Right panel: separate lines by income tercile.
 
 The slopes differ substantially. Low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one. Anthropic's single line averages over this heterogeneity, obscuring that middle-income countries achieve AI adoption beyond what their income level alone would predict.
 
-**Note on data coverage:** China is not included in Anthropic's dataset. India and Indonesia are included but classified as *low-income* based on GDP per working-age capita—they are not in the middle-income tercile. The 38 middle-income countries range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
+**Note on data coverage:** China is not included in Anthropic's dataset. India and Indonesia are included but classified as *low-income* based on GDP per working-age capita — they are not in the middle-income tercile. The 38 middle-income countries range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
 
 | Income Level | GDP Elasticity (β) | N |
 |--------------|-------------------|---|
@@ -59,9 +59,9 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 
 **Figure 2** shows the estimated elasticity (with standard errors) for each income group. The middle-income bar is notably shorter than Anthropic's global estimate.
 
-This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption—they're adopting AI beyond what their wealth would predict.
+This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they're adopting AI beyond what their wealth would predict.
 
-The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia don't need to wait for more GDP growth in order to get more AI adoption—and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
+The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia don't need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
 ### 2. Uncertainty is underestimated
 
@@ -69,7 +69,7 @@ The implication: middle-income countries like Brazil, Mexico, Thailand, and Mala
 
 **Figure 3** compares confidence intervals. The top bar (Anthropic's OLS) shows a narrow interval [0.61, 0.77]. The bottom bar (partial pooling) shows a wider interval [0.43, 0.89].
 
-Anthropic's narrow interval suggests false precision. It excludes 0.44—the elasticity we actually observe in middle-income countries. Proper accounting for group-level variance reveals we are far less certain about the income-AI adoption relationship than Anthropic implies.
+Anthropic's narrow interval suggests false precision. It excludes 0.44 — the elasticity we actually observe in middle-income countries. Proper accounting for group-level variance reveals we are far less certain about the income-AI adoption relationship than Anthropic implies.
 
 | Method | Slope | SE | 95% CI |
 |--------|-------|-----|--------|
@@ -82,9 +82,7 @@ Standard errors are ~3x larger when accounting for group-level variance (i.e., v
 
 Some countries deviate substantially from the income-AI adoption relationship. Israel has 3x the AI usage predicted by its income level. Gulf states (Qatar, Kuwait, Saudi Arabia) have far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.
 
-**A striking example: South Korea vs USA.** The United States has a GDP per capita of $132,532—**2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, the USA should have dramatically higher adoption. It doesn't. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
-
-These outliers suggest country-specific factors—language, culture, regulation, tech infrastructure—matter beyond income level. However, removing outliers only shifts the slope by ~5%, so the main critique (heterogeneity by income level) stands regardless. See [CRITIQUE.md](CRITIQUE.md) for detailed outlier analysis.
+These outliers suggest country-specific factors — language, culture, regulation, tech infrastructure — matter beyond income level. However, removing outliers only shifts the slope by ~5%, so the main critique (heterogeneity by income level) stands regardless. See [CRITIQUE.md](CRITIQUE.md) for detailed outlier analysis.
 
 ---
 
@@ -109,7 +107,7 @@ We use partial pooling (mixed effects models), allowing slopes to vary by income
 
 For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level alone doesn't determine AI adoption. Education, infrastructure, and language access are already driving adoption beyond what wealth predicts.
 
-The "divergence in living standards" Anthropic warns of is not inevitable. It depends on policy—policy their analysis obscures by pooling heterogeneous relationships.
+The "divergence in living standards" Anthropic warns of is not inevitable. It depends on policy — policy their analysis obscures by pooling heterogeneous relationships.
 
 ---
 
@@ -120,3 +118,9 @@ Code and data: [github.com/IlanStrauss/anthropic-econ-critique](https://github.c
 ---
 
 *Contact: ilan@aidisclosures.org*
+
+---
+
+[^1]: **How Anthropic measures AI adoption:** Anthropic's "AI Usage Index" (AUI) is based on Claude.ai usage per capita — the number of conversations users in each country have with Claude, normalized by working-age population. This measures adoption of *one* AI assistant (Claude), not AI adoption broadly. The data comes from November 2025.
+
+[^2]: **How Anthropic measures GDP per capita:** Anthropic uses GDP per working-age capita (ages 15-64) from the World Bank's World Development Indicators, in current US dollars (nominal). This differs from standard GDP per capita which divides by total population.

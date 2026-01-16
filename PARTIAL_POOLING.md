@@ -200,6 +200,8 @@ Anthropic's headline finding—0.7 elasticity between GDP and AI usage—is:
 
 10. Bürkner, P.-C. (2017). "brms: An R Package for Bayesian Multilevel Models Using Stan." *Journal of Statistical Software*, 80(1), 1-28.
 
+11. Hsiao, C. (2022). [*Analysis of Panel Data*](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) (3rd ed.). Cambridge University Press.
+
 ---
 
 ## Code Availability

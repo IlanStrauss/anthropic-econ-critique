@@ -113,7 +113,7 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 ## Methods
 
-Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally.
+Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally. As [Hsiao (2022, p. 12)](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) notes in *Analysis of Panel Data*, pooled regression "implicitly assumes that the average values of variables and the relationships between variables are constant over time and across all cross-sectional units"—an assumption we test and find wanting.
 
 We run **three separate OLS regressions**—one for each income tercile (low, middle, high):
 

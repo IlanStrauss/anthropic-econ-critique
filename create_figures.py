@@ -138,8 +138,8 @@ bars = ax.bar(categories, slopes, yerr=errors, capsize=8, color=bar_colors,
 ax.axhline(0.69, color='#3498db', linestyle='--', linewidth=2, alpha=0.7, label="Anthropic's global estimate")
 ax.axhline(0.44, color='#f39c12', linestyle=':', linewidth=2, alpha=0.7)
 
-ax.set_ylabel('GDP Elasticity (β)', fontsize=13)
-ax.set_title('The GDP-AI Usage Relationship Varies Dramatically\nMiddle-Income Countries Show Weak Effect', fontsize=14, fontweight='bold')
+ax.set_ylabel('GDP per Capita Elasticity (β)', fontsize=13)
+ax.set_title('The GDP per Capita-AI Usage Relationship Varies Dramatically\nMiddle-Income Countries Show Weak Effect', fontsize=14, fontweight='bold')
 ax.set_ylim(0, 1.1)
 
 # Add value labels
@@ -148,7 +148,7 @@ for bar, slope, err in zip(bars, slopes, errors):
             f'{slope:.2f}', ha='center', va='bottom', fontsize=12, fontweight='bold')
 
 # Annotation
-ax.annotate('Middle-income countries:\nGDP barely predicts AI usage!',
+ax.annotate('Middle-income countries:\nGDP per capita barely predicts AI usage!',
             xy=(1, 0.44), xytext=(1.5, 0.2),
             fontsize=11, ha='left',
             arrowprops=dict(arrowstyle='->', color='#f39c12', lw=2))

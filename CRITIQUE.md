@@ -8,9 +8,9 @@
 
 ## Abstract
 
-Anthropic's Economic Index claims "Worldwide, uneven adoption remains well-explained by GDP per capita." Using their own data, we show this is not true for middle-income countries—where most of the world's population lives.
+Anthropic's Economic Index claims "Worldwide, uneven adoption remains well-explained by GDP per capita." Using their own data, we show this is not true for middle-income countries—where much of the world's population resides.
 
-Using Anthropic's own data with partial pooling models, we show the GDP per capita-AI adoption relationship varies dramatically by income level: from 0.76 in low-income countries to just 0.44 in middle-income countries. Middle-income countries—home to most of the world's population—are adopting AI beyond what their income level alone would predict.
+Using Anthropic's own data with partial pooling models, we show the GDP per capita-AI adoption relationship varies dramatically by income level: from 0.76 in low-income countries to just 0.44 in middle-income countries. Middle-income countries—home to much of the world's population—are adopting AI beyond what their income level alone would predict.
 
 Anthropic's divergence scenario is less clear-cut than they suggest. The head of economics at Anthropic, Peter McCrory, warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
@@ -46,7 +46,7 @@ We examine whether this conclusion is robust to:
 | Anthropic's Claim | Our Finding |
 |-------------------|-------------|
 | "a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage" | Elasticity is 0.66 with partial pooling; ranges from 0.44 to 0.76 by income level |
-| "Worldwide, uneven adoption remains well-explained by GDP per capita" | Not true for middle-income countries (R²=0.14)—most of the world's population |
+| "Worldwide, uneven adoption remains well-explained by GDP per capita" | Not true for middle-income countries (R²=0.14)—much of the world's population |
 | Single elasticity presented without uncertainty discussion | True 95% CI is [0.43, 0.89], not [0.61, 0.77] |
 
 **Policy Implications:**
@@ -274,7 +274,7 @@ Anthropic's headline finding—0.7 elasticity between GDP and AI usage—is:
 2. **Heterogeneous** across income levels (0.44 to 0.76)
 3. **Driven by outliers** (Israel, Gulf states, African countries)
 
-For middle-income countries—home to most of the world's population—income level is a weak predictor of AI adoption. These countries are already adopting AI beyond what their wealth predicts, driven by education, infrastructure, and policy. The "divergence in living standards" that Anthropic warns of is not inevitable.
+For middle-income countries—home to much of the world's population—income level is a weak predictor of AI adoption. These countries are already adopting AI beyond what their wealth predicts, driven by education, infrastructure, and policy. The "divergence in living standards" that Anthropic warns of is not inevitable.
 
 ---
 

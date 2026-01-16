@@ -55,7 +55,7 @@ ax1.legend(loc='lower right', fontsize=11)
 ax2 = axes[1]
 
 for tercile in ['Low', 'Mid', 'High']:
-    subset = df[df['income_tercile'] == tercile]
+    subset = df[df['income_group'] == tercile]
     ax2.scatter(subset['log_gdp'], subset['log_usage'], c=colors[tercile],
                 alpha=0.7, s=60, edgecolor='white', linewidth=0.5, label=f'{tercile} income')
 

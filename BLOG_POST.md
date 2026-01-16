@@ -144,16 +144,6 @@ All code and data are available in the GitHub repository.
 
 ---
 
-## Replication
-
-Code and data: [github.com/IlanStrauss/anthropic-econ-critique](https://github.com/IlanStrauss/anthropic-econ-critique)
-
----
-
-*Contact: ilan@aidisclosures.org*
-
----
-
 ## Note on Data Coverage and Income-Group Definitions
 
 China is not included in Anthropic's dataset.
@@ -161,6 +151,16 @@ China is not included in Anthropic's dataset.
 India and Indonesia are included but classified as *low-income* by Anthropic, who simply take countries' GDP per working-age capita and divide all the countries in their sample into three equal groups. This is a clear classification error. Both Indonesia (upper-middle) and India (lower-middle) are middle-income economies according to the World Bank's definition.
 
 The 38 middle-income countries in Anthropic's sample (i.e. using their income group definition based on dividing their dataset into thirds and calling each third a distinct income group) range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
+
+---
+
+## Replication
+
+Code and data: [github.com/IlanStrauss/anthropic-econ-critique](https://github.com/IlanStrauss/anthropic-econ-critique)
+
+---
+
+*Contact: ilan@aidisclosures.org*
 
 ---
 

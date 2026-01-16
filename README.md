@@ -22,7 +22,7 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered this with Anthropic's head of economics warning: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
-**Using their own data, we show that a country's income levels (GDP per capita) do not drive AI adoption for middle-income countries in particular — where much of the world's population resides.** Moreover, no evidence on "productivity gains" are provided in Anthropic's report.
+**Using their own data, we show that a country's income levels (GDP per capita) does not drive AI adoption for middle-income countries in particular — where much of the world's population resides.** Moreover, no evidence on "productivity gains" are provided in Anthropic's report.
 
 Using Anthropic's own data we estimate seperate regression estimates for different country groups and find that:
 1. **The income-AI adoption relationship varies dramatically by income level** — from 0.44 (middle-income) to 0.76 (low-income)

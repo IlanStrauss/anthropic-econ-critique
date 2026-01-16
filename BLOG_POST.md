@@ -59,7 +59,7 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 
 ![Figure 2](figures/fig2_slope_by_income.png)
 
-**Figure 2** shows the regression coefficients (with standard errors) estimated from separate regressions for each income group. Each bar represents the coefficient on log GDP per capita from regressing AI usage on income within that group. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70).
+**Figure 2** shows the regression coefficients (with standard errors) estimated from separate regressions for each income group. Each bar represents the coefficient on log GDP per capita from regressing AI usage on income within that group. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70). See [CRITIQUE.md](CRITIQUE.md) for the regression equation from which these coefficient estimates are derived.
 
 This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they're adopting AI beyond what their wealth would predict.
 

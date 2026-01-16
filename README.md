@@ -9,9 +9,9 @@
 
 | Format | Link | Description |
 |--------|------|-------------|
-| **🌐 Blog (Easy Read)** | [**View Online**](https://ilanstrauss.github.io/anthropic-econ-critique/) | Visual, accessible version with figures |
+| **✍️ Blog Post** | [**BLOG_POST.md**](BLOG_POST.md) | Full blog post |
 | **📝 Background Note** | [PARTIAL_POOLING.md](PARTIAL_POOLING.md) | Detailed methodology, equations, citations |
-| **✍️ Blog Post (Markdown)** | [BLOG_POST.md](BLOG_POST.md) | Markdown version of the blog |
+| **🌐 Blog (Easy Read)** | [View Online](https://ilanstrauss.github.io/anthropic-econ-critique/) | Simplified analysis |
 
 ---
 

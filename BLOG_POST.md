@@ -48,7 +48,7 @@ Elsewhere, Anthropic also finds that human education — the sophistication of u
 
 **The estimated slope relationships differ substantially by country income group in our regression**. Low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one. Anthropic's single line averages over this heterogeneity, obscuring that middle-income countries achieve AI adoption beyond what their income level alone would predict. 
 
-*But we can see considerable heterogeneity (i.e. differences) within other income groups too*. And we run a partial pooling regression elsewhere that recognizes this ([PARTIAL_POOLING.md](PARTIAL_POOLING.md)).
+*But we can see considerable heterogeneity (i.e. differences) within other income groups too*. So we run a partial pooling regression in a seperate document that tries to estimate this heterogeneity directly ([PARTIAL_POOLING.md](PARTIAL_POOLING.md)).
 
 **A striking example: South Korea vs USA**. The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, then the USA might be expected to have considerably higher adoption. It does not.
 

@@ -202,6 +202,9 @@ Anthropic's headline finding — 0.7 elasticity between GDP and AI usage — is:
 
 All code and data are available at: https://github.com/IlanStrauss/anthropic-econ-critique
 
-- `analysis_brms.R`: R analysis using brms (Bayesian)
-- `analysis_full.py`: Python analysis using statsmodels
+- `analysis_brms.R`: R script that reproduces the Bayesian hierarchical model with 7 groups (requires `brms` and `tidyverse` packages)
+- `analysis_full.py`: Python analysis using statsmodels (OLS, residuals, outlier analysis)
+- `analysis_results.csv`: Processed country-level data
 - `data/`: Anthropic's original data
+
+**Reproducibility note:** The Bayesian results use MCMC sampling with `seed = 42`. Due to MCMC stochasticity, exact values may vary slightly across runs (typically ±0.02 for point estimates), but the qualitative finding — that the partial pooling estimate is substantially lower than Anthropic's 0.69 — is robust.

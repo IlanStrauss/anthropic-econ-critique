@@ -75,6 +75,15 @@ for geo_id, label in outlier_labels.items():
                     fontsize=8, fontweight='bold', color='#c0392b',
                     xytext=(3, 3), textcoords='offset points')
 
+# Label key middle-income countries
+mid_income_labels = {'BRA': 'Brazil', 'MEX': 'Mexico', 'THA': 'Thailand', 'TUR': 'Turkey', 'ZAF': 'S. Africa', 'ARG': 'Argentina'}
+for geo_id, label in mid_income_labels.items():
+    if geo_id in df['geo_id'].values:
+        row = df[df['geo_id'] == geo_id].iloc[0]
+        ax2.annotate(label, (row['log_gdp'], row['log_usage']),
+                    fontsize=8, fontweight='bold', color='#f39c12',
+                    xytext=(3, 3), textcoords='offset points')
+
 # Label extreme high AI usage outliers (above trend)
 high_outliers = {'GEO': 'Georgia', 'KOR': 'S. Korea'}
 for geo_id, label in high_outliers.items():

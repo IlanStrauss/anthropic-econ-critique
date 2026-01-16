@@ -28,7 +28,7 @@ Anthropic uses GDP per capita to predict AI adoption. They "pool" across all cou
 
 We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex). The 0.7 elasticity doesn't hold universally across countries.
 
-We find the relationship breaks down mostly for middle-income countries. This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they're adopting AI beyond what their wealth would predict.
+We find the relationship breaks down mostly for middle-income countries. This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they are adopting AI beyond what their wealth would predict.
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia don't need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
@@ -63,7 +63,7 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 
 **Figure 2** shows the regression coefficients (with standard errors) estimated from a single regression with income-group-varying slopes (jointly estimated). Each bar represents the coefficient on log GDP per capita for that income group. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70). See [CRITIQUE.md](CRITIQUE.md) for the regression equation from which these coefficient estimates are derived.
 
-This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they're adopting AI beyond what their wealth would predict.
+This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they are adopting AI beyond what their wealth would predict.
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia don't need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 

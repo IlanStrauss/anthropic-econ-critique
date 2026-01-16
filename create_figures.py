@@ -94,7 +94,7 @@ for geo_id, label in high_outliers.items():
                     xytext=(3, 3), textcoords='offset points')
 
 # Label extreme low AI usage outliers (below trend)
-low_outliers = {'AGO': 'Angola', 'KWT': 'Kuwait', 'SAU': 'Saudi Arabia', 'QAT': 'Qatar'}
+low_outliers = {'TZA': 'Tanzania', 'AGO': 'Angola', 'KWT': 'Kuwait', 'SAU': 'Saudi Arabia', 'QAT': 'Qatar'}
 for geo_id, label in low_outliers.items():
     if geo_id in df['geo_id'].values:
         row = df[df['geo_id'] == geo_id].iloc[0]

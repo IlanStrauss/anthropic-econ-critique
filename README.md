@@ -19,7 +19,7 @@
 
 Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims "Worldwide, uneven adoption remains well-explained by GDP per capita."
 
-**Using their own data, we show this is not true for middle-income countries—where much of the world's population resides.**
+**Using their own data, we show this is not true for middle-income countries — where much of the world's population resides.**
 
 Using Anthropic's own data with partial pooling models, we show:
 1. **The income-AI adoption relationship varies dramatically by income level** — from 0.44 (middle-income) to 0.76 (low-income)
@@ -60,7 +60,7 @@ Anthropic's analysis implies a simple story: **higher income → more AI adoptio
 
 ### A Striking Example: South Korea vs USA
 
-The United States has a GDP per capita of $132,532—**2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, the USA should have dramatically higher adoption. It does not. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
+The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, the USA should have dramatically higher adoption. It does not. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
 
 ### What Should Policymakers Know?
 

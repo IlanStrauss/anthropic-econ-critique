@@ -65,7 +65,7 @@ The United States has a GDP per capita of $132,532 — **2.6 times** South Korea
 ### What Should Policymakers Know?
 
 **For low-income countries (β = 0.76):**
-- Income level IS strongly associated with AI adoption
+- Income level *is* strongly associated with AI adoption
 - Economic development may be a necessary precondition
 - Possible focus: basic infrastructure, connectivity, economic fundamentals
 

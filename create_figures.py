@@ -121,36 +121,43 @@ plt.savefig('figures/fig1_their_view_vs_ours.png', dpi=150, bbox_inches='tight')
 plt.close()
 
 # =============================================================
-# FIGURE 2: Slope comparison by income level
+# FIGURE 2: Slope comparison by income level (Gelman-style dot plot)
 # =============================================================
 
 fig, ax = plt.subplots(figsize=(10, 6))
 
 categories = ['Low\nIncome', 'Mid\nIncome', 'High\nIncome', 'Global\n(Anthropic)']
+x_pos = [0, 1, 2, 3]
 slopes = [0.76, 0.44, 0.63, 0.69]
 errors = [0.19, 0.18, 0.20, 0.042]
-bar_colors = ['#e74c3c', '#f39c12', '#27ae60', '#3498db']
 
-bars = ax.bar(categories, slopes, yerr=errors, capsize=8, color=bar_colors,
-              edgecolor='black', linewidth=1.5, alpha=0.8)
+# Gelman-style: dots with error bars
+ax.errorbar(x_pos, slopes, yerr=errors, fmt='none', ecolor='black', elinewidth=2, capsize=0)
+ax.scatter(x_pos, slopes, s=400, c='tomato', alpha=0.85, edgecolor='black', linewidth=1.5, zorder=5)
 
-ax.axhline(0.69, color='#3498db', linestyle='--', linewidth=2, alpha=0.7, label="Anthropic's global estimate")
-ax.axhline(0.44, color='#f39c12', linestyle=':', linewidth=2, alpha=0.7)
+# Reference lines (more visible)
+ax.axhline(0.69, color='#3498db', linestyle='--', linewidth=2.5, alpha=0.8, label="Anthropic's global estimate (0.69)")
+ax.axhline(0.44, color='gray', linestyle=':', linewidth=2, alpha=0.7, label="Middle-income estimate (0.44)")
 
+ax.set_xticks(x_pos)
+ax.set_xticklabels(categories, fontsize=12)
 ax.set_ylabel('Regression Coefficient on ln(GDP per capita)', fontsize=13)
 ax.set_title('Regression Coefficients by Income Group\n(from three separate OLS regressions, one per income tercile)', fontsize=14, fontweight='bold')
 ax.set_ylim(0, 1.1)
+ax.set_xlim(-0.5, 3.5)
 
-# Add value labels
-for bar, slope, err in zip(bars, slopes, errors):
-    ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + err + 0.03,
-            f'{slope:.2f}', ha='center', va='bottom', fontsize=12, fontweight='bold')
+# Add value labels above error bars
+for x, slope, err in zip(x_pos, slopes, errors):
+    ax.text(x, slope + err + 0.05, f'{slope:.2f}', ha='center', va='bottom', fontsize=12, fontweight='bold')
 
 # Annotation
 ax.annotate('Middle-income countries:\nGDP per capita barely predicts AI usage!',
-            xy=(1, 0.44), xytext=(1.5, 0.2),
+            xy=(1, 0.44), xytext=(1.8, 0.15),
             fontsize=11, ha='left',
-            arrowprops=dict(arrowstyle='->', color='#f39c12', lw=2))
+            arrowprops=dict(arrowstyle='->', color='gray', lw=2))
+
+# Legend for reference lines
+ax.legend(loc='upper right', fontsize=10)
 
 plt.tight_layout()
 plt.savefig('figures/fig2_slope_by_income.png', dpi=150, bbox_inches='tight')

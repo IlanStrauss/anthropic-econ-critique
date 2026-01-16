@@ -12,7 +12,7 @@ Anthropic's Economic Index claims "Worldwide, uneven adoption remains well-expla
 
 Using Anthropic's own data with partial pooling models, we show the GDP per capita-AI adoption relationship varies dramatically by income level: from 0.76 in low-income countries to just 0.44 in middle-income countries. Middle-income countries—home to much of the world's population—are adopting AI beyond what their income level alone would predict.
 
-Anthropic's divergence scenario is less clear-cut than they suggest. The head of economics at Anthropic, Peter McCrory, warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
+The head of economics at Anthropic, Peter McCrory, warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." Yet I try to show that Anthropic's latest research does not provide much evidence on the question of if AI will create more or less convergence in global income levels between countries.
 
 But a cross-sectional regression looking at how income (GDP per capita) impacts AI adoption doesn't imply divergence in living standards. Impacts on living standards from AI adoption cannot be estimated from this regression. This requires estimating the second order effect of how AI adoption impacts productivity, which Anthropic does not do here.
 

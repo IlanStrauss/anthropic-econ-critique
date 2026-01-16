@@ -82,6 +82,8 @@ Anthropic's narrow interval suggests false precision. It excludes 0.44 — the e
 
 Standard errors are ~3x larger when accounting for group-level variance (i.e., variation across income groups: low, middle, high).
 
+**Why is the SE so much larger?** Anthropic's OLS standard error captures only sampling variance — uncertainty about the slope assuming one true global slope exists. But the slopes genuinely differ across income groups (0.44 to 0.76). Partial pooling captures both sampling variance *and* this between-group heterogeneity. OLS treats slope variation as noise around a "true" single slope; partial pooling recognizes there is no single slope. This is the classic "Moulton problem" in econometrics: regressing outcomes on group-level predictors while ignoring group structure biases standard errors downward by 2-3x ([Bertrand, Duflo & Mullainathan 2004](https://academic.oup.com/qje/article/119/1/249/1876068)).
+
 ### 3. Notable outliers
 
 Some countries deviate substantially from the income-AI adoption relationship. **Israel stands out as the most striking outlier among high-income countries**: with a GDP per capita of $90,237, its AI Usage Index of 7.00 is **3x higher than the 2.36 predicted by Anthropic's regression**. Israel is the second-largest positive outlier in the entire dataset (after Georgia at 3.3x), suggesting that factors like tech sector concentration, education, and startup culture drive AI adoption far more than income alone. Gulf states (Qatar, Kuwait, Saudi Arabia) show the opposite pattern — far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.

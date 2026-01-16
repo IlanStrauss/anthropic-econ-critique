@@ -36,14 +36,14 @@ See [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full write-up.
 | Method | GDP Elasticity (β) | Std. Error | 95% CI |
 |--------|-------------------|------------|--------|
 | Anthropic OLS | 0.70 | 0.042 | [0.61, 0.77] |
-| Partial Pooling | 0.66 | 0.116 | [0.43, 0.89] |
+| Partial Pooling (7 groups) | 0.54 | 0.10 | [0.33, 0.74] |
 
 ### Slope Heterogeneity by Income Level (from separate OLS regressions)
 
 | Income Tercile | Slope (β) | Std. Error | N |
 |----------------|-----------|------------|---|
 | Low income | 0.76 | 0.19 | 38 |
-| **Mid income** | **0.44** | 0.18 | 38 |
+| **Middle income** | **0.44** | 0.18 | 38 |
 | High income | 0.63 | 0.20 | 38 |
 
 ## Why This Matters: Policy Implications

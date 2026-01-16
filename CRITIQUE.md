@@ -14,7 +14,7 @@ Using Anthropic's own data with partial pooling models, we show the GDP per capi
 
 Anthropic's divergence scenario is less clear-cut than they suggest. The head of economics at Anthropic, Peter McCrory, warned in the *Financial Times*, "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
-But a cross-sectional regression looking at how income (GDP per capita) impacts AI adoption doesn't imply divergence in living standards. Impacts on living standards from AI adoption cannot be estimated. This requires estimating how AI adoption impacts productivity, which Anthropic cannot and does not do.
+But a cross-sectional regression looking at how income (GDP per capita) impacts AI adoption doesn't imply divergence in living standards. Impacts on living standards from AI adoption cannot be estimated from this regression. This requires estimating the second order effect of how AI adoption impacts productivity, which Anthropic does not do here.
 
 Moreover, our findings suggest more reason to predict convergence in AI adoption at least: middle-income countries are already adopting AI beyond what their income predicts, when allowing for how GDP per capita impacts AI adoption to vary by a country's starting income level.
 

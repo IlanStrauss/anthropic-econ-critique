@@ -37,7 +37,6 @@ See [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full write-up.
 |--------|-------------------|------------|--------|
 | Anthropic OLS | 0.70 | 0.042 | [0.61, 0.77] |
 | Partial Pooling | 0.66 | 0.116 | [0.43, 0.89] |
-| Robust (Huber) | 0.67 | 0.040 | [0.59, 0.75] |
 
 ### Slope Heterogeneity by Income Level
 

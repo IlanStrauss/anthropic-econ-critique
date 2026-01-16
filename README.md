@@ -18,7 +18,7 @@
 
 ## Overview
 
-Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims "Worldwide, uneven adoption remains well-explained by GDP per capita." 
+Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims "Worldwide, uneven [AI] adoption remains well-explained by GDP per capita." 
 
 The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered this with Anthropic's head of economics warning: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
@@ -61,7 +61,7 @@ Anthropic's analysis implies a simple story: **higher income → more AI adoptio
 
 | Anthropic's Claim | Our Finding | Implication |
 |-------------------|-------------|-------------|
-| "Worldwide, uneven adoption remains well-explained by GDP per capita" | Not true for middle-income countries (β = 0.44) | Most of the world's population does not fit their story |
+| "Worldwide, uneven [AI] adoption remains well-explained by GDP per capita" | Not true for middle-income countries (β = 0.44) | Most of the world's population does not fit their story |
 | Single global elasticity of 0.70 | Elasticity varies from 0.44 to 0.76 | One-size-fits-all policy is inappropriate |
 | Tight confidence interval [0.61, 0.77] | True interval is [0.33, 0.74] | We're far less certain about this relationship than they suggest |
 

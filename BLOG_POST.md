@@ -26,9 +26,9 @@ The head of economics at Anthropic, Peter McCrory, told the *Financial Times*: "
 3) Moreover, as we focus on in this note, Anthropic's data when analyzed properly shows more reason to predict convergence in AI adoption: since **middle-income countries are adopting AI more than what their income level predicts**, when allowing for GDP per capita's impact on AI adoption to vary by a country's initial income level. Additionally, low-income countries have the largest coefficient (0.76 vs 0.63 for high-income), meaning a given percentage increase in their GDP per capita translates into greater AI adoption gains for these poorer countries than richer ones. This is the opposite of the divergence story.[^3]
 
 ### Do not pool data: all countries are not alike
-Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between income level and AI adoption is the same everywhere — a single parameter applies to Nigeria and Norway alike.
+Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between how income level impacts AI adoption is the same everywhere — a single parameter represents the strength and nature of this relationship and applies equally to Nigeria and Norway alike. 
 
-We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex). The 0.7 elasticity doesn't hold universally across countries.
+We reanalyzed Anthropic's [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex). The 0.7 elasticity coefficient representing the impact that gdp per capita has on AI adoption does not hold universally across countries. Their analysis is biased by assuming a single relationship when in fact different ones exist for different income-level groups (see [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full analysis).
 
 We find the relationship breaks down mostly for middle-income countries. This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they are adopting AI beyond what their wealth would predict.
 

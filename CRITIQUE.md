@@ -41,6 +41,10 @@ We examine whether this conclusion is robust to:
 
 ### Core Findings
 
+![Figure 1](figures/fig1_their_view_vs_ours.png)
+
+**Figure 1**: Left panel shows Anthropic's approach—one regression line through all countries. Right panel shows separate lines by income tercile. The slopes differ substantially: low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one.
+
 **Their Claim vs Our Finding:**
 
 | Anthropic's Claim | Our Finding |
@@ -190,6 +194,10 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 
 ### 3.1 Uncertainty is Underestimated
 
+![Figure 3](figures/fig3_confidence_intervals.png)
+
+**Figure 3**: Confidence interval comparison. Anthropic's OLS (top) shows a narrow interval [0.61, 0.77]. Partial pooling (bottom) shows a wider interval [0.43, 0.89].
+
 | Method | Slope (β) | Std. Error | 95% CI |
 |--------|-----------|------------|--------|
 | Anthropic OLS | 0.69 | 0.042 | [0.61, 0.77] |
@@ -201,11 +209,17 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 
 ### 3.2 The Relationship Between GDP and AI Usage Varies by Income Level
 
+![Figure 2](figures/fig2_slope_by_income.png)
+
+**Figure 2**: Estimated elasticity (with standard errors) for each income group. The middle-income bar is notably shorter than Anthropic's global estimate.
+
 | Income Tercile | Slope (β) | SE | R² | N |
 |----------------|-----------|-----|-----|---|
 | Low income | 0.76 | 0.19 | 0.30 | 38 |
 | **Middle income** | **0.44** | 0.18 | 0.14 | 38 |
 | High income | 0.63 | 0.20 | 0.21 | 38 |
+
+**Note on data coverage:** China is not included in Anthropic's dataset. India and Indonesia are included but classified as *low-income* based on GDP per working-age capita—they are not in the middle-income tercile. The 38 middle-income countries range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
 
 **Finding**: The elasticity of AI usage with respect to GDP varies by **73%** across income levels (0.44 to 0.76).
 
@@ -219,7 +233,11 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 
 ### 3.3 Outliers
 
-Some countries deviate substantially from the income-AI adoption relationship: Israel has 3x the AI usage predicted by its income level; Gulf states (Qatar, Kuwait) have far less than predicted; several African countries (Tanzania, Angola) fall well below the regression line.
+![Figure 4](figures/fig4_outliers.png)
+
+**Figure 4**: Influential outliers in the GDP-AI usage relationship. Point size indicates influence (Cook's D). Red = over-adopter (above regression line), Blue = under-adopter (below line).
+
+Some countries deviate substantially from the income-AI adoption relationship: Israel has 3x the AI usage predicted by its income level; Gulf states (Qatar, Kuwait, Saudi Arabia) have far less than predicted; several African countries (Tanzania, Angola) fall well below the regression line. Georgia and South Korea are notable over-adopters relative to their income levels.
 
 However, removing outliers only shifts the slope by ~5% (see Appendix B for details). The main findings—heterogeneity by income level and underestimated uncertainty—are not driven by outliers.
 

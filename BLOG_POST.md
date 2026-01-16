@@ -59,7 +59,7 @@ The slopes differ substantially. Low-income countries (red) show a steep relatio
 
 Middle-income countries show a 37% weaker relationship than Anthropic's global estimate.
 
-<img src="figures/fig2_slope_by_income.png" alt="Figure 2" width="600">
+<img src="figures/fig2_slope_by_income.png" alt="Figure 2" width="720">
 
 **Figure 2** shows the regression coefficients (with standard errors) estimated from a single regression with income-group-varying slopes (jointly estimated). Each bar represents the coefficient on log GDP per capita for that income group. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70). See [CRITIQUE.md](CRITIQUE.md) for the regression equation from which these coefficient estimates are derived.
 
@@ -69,7 +69,7 @@ The implication: middle-income countries like Brazil, Mexico, Thailand, and Mala
 
 ### 2. Uncertainty is underestimated
 
-<img src="figures/fig3_confidence_intervals.png" alt="Figure 3" width="600">
+<img src="figures/fig3_confidence_intervals.png" alt="Figure 3" width="720">
 
 **Figure 3** compares confidence intervals. The top bar (Anthropic's OLS) shows a narrow interval [0.61, 0.77]. The bottom bar (partial pooling) shows a wider interval [0.43, 0.89].
 

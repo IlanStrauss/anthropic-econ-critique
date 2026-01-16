@@ -102,6 +102,15 @@ for geo_id, label in low_outliers.items():
                     fontsize=8, fontweight='bold', color='black',
                     xytext=(3, -10), textcoords='offset points')
 
+# Label high-income countries with low AI usage (after Gulf states)
+high_income_low_usage = {'PRI': 'Puerto Rico', 'SVK': 'Slovakia'}
+for geo_id, label in high_income_low_usage.items():
+    if geo_id in df['geo_id'].values:
+        row = df[df['geo_id'] == geo_id].iloc[0]
+        ax2.annotate(label, (row['log_gdp'], row['log_usage']),
+                    fontsize=8, fontweight='bold', color='black',
+                    xytext=(3, -10), textcoords='offset points')
+
 ax2.set_xlabel('ln(GDP per capita)', fontsize=12)
 ax2.set_ylabel('ln(AI Usage Index)', fontsize=12)
 ax2.set_title("Our View: Relationship Varies by Income Level\nSlopes: 0.76 (Low), 0.44 (Mid), 0.63 (High)", fontsize=13, fontweight='bold')

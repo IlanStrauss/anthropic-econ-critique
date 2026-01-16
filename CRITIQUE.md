@@ -243,6 +243,15 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 
 Middle-income countries have a median residual of +0.122, meaning the typical middle-income country adopts about 13% more AI than predicted by Anthropic's regression (e^0.122 ≈ 1.13). Nearly two-thirds (63%) of middle-income countries are above the regression line. This directly supports our claim: middle-income countries are adopting AI beyond what their income level alone would predict.
 
+**Comparing the two regression equations**:
+
+| Model | Equation | R² (middle-income) |
+|-------|----------|-------------------|
+| Anthropic (global) | ln(AUI) = -7.01 + 0.69 × ln(GDP) | 0.095 |
+| Ours (middle-income) | ln(AUI) = -4.43 + 0.44 × ln(GDP) | 0.144 |
+
+Our middle-income-specific model has a flatter slope (0.44 vs 0.69) but a higher intercept (-4.43 vs -7.01). The two lines cross at GDP ≈ $26,322. For countries below this threshold—the majority of middle-income countries—our model predicts *higher* adoption than Anthropic's. This reflects the fact that middle-income countries are adopting AI beyond what a global income-based model would predict, and a model fitted specifically to this group captures this pattern with a higher intercept. Notably, our model also fits the data better (R² = 0.144 vs 0.095), though both R² values are low—confirming that GDP per capita is a weak predictor for middle-income countries regardless of specification.
+
 ### 3.3 Outliers
 
 ![Figure 4](figures/fig4_outliers.png)

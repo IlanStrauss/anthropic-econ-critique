@@ -326,6 +326,8 @@ For middle-income countries—home to much of the world's population—income le
 
 12. Bürkner, P.-C. (2017). "brms: An R Package for Bayesian Multilevel Models Using Stan." *Journal of Statistical Software*, 80(1), 1-28. https://doi.org/10.18637/jss.v080.i01
 
+13. Hsiao, C. (2022). *Analysis of Panel Data* (3rd ed.). Cambridge University Press. https://www.cambridge.org/core/books/analysis-of-panel-data/B8C2B0B64BEB1682A845C5F3FF677E61
+
 ---
 
 ## Appendix A: Code Availability

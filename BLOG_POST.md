@@ -97,7 +97,7 @@ These outliers suggest country-specific factors — language, culture, regulatio
 Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally.
 
 We use partial pooling (mixed effects models) — a class of [James-Stein estimators](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) — allowing slopes to vary by income group while shrinking toward the global mean. This approach:
-- Properly accounts for group-level variance ([Gelman & Hill 2007](https://www.cambridge.org/highereducation/books/data-analysis-using-regression-and-multilevel-hierarchical-models/32A29531C7FD730C3A68951A17C9D983))
+- Properly accounts for group-level variance ([Gelman & Hill 2007](https://www.cambridge.org/highereducation/books/data-analysis-using-regression-and-multilevel-hierarchical-models/32A29531C7FD730C3A68951A17C9D983); [Hsiao 2022, p. 12](https://www.cambridge.org/core/books/analysis-of-panel-data/B8C2B0B64BEB1682A845C5F3FF677E61))
 - Dominates both complete pooling and no pooling ([McElreath 2017](https://elevanth.org/blog/2017/08/24/multilevel-regression-as-default/))
 - Yields appropriate uncertainty intervals
 

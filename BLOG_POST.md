@@ -65,6 +65,16 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 
 This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they are adopting AI beyond what their wealth would predict.
 
+**Evidence from residuals:** We can verify this claim by examining prediction errors. Using Anthropic's own regression, middle-income countries have a median residual of +0.122 — meaning the typical middle-income country adopts about 13% more AI than predicted (e^0.122 ≈ 1.13). Nearly two-thirds (63%) of middle-income countries are above Anthropic's regression line.
+
+| Income Group | Mean Residual | Median Residual | % Above Prediction |
+|--------------|---------------|-----------------|-------------------|
+| Low | -0.059 | +0.042 | 50.0% |
+| **Middle** | **+0.094** | **+0.122** | **63.2%** |
+| High | -0.035 | -0.054 | 44.7% |
+
+Our middle-income-specific regression (β = 0.44) also tells this story: it has a higher intercept than Anthropic's global model (-4.43 vs -7.01), meaning it predicts higher baseline adoption for middle-income countries. Both models have low R² for this group (~10-14%), confirming GDP per capita is a weak predictor regardless of specification. See [CRITIQUE.md](CRITIQUE.md) for full details.
+
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
 ### 2. Uncertainty is underestimated

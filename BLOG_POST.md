@@ -59,7 +59,7 @@ The slopes differ substantially. Low-income countries (red) show a steep relatio
 
 Middle-income countries show a 37% weaker relationship than Anthropic's global estimate.
 
-![Figure 2](figures/fig2_slope_by_income.png)
+<img src="figures/fig2_slope_by_income.png" alt="Figure 2" width="600">
 
 **Figure 2** shows the regression coefficients (with standard errors) estimated from a single regression with income-group-varying slopes (jointly estimated). Each bar represents the coefficient on log GDP per capita for that income group. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70). See [CRITIQUE.md](CRITIQUE.md) for the regression equation from which these coefficient estimates are derived.
 

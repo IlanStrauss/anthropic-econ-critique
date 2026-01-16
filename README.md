@@ -1,4 +1,4 @@
-# Critique of FT analysis: Anthropic Economic Index shows growing international divergence in AI adoption and impacts?
+# Does Anthropic's Economic Index really show growing international divergence in AI adoption and impacts? A critique.
 
 **Authors**: Ilan Strauss
 **AI Disclosures Project**

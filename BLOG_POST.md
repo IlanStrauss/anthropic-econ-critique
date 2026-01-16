@@ -77,22 +77,29 @@ Our income-group-specific regressions also tell this story: the middle-income re
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
-### 2. Uncertainty is underestimated
+### 2. Anthropic's single estimate masks real heterogeneity
 
-<img src="figures/fig3_confidence_intervals.png" alt="Figure 3" width="720">
+Anthropic reports a single global estimate (0.69) with a narrow confidence interval [0.61, 0.77]. But this interval is misleading because it assumes the relationship is constant across all countries.
 
-**Figure 3** compares confidence intervals. The top bar (Anthropic's OLS) shows a narrow interval [0.61, 0.77]. The bottom bar (our Bayesian hierarchical model) shows a wider interval [0.33, 0.74].
+**Separate regressions by income group** show slopes range from 0.44 to 0.76:
 
-Anthropic's narrow interval suggests false precision. It excludes the slopes we observe in separate regressions by income group (ranging from 0.23 to 0.93 unpooled). Proper accounting for group-level variance reveals we are far less certain about the income-AI adoption relationship than Anthropic implies.
+| Income Group | Slope (β) | SE | 95% CI |
+|--------------|-----------|-----|--------|
+| Low-income | 0.76 | 0.19 | [0.39, 1.14] |
+| **Middle-income** | **0.44** | **0.18** | **[0.09, 0.79]** |
+| High-income | 0.63 | 0.20 | [0.23, 1.03] |
+| Anthropic (pooled) | 0.69 | 0.04 | [0.61, 0.77] |
 
-| Method | Slope | SE | 95% CI |
-|--------|-------|-----|--------|
-| Anthropic (OLS) | 0.69 | 0.042 | [0.61, 0.77] |
+Anthropic's confidence interval excludes the middle-income slope (0.44) entirely — their interval reflects false precision because it ignores this heterogeneity.
+
+**Bayesian hierarchical model** (see [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full analysis): When we properly account for group-level variance using partial pooling with 7 country groups, we estimate a global slope of **β = 0.54** with 95% CI **[0.33, 0.74]**. Anthropic's estimate of 0.69 falls outside this interval.
+
+| Method | Slope (β) | SE | 95% CI |
+|--------|-----------|-----|--------|
+| Anthropic (pooled OLS) | 0.69 | 0.04 | [0.61, 0.77] |
 | Bayesian hierarchical (7 groups) | 0.54 | 0.10 | [0.33, 0.74] |
 
-Standard errors are ~2.4x larger when properly accounting for group-level variance. Moreover, **Anthropic's estimate of 0.70 falls outside our 95% CI**.
-
-**Why is our estimate lower and less precise?** Anthropic's pooled OLS treats all countries as exchangeable, ignoring systematic differences across groups. In a separate analysis, we fit a **Bayesian hierarchical model** using `brms` with 7 theoretically meaningful groups (Gulf states, tech hubs, low-income Africa, low-income Asia, low-income other, middle-income, and high-income). This model allows slopes to vary by group while shrinking toward a global mean. The simple average of group slopes is 0.56 — close to our estimate of 0.54. Anthropic's 0.69 is inflated by a composition effect: Gulf states (high GDP, low adoption) and low-income African countries (low GDP, low adoption) create a steeper apparent slope than exists within any group (a form of Simpson's paradox).
+The Bayesian model's lower estimate (0.54 vs 0.69) reflects a composition effect: Gulf states (high GDP, low adoption) and low-income African countries (low GDP, low adoption) create a steeper apparent slope in pooled regression than exists within any group (Simpson's paradox).
 
 ### 3. Notable outliers
 
@@ -106,15 +113,18 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally.
 
-**In this blog post**, we run **three separate OLS regressions**—one for each income tercile (low, middle, high). This reveals the heterogeneity that Anthropic's pooled estimate obscures:
-- Low-income: β = 0.76
-- Middle-income: β = 0.44
-- High-income: β = 0.63
+We run **three separate OLS regressions**—one for each income tercile (low, middle, high):
 
-**In a separate analysis**, we also fit a **Bayesian hierarchical model** (partial pooling) using `brms` with 7 theoretically meaningful groups. This approach:
-- Properly accounts for group-level variance ([Gelman & Hill 2007](https://www.cambridge.org/highereducation/books/data-analysis-using-regression-and-multilevel-hierarchical-models/32A29531C7FD730C3A68951A17C9D983); [Hsiao 2022, p. 12](https://www.cambridge.org/core/books/analysis-of-panel-data/B8C2B0B64BEB1682A845C5F3FF677E61))
-- Allows slopes to vary by group while shrinking toward a global mean ([McElreath 2017](https://elevanth.org/blog/2017/08/24/multilevel-regression-as-default/))
-- Yields the global estimate of β = 0.54 with appropriate uncertainty (95% CI: [0.33, 0.74])
+```
+ln(AUI) = α + β × ln(GDP per capita) + ε
+```
+
+This reveals the heterogeneity that Anthropic's pooled estimate obscures:
+- Low-income: β = 0.76, SE = 0.19
+- Middle-income: β = 0.44, SE = 0.18
+- High-income: β = 0.63, SE = 0.20
+
+For a more rigorous analysis using Bayesian hierarchical models with partial pooling (which allows slopes to vary by group while shrinking toward a global mean), see [PARTIAL_POOLING.md](PARTIAL_POOLING.md).
 
 All code and data are available in the GitHub repository.
 

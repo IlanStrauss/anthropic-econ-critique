@@ -162,7 +162,7 @@ plt.close()
 
 fig, ax = plt.subplots(figsize=(10, 5))
 
-methods = ['Anthropic\n(OLS)', 'Bayesian\nHierarchical']
+methods = ['Anthropic\n(OLS)', 'Our Model\n(7 groups)']
 point_estimates = [0.69, 0.54]
 ci_lower = [0.61, 0.33]
 ci_upper = [0.77, 0.74]

@@ -17,7 +17,7 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 ## Why This Matters
 
-The head of economics at Anthropic, Peter McCrory, told the *Financial Times*: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." However, Anthropic's latest research does not provide much evidence (if any) on the question of whether AI will create more or less convergence in global income levels between countries.
+The head of economics at Anthropic, Peter McCrory, told the [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4): "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." However, Anthropic's latest research does not provide much evidence (if any) on the question of whether AI will create more or less convergence in global income levels between countries.
 
 1) Anthropic's cross-country regression, estimating how income level (GDP per capita) impacts AI adoption, does not by itself imply growing divergence in global living standards between countries. Impacts on *living standards* (i.e. convergence vs. divergence) from AI adoption cannot be estimated from AI adoption. This requires estimating the **second order effect** of how AI adoption impacts a country's productivity, which Anthropic does not do here.
 
@@ -50,9 +50,9 @@ Elsewhere, Anthropic also finds that human education — the sophistication of u
 
 *But we can see considerable heterogeneity (i.e. differences) within other income groups too*. And we run a partial pooling regression elsewhere that recognizes this ([PARTIAL_POOLING.md](PARTIAL_POOLING.md)).
 
-**A striking example: South Korea vs USA**. The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, then the USA might be expected to have considerably higher adoption. It does not. 
+**A striking example: South Korea vs USA**. The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, then the USA might be expected to have considerably higher adoption. It does not.
 
-This also suggests that first-mover advantage in AI innovation does not necessarily translate into higher adoption, contrary to the divergence narrative in the *Financial Times* article cited above. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
+This also suggests that first-mover advantage in AI innovation does not necessarily translate into higher adoption, contrary to the divergence narrative in the [*Financial Times* article](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) cited above. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
 
 **Note on data coverage and income-group definitions:** 
 

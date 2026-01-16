@@ -138,7 +138,7 @@ ax.axhline(0.69, color='#3498db', linestyle='--', linewidth=2, alpha=0.7, label=
 ax.axhline(0.44, color='#f39c12', linestyle=':', linewidth=2, alpha=0.7)
 
 ax.set_ylabel('Regression Coefficient on ln(GDP per capita)', fontsize=13)
-ax.set_title('Regression Coefficients by Income Group\n(from single regression with income-group-varying slopes; see CRITIQUE.md for equation)', fontsize=14, fontweight='bold')
+ax.set_title('Regression Coefficients by Income Group\n(from three separate OLS regressions, one per income tercile)', fontsize=14, fontweight='bold')
 ax.set_ylim(0, 1.1)
 
 # Add value labels

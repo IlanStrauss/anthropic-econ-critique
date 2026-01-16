@@ -11,7 +11,7 @@
 |--------|------|-------------|
 | **🌐 Blog (Easy Read)** | [**View Online**](https://ilanstrauss.github.io/anthropic-econ-critique/) | Visual, accessible version with figures |
 | **📄 PDF** | [**Download PDF**](https://ilanstrauss.github.io/anthropic-econ-critique/?print) | Print the blog page (Ctrl/Cmd+P) |
-| **📝 Background Note** | [CRITIQUE.md](CRITIQUE.md) | Detailed methodology, equations, citations |
+| **📝 Background Note** | [PARTIAL_POOLING.md](PARTIAL_POOLING.md) | Detailed methodology, equations, citations |
 | **✍️ Blog Post (Markdown)** | [BLOG_POST.md](BLOG_POST.md) | Markdown version of the blog |
 
 ---
@@ -30,7 +30,7 @@ Using Anthropic's own data with partial pooling models, we show:
 
 ## Key Findings
 
-See [CRITIQUE.md](CRITIQUE.md) for full write-up.
+See [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full write-up.
 
 ### Effect Size Comparison
 
@@ -96,7 +96,7 @@ Anthropic warns of "divergence in living standards." But a cross-sectional incom
 ```
 anthropic-econ-critique/
 ├── README.md                    # This file
-├── CRITIQUE.md                  # Full write-up
+├── PARTIAL_POOLING.md                  # Full write-up
 ├── analysis_full.py             # Main Python analysis
 ├── analysis_brms.R              # R/brms Bayesian analysis
 ├── analysis_results.csv         # Processed results

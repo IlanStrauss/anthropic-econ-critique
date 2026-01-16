@@ -11,7 +11,7 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 > "At the country level, a 1% increase in GDP per capita[^2] is associated with a 0.7% increase in Claude usage per capita."
 
-**Using their own data, we show this is not true for middle-income countries — where much of the world's population resides.**
+**Using their own data, we show this is not true for the middle-income country group — where much of the world's population resides.**
 
 *Note: Anthropic's research paper contains a number of important findings — on occupational exposure, task automation, and more. We focus here on just one claim: the GDP per capita relationship.*
 

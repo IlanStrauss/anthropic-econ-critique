@@ -121,6 +121,6 @@ Code and data: [github.com/IlanStrauss/anthropic-econ-critique](https://github.c
 
 ---
 
-[^1]: **How Anthropic measures AI adoption:** Anthropic's "AI Usage Index" (AUI) is based on Claude.ai usage per capita — the number of conversations users in each country have with Claude, normalized by working-age population. This measures adoption of *one* AI assistant (Claude), not AI adoption broadly. The data comes from November 2025.
+[^1]: **How Anthropic measures AI adoption:** Anthropic's "AI Usage Index" (AUI) is defined as: *Country's share of Claude usage ÷ Country's share of working-age population*. An AUI of 2 means a country uses Claude at twice the rate expected given its population share. This is a measure of **relative usage intensity** — it tells you how countries rank against each other, but not whether absolute usage is economically meaningful. A country could have high AUI but still have tiny absolute adoption. The data comes from a sample of 1M Claude.ai conversations and 1M API transcripts from November 2025.
 
 [^2]: **How Anthropic measures GDP per capita:** Anthropic uses GDP per working-age capita (ages 15-64) from the World Bank's World Development Indicators, in current US dollars (nominal). This differs from standard GDP per capita which divides by total population.

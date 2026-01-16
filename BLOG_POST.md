@@ -69,7 +69,7 @@ The implication: middle-income countries like Brazil, Mexico, Thailand, and Mala
 
 ### 2. Uncertainty is underestimated
 
-![Figure 3](figures/fig3_confidence_intervals.png)
+<img src="figures/fig3_confidence_intervals.png" alt="Figure 3" width="600">
 
 **Figure 3** compares confidence intervals. The top bar (Anthropic's OLS) shows a narrow interval [0.61, 0.77]. The bottom bar (partial pooling) shows a wider interval [0.43, 0.89].
 

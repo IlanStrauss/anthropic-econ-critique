@@ -126,7 +126,7 @@ plt.close()
 
 fig, ax = plt.subplots(figsize=(10, 6))
 
-categories = ['Low\nIncome', 'Mid\nIncome', 'High\nIncome', 'Global\n(Anthropic)']
+categories = ['Low\nIncome', 'Middle\nIncome', 'High\nIncome', 'Global\n(Anthropic)']
 x_pos = [0, 1, 2, 3]
 slopes = [0.76, 0.44, 0.63, 0.69]
 errors = [0.19, 0.18, 0.20, 0.042]

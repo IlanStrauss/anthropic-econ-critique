@@ -11,7 +11,7 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 > "At the country level, a 1% increase in GDP per capita[^2] is associated with a 0.7% increase in Claude usage per capita."
 
-**Using their own data, however, we show this claim is not true for the middle-income group of countries, where much of the world's population resides. It also points to convergence in AI adoption, not divergence.** It says nothing about the possibility for long-term divergences in economic growth between countries from AI investments.
+**Using their own data, however, we show this claim is not true for the middle-income group of countries, where much of the world's population resides. It also points to convergence in AI adoption, not divergence.** It provides no evidence on the possibility for long-term divergences in economic growth between countries from AI investments.
 
 *Note: Anthropic's research paper contains a number of important findings — on occupational exposure, task automation, and more. We focus here on just one claim: the GDP per capita relationship.*
 

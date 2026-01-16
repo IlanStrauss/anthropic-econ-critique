@@ -18,6 +18,8 @@ The head of economics at Anthropic, Peter McCrory, told the *Financial Times*: "
 
 But a cross-sectional regression looking at how income (GDP per capita) impacts AI adoption doesn't imply divergence in living standards. Impacts on living standards from AI adoption cannot be estimated from this regression. This requires estimating the second order effect of how AI adoption impacts productivity, which Anthropic does not do here.
 
+Furthermore, Anthropic's AI Usage Index (AUI) measures **relative usage intensity** — how countries rank against each other — not absolute adoption levels. A 0.7 elasticity tells us richer countries use Claude more *relative to other countries*, but says nothing about whether that usage is economically meaningful in absolute terms. A country could rank highly on AUI while still having negligible actual AI adoption.
+
 Moreover, as we show below, our findings suggest more reason to predict convergence in AI adoption at least: middle-income countries are already adopting AI beyond what their income predicts, when allowing for how GDP per capita impacts AI adoption to vary by a country's starting income level.
 
 Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between income level and AI adoption is the same everywhere — a single parameter applies to Nigeria and Norway alike.

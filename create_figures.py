@@ -85,7 +85,7 @@ for geo_id, label in mid_income_labels.items():
                     xytext=(3, 3), textcoords='offset points')
 
 # Label extreme high AI usage outliers (above trend)
-high_outliers = {'GEO': 'Georgia', 'KOR': 'S. Korea'}
+high_outliers = {'GEO': 'Georgia', 'KOR': 'S. Korea', 'MNE': 'Montenegro'}
 for geo_id, label in high_outliers.items():
     if geo_id in df['geo_id'].values:
         row = df[df['geo_id'] == geo_id].iloc[0]

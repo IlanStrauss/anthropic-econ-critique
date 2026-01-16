@@ -70,7 +70,7 @@ Anthropic's analysis implies a simple story: **higher income → more AI adoptio
 **For middle-income countries (β = 0.44):**
 - **These countries adopt AI beyond what their income predicts** — this is the critical finding
 - Education, English proficiency, digital literacy, tech infrastructure, and regulatory environment are driving adoption now
-- Examples: Brazil, Mexico, Thailand, Indonesia don't need to wait to get richer
+- Examples: Brazil, Mexico, Thailand, Malaysia don't need to wait to get richer
 
 **For high-income countries (β = 0.63):**
 - Massive variation unexplained by income

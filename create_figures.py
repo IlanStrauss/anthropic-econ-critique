@@ -66,6 +66,19 @@ for tercile in ['Low', 'Mid', 'High']:
     ax2.plot(x_sub, ols_sub.params['const'] + ols_sub.params['log_gdp'] * x_sub,
              c=colors[tercile], linewidth=2.5, linestyle='-')
 
+# Label key middle-income countries
+mid_income_labels = ['BRA', 'MEX', 'THA', 'MYS', 'COL', 'ARG', 'TUR', 'POL', 'ZAF']
+for _, row in df[df['geo_id'].isin(mid_income_labels)].iterrows():
+    ax2.annotate(row['geo_id'], (row['log_gdp'], row['log_usage']),
+                fontsize=8, fontweight='bold', color='#c0392b',
+                xytext=(3, 3), textcoords='offset points')
+
+# Label India (low income) for reference
+india = df[df['geo_id'] == 'IND'].iloc[0]
+ax2.annotate('IND', (india['log_gdp'], india['log_usage']),
+            fontsize=8, fontweight='bold', color='#c0392b',
+            xytext=(3, 3), textcoords='offset points')
+
 ax2.set_xlabel('ln(GDP per capita)', fontsize=12)
 ax2.set_ylabel('ln(AI Usage Index)', fontsize=12)
 ax2.set_title("Our View: Relationship Varies by Income Level\nSlopes: 0.76 (Low), 0.44 (Mid), 0.63 (High)", fontsize=13, fontweight='bold')

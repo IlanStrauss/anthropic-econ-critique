@@ -105,7 +105,19 @@ Anthropic's confidence interval excludes the middle-income slope (0.44) entirely
 
 The Bayesian model's lower estimate (0.54 vs 0.69) reflects a composition effect: Gulf states (high GDP, low adoption) and low-income African countries (low GDP, low adoption) create a steeper apparent slope in pooled regression than exists within any group (Simpson's paradox).
 
-### 3. Notable outliers
+### 3. Policy Implications
+
+| Income Level | Anthropic's Implication | Our Finding |
+|--------------|------------------------|-------------|
+| Low | Higher income → more AI adoption | Supported (β = 0.76) |
+| Middle | Higher income → more AI adoption | Weak link (β = 0.44) — adopting beyond wealth |
+| High | Higher income → more AI adoption | Variable; outliers dominate |
+
+For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level alone doesn't determine AI adoption. Education, infrastructure, and language access are already driving adoption beyond what wealth predicts.
+
+The "divergence in living standards" Anthropic warns of is not inevitable. It depends on policy — policy their analysis obscures by pooling heterogeneous relationships.
+
+### 4. Notable outliers
 
 Some countries deviate substantially from the income-AI adoption relationship. **Israel stands out as the most striking outlier among high-income countries**: with a GDP per capita of $90,237, its AI Usage Index of 7.00 is **3x higher than the 2.36 predicted by Anthropic's regression**. Israel is the second-largest positive outlier in the entire dataset (after Georgia at 3.3x), suggesting that factors like tech sector concentration, education, and startup culture drive AI adoption far more than income alone. Gulf states (Qatar, Kuwait, Saudi Arabia) show the opposite pattern — far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.
 
@@ -113,7 +125,7 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 ---
 
-## Methods
+## Method
 
 Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally. As [Hsiao (2022, p. 12)](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) notes in *Analysis of Panel Data*, pooled regression "implicitly assumes that the average values of variables and the relationships between variables are constant over time and across all cross-sectional units" — an assumption we test and find wanting.
 
@@ -131,20 +143,6 @@ This reveals the heterogeneity that Anthropic's pooled estimate obscures:
 For a more rigorous analysis using Bayesian hierarchical models with partial pooling (which allows slopes to vary by group while shrinking toward a global mean), see [PARTIAL_POOLING.md](PARTIAL_POOLING.md).
 
 All code and data are available in the GitHub repository.
-
----
-
-## Policy Implications
-
-| Income Level | Anthropic's Implication | Our Finding |
-|--------------|------------------------|-------------|
-| Low | Higher income → more AI adoption | Supported (β = 0.76) |
-| Middle | Higher income → more AI adoption | Weak link (β = 0.44) — adopting beyond wealth |
-| High | Higher income → more AI adoption | Variable; outliers dominate |
-
-For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level alone doesn't determine AI adoption. Education, infrastructure, and language access are already driving adoption beyond what wealth predicts.
-
-The "divergence in living standards" Anthropic warns of is not inevitable. It depends on policy — policy their analysis obscures by pooling heterogeneous relationships.
 
 ---
 

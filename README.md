@@ -18,7 +18,9 @@
 
 ## Overview
 
-Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims "Worldwide, uneven adoption remains well-explained by GDP per capita." The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered this with Anthropic's head of economics warning: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
+Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims "Worldwide, uneven adoption remains well-explained by GDP per capita." 
+
+The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered this with Anthropic's head of economics warning: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
 **Using their own data, we show this is not true for middle-income countries in particular — where much of the world's population resides.**
 

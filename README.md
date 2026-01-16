@@ -10,7 +10,7 @@
 | Format | Link | Description |
 |--------|------|-------------|
 | **✍️ Blog Post** | [**BLOG_POST.md**](BLOG_POST.md) | Full blog post |
-| **📝 Background Note** | [PARTIAL_POOLING.md](PARTIAL_POOLING.md) | Detailed methodology, equations, citations |
+| **📝 Background Note** | [PARTIAL_POOLING.md](PARTIAL_POOLING.md) | Detailed Partial Pooling Analysis |
 | **🌐 Blog (Easy Read)** | [View Online](https://ilanstrauss.github.io/anthropic-econ-critique/) | Simplified analysis |
 
 ---

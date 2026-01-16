@@ -233,6 +233,16 @@ For researchers preferring full Bayesian inference, we provide `analysis_brms.R`
 
 **Policy implication**: Middle-income countries don't need to wait to get richer. For Brazil, Mexico, Thailand, and similar nations, education, infrastructure, and policy are already driving AI adoption beyond what income alone predicts.
 
+**Evidence from residuals**: Using Anthropic's own pooled regression, we can examine whether middle-income countries systematically over- or under-adopt relative to prediction:
+
+| Income Group | Mean Residual | Median Residual | % Above Prediction |
+|--------------|---------------|-----------------|-------------------|
+| Low | -0.059 | +0.042 | 50.0% |
+| **Middle** | **+0.094** | **+0.122** | **63.2%** |
+| High | -0.035 | -0.054 | 44.7% |
+
+Middle-income countries have a median residual of +0.122, meaning the typical middle-income country adopts about 13% more AI than predicted by Anthropic's regression (e^0.122 ≈ 1.13). Nearly two-thirds (63%) of middle-income countries are above the regression line. This directly supports our claim: middle-income countries are adopting AI beyond what their income level alone would predict.
+
 ### 3.3 Outliers
 
 ![Figure 4](figures/fig4_outliers.png)

@@ -146,9 +146,12 @@ ax.set_title('Regression Coefficients by Income Group\n(from three separate OLS 
 ax.set_ylim(0, 1.1)
 ax.set_xlim(-0.5, 3.5)
 
-# Add value labels above error bars
-for x, slope, err in zip(x_pos, slopes, errors):
-    ax.text(x, slope + err + 0.05, f'{slope:.2f}', ha='center', va='bottom', fontsize=15, fontweight='bold')
+# Add value labels above error bars (mid-income to the right of dot to avoid blue line)
+for i, (x, slope, err) in enumerate(zip(x_pos, slopes, errors)):
+    if i == 1:  # Mid-income: place to the right of dot
+        ax.text(x + 0.25, slope, f'{slope:.2f}', ha='left', va='center', fontsize=15, fontweight='bold')
+    else:
+        ax.text(x, slope + err + 0.05, f'{slope:.2f}', ha='center', va='bottom', fontsize=15, fontweight='bold')
 
 # Annotation
 ax.annotate('Middle-income countries:\nGDP per capita barely predicts AI usage!',

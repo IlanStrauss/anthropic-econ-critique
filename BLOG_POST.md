@@ -1,4 +1,5 @@
 # Does GDP per Capita Really Predict AI Adoption? Adjusting Anthropic's Estimates
+Why Anthropic's data does not predict divergence between countries from global AI adoption -- if anything it predicts convergence
 
 **Ilan Strauss | [AI Disclosures Project](https://www.ssrc.org/programs/ai-disclosures-project/) | January 2026**
 

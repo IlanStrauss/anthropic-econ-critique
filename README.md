@@ -26,7 +26,9 @@ Using Anthropic's own data we estimate seperate regression estimates for differe
 1. **The income-AI adoption relationship varies dramatically by income level** — from 0.44 (middle-income) to 0.76 (low-income)
 2. **Middle-income countries adopt AI beyond what their income predicts** — education, infrastructure, and policy, for example, may drive adoption more
 3. **Their uncertainty is underestimated** (~3x) due to ignoring country-level heterogeneity
-4. **No evidence supporting divergence is provided** — their single (pooled) cross-sectional estimate does not imply growing divergence in AI adoption between countries (or resulting GDP growth). If anything, their data more closely supports convergence in AI adoption. The real question of divergence in economic growth between countries arising from AI investment requires a seperate analysis.
+4. **No evidence supporting divergence is provided** — their single (pooled) cross-sectional estimate does not imply growing divergence in AI adoption between countries (or resulting GDP growth). If anything, their data more closely supports convergence in AI adoption. 
+
+The real question of divergence in economic growth between countries arising from AI investment requires a seperate analysis.
 
 ## Key Findings
 

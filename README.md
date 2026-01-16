@@ -38,7 +38,7 @@ See [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full write-up.
 | Anthropic OLS | 0.70 | 0.042 | [0.61, 0.77] |
 | Partial Pooling | 0.66 | 0.116 | [0.43, 0.89] |
 
-### Slope Heterogeneity by Income Level
+### Slope Heterogeneity by Income Level (from separate OLS regressions)
 
 | Income Tercile | Slope (β) | Std. Error | N |
 |----------------|-----------|------------|---|

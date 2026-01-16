@@ -22,7 +22,7 @@ Anthropic's cross-country regression, estimating how income (GDP per capita) imp
 
 Furthermore, Anthropic's AI Usage Index (AUI)[^1] measures **relative usage intensity** — how countries rank against each other — not absolute adoption levels. A 0.7 elasticity tells us richer countries use Claude more *relative to other countries*, but says nothing about whether that usage is economically meaningful in absolute terms. A country could rank highly on AUI while still having negligible actual AI adoption.
 
-Moreover, as we focus on below, our findings suggest more reason to predict convergence in AI adoption at least: **middle-income countries are already adopting AI beyond what their income predicts**, when allowing for how GDP per capita impacts AI adoption to vary by a country's starting income level.
+Moreover, as we focus on below, our findings suggest more reason to predict convergence in AI adoption at least: **middle-income countries are already adopting AI beyond what their income predicts**, when allowing for how GDP per capita impacts AI adoption to vary by a country's starting income level. Additionally, low-income countries have the largest coefficient (0.76 vs 0.63 for high-income), meaning a given percentage increase in GDP per capita translates into greater AI adoption gains for poorer countries than richer ones — the opposite of the divergence story.
 
 Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between income level and AI adoption is the same everywhere — a single parameter applies to Nigeria and Norway alike.
 

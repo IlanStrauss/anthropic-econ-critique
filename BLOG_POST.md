@@ -10,6 +10,8 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 > "At the country level, a 1% increase in GDP per capita is associated with a 0.7% increase in Claude usage per capita."
 
+**How Anthropic measures AI adoption:** Anthropic's "AI Usage Index" (AUI) is based on Claude.ai usage per capita—the number of conversations users in each country have with Claude, normalized by working-age population. This measures adoption of *one* AI assistant (Claude), not AI adoption broadly. The data comes from November 2025.
+
 **Using their own data, we show this is not true for middle-income countries—where much of the world's population resides.**
 
 ## Why This Matters

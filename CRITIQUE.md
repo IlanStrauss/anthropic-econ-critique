@@ -156,6 +156,8 @@ We use Anthropic's publicly released data from their [HuggingFace repository](ht
 - Country-level aggregates with GDP per working-age capita
 - 114 countries with ≥200 observations (their filtering threshold)
 
+**How Anthropic measures AI adoption:** Anthropic's "AI Usage Index" (AUI) is based on Claude.ai usage per capita—the number of conversations users in each country have with Claude, normalized by working-age population. This measures adoption of *one* AI assistant (Claude), not AI adoption broadly. Anthropic acknowledges this limitation but argues Claude usage is a reasonable proxy for frontier AI adoption patterns.
+
 ### 2.2 Anthropic's Approach
 
 Anthropic estimates a simple OLS regression in log-log space:

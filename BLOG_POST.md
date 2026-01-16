@@ -54,14 +54,6 @@ Elsewhere, Anthropic also finds that human education — the sophistication of u
 
 This also suggests that first-mover advantage in AI innovation does not necessarily translate into higher adoption, contrary to the divergence narrative in the [*Financial Times* article](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) cited above. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
 
-**Note on data coverage and income-group definitions:** 
-
-China is not included in Anthropic's dataset. 
-
-India and Indonesia are included but classified as *low-income* by Anthropic, who simply take countries' GDP per working-age capita and divide all the countries in their sample into three equal groups. This is a clear classification error. Both Indonesia (upper-middle) and India (lower-middle) are middle-income economies according to the World Bank's definition. 
-
-The 38 middle-income countries in Anthropic's sample (i.e. using their income group definition based on dividing their dataset into thirds and calling each third a distinct income group) range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and includes Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
-
 | Income Level | GDP Per Capita (β coefficient) | N |
 |--------------|-------------------|---|
 | Low income | 0.76 | 38 |
@@ -73,7 +65,7 @@ Middle-income countries show a 37% weaker relationship between their GDP per cap
 
 <img src="figures/fig2_slope_by_income.png" alt="Figure 2" width="720">
 
-**Figure 2** shows the regression coefficients (with standard errors) estimated from **three separate OLS regressions**—one for each income tercile. Each bar represents the coefficient on log GDP per capita from that group's regression. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70).
+**Figure 2** shows the regression coefficients (with standard errors) estimated from **three separate OLS regressions** — one for each income tercile. Each bar represents the coefficient on log GDP per capita from that group's regression. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70).
 
 This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they are adopting AI beyond what their wealth would predict.
 
@@ -123,9 +115,9 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 ## Methods
 
-Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally. As [Hsiao (2022, p. 12)](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) notes in *Analysis of Panel Data*, pooled regression "implicitly assumes that the average values of variables and the relationships between variables are constant over time and across all cross-sectional units"—an assumption we test and find wanting.
+Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally. As [Hsiao (2022, p. 12)](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) notes in *Analysis of Panel Data*, pooled regression "implicitly assumes that the average values of variables and the relationships between variables are constant over time and across all cross-sectional units" — an assumption we test and find wanting.
 
-We run **three separate OLS regressions**—one for each income tercile (low, middle, high):
+We run **three separate OLS regressions** — one for each income tercile (low, middle, high):
 
 ```
 ln(AUI) = α + β × ln(GDP per capita) + ε
@@ -163,6 +155,16 @@ Code and data: [github.com/IlanStrauss/anthropic-econ-critique](https://github.c
 ---
 
 *Contact: ilan@aidisclosures.org*
+
+---
+
+## Note on Data Coverage and Income-Group Definitions
+
+China is not included in Anthropic's dataset.
+
+India and Indonesia are included but classified as *low-income* by Anthropic, who simply take countries' GDP per working-age capita and divide all the countries in their sample into three equal groups. This is a clear classification error. Both Indonesia (upper-middle) and India (lower-middle) are middle-income economies according to the World Bank's definition.
+
+The 38 middle-income countries in Anthropic's sample (i.e. using their income group definition based on dividing their dataset into thirds and calling each third a distinct income group) range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
 
 ---
 

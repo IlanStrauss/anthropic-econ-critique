@@ -11,7 +11,7 @@
 |--------|------|-------------|
 | **🌐 Blog (Easy Read)** | [**View Online**](https://ilanstrauss.github.io/anthropic-econ-critique/) | Visual, accessible version with figures |
 | **📄 PDF** | [**Download PDF**](https://ilanstrauss.github.io/anthropic-econ-critique/?print) | Print the blog page (Ctrl/Cmd+P) |
-| **📝 Full Technical Paper** | [CRITIQUE.md](CRITIQUE.md) | Detailed methodology, equations, citations |
+| **📝 Background Note** | [CRITIQUE.md](CRITIQUE.md) | Detailed methodology, equations, citations |
 | **✍️ Blog Post (Markdown)** | [BLOG_POST.md](BLOG_POST.md) | Markdown version of the blog |
 
 ---

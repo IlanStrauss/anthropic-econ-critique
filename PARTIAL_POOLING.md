@@ -52,11 +52,11 @@ Anthropic's OLS approach assumes observations are **independent and identically 
 
 When the true data-generating process has group-varying slopes (see [Moulton 1990](https://www.jstor.org/stable/2109724); [Bertrand, Duflo & Mullainathan 2004](https://academic.oup.com/qje/article/119/1/249/1876068)):
 
-**y<sub>ij</sub> = α + α<sub>j</sub> + (β + β<sub>j</sub>) × x<sub>ij</sub> + ε<sub>ij</sub>**
+$$y_{ij} = \alpha + \alpha_j + (\beta + \beta_j) \times x_{ij} + \varepsilon_{ij}$$
 
-where β<sub>j</sub> ~ N(0, τ²<sub>β</sub>) are random slope deviations, the variance of the pooled OLS estimator is:
+where $\beta_j \sim N(0, \tau^2_\beta)$ are random slope deviations, the variance of the pooled OLS estimator is:
 
-**Var(β̂<sub>pooled</sub>) = Var(β̂ | slopes fixed) + Var(slopes across groups)**
+$$\text{Var}(\hat{\beta}_{pooled}) = \text{Var}(\hat{\beta} \mid \text{slopes fixed}) + \text{Var}(\text{slopes across groups})$$
 
 OLS only captures the first term — the **sampling variance** given fixed slopes. It completely ignores the second term — the **between-group variance in slopes** (`τ²_β`).
 
@@ -79,13 +79,13 @@ We use Anthropic's publicly released data from their [HuggingFace repository](ht
 
 We fit a Bayesian hierarchical model using `brms` (Bürkner 2017) with random intercepts and slopes by country group:
 
-**log(AUI)<sub>i</sub> = α + α<sub>g[i]</sub> + (β + β<sub>g[i]</sub>) × log(GDP)<sub>i</sub> + ε<sub>i</sub>**
+$$\log(\text{AUI})_i = \alpha + \alpha_{g[i]} + (\beta + \beta_{g[i]}) \times \log(\text{GDP})_i + \varepsilon_i$$
 
 where:
-- g[i] = group for country i (7 groups)
-- α<sub>g</sub> ~ N(0, σ<sub>α</sub>) — random intercepts by group
-- β<sub>g</sub> ~ N(0, σ<sub>β</sub>) — random slopes by group
-- ε<sub>i</sub> ~ N(0, σ) — residual error
+- $g[i]$ = group for country $i$ (7 groups)
+- $\alpha_g \sim N(0, \sigma_\alpha)$ — random intercepts by group
+- $\beta_g \sim N(0, \sigma_\beta)$ — random slopes by group
+- $\varepsilon_i \sim N(0, \sigma)$ — residual error
 
 ### Group Construction
 

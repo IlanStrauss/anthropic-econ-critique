@@ -131,7 +131,7 @@ Anthropic uses OLS on log-transformed data, pooling all countries. This assumes 
 
 We run **three separate OLS regressions** — one for each income tercile (low, middle, high):
 
-**ln(AUI) = α + β × ln(GDP per capita) + ε**
+$$\ln(\text{AUI}) = \alpha + \beta \times \ln(\text{GDP per capita}) + \varepsilon$$
 
 This highlights the heterogeneity that Anthropic's pooled estimate obscures:
 - Low-income: β = 0.76 (SE = 0.19)

@@ -44,12 +44,12 @@ The slopes differ substantially. Low-income countries (red) show a steep relatio
 
 **Note on data coverage:** China is not included in Anthropic's dataset. India and Indonesia are included but classified as *low-income* based on GDP per working-age capita—they are not in the middle-income tercile. The 38 middle-income countries range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
 
-| Income Level | GDP Elasticity (β) |
-|--------------|-------------------|
-| Low income | 0.76 |
-| **Middle income** | **0.44** |
-| High income | 0.63 |
-| Anthropic (pooled) | 0.70 |
+| Income Level | GDP Elasticity (β) | N |
+|--------------|-------------------|---|
+| Low income | 0.76 | 38 |
+| **Middle income** | **0.44** | **38** |
+| High income | 0.63 | 38 |
+| Anthropic (pooled) | 0.70 | 114 |
 
 Middle-income countries show a 37% weaker relationship than Anthropic's global estimate.
 

@@ -12,6 +12,8 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 **Using their own data, we show this is not true for middle-income countries — where much of the world's population resides.**
 
+*Note: Anthropic's research paper contains a number of important findings — on occupational exposure, task automation, and more. We focus here on just one claim: the GDP per capita relationship.*
+
 ## Why This Matters
 
 The head of economics at Anthropic, Peter McCrory, told the *Financial Times*: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." Yet I try to show that Anthropic's latest research does not provide much evidence on the question of if AI will create more or less convergence in global income levels between countries.

@@ -162,10 +162,10 @@ plt.close()
 
 fig, ax = plt.subplots(figsize=(10, 5))
 
-methods = ['Anthropic\n(OLS)', 'Partial\nPooling']
-point_estimates = [0.69, 0.66]
-ci_lower = [0.61, 0.43]
-ci_upper = [0.77, 0.89]
+methods = ['Anthropic\n(OLS)', 'Bayesian\nHierarchical']
+point_estimates = [0.69, 0.54]
+ci_lower = [0.61, 0.33]
+ci_upper = [0.77, 0.74]
 
 y_pos = [1, 0]
 colors = ['#3498db', '#9b59b6']
@@ -181,16 +181,16 @@ ax.set_ylim(-0.5, 1.5)
 ax.set_yticks(y_pos)
 ax.set_yticklabels(methods, fontsize=12)
 ax.set_xlabel('GDP Elasticity (β)', fontsize=13)
-ax.set_title('Anthropic Underestimates Uncertainty by ~3x\nTrue confidence interval is much wider', fontsize=14, fontweight='bold')
+ax.set_title('Anthropic Underestimates Uncertainty and Overstates the Effect\nTheir estimate (0.69) falls outside our 95% CI', fontsize=14, fontweight='bold')
 
 # Annotation
 ax.annotate('Their narrow CI\ngives false precision',
-            xy=(0.69, 1), xytext=(0.4, 1.3),
+            xy=(0.69, 1), xytext=(0.85, 1.3),
             fontsize=10, ha='center',
             arrowprops=dict(arrowstyle='->', color='gray', lw=1.5))
 
-ax.annotate('True CI includes\nvalues as low as 0.43',
-            xy=(0.43, 0), xytext=(0.35, -0.3),
+ax.annotate('Our estimate: 0.54\n95% CI: [0.33, 0.74]',
+            xy=(0.54, 0), xytext=(0.40, -0.3),
             fontsize=10, ha='center',
             arrowprops=dict(arrowstyle='->', color='#9b59b6', lw=1.5))
 

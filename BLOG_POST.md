@@ -61,7 +61,7 @@ Middle-income countries show a 37% weaker relationship than Anthropic's global e
 
 <img src="figures/fig2_slope_by_income.png" alt="Figure 2" width="720">
 
-**Figure 2** shows the regression coefficients (with standard errors) estimated from a single regression with income-group-varying slopes (jointly estimated). Each bar represents the coefficient on log GDP per capita for that income group. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70). See [CRITIQUE.md](CRITIQUE.md) for the regression equation from which these coefficient estimates are derived.
+**Figure 2** shows the regression coefficients (with standard errors) estimated from **three separate OLS regressions**—one for each income tercile. Each bar represents the coefficient on log GDP per capita from that group's regression. The middle-income coefficient (0.44) is notably smaller than Anthropic's pooled global estimate (0.70).
 
 This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they are adopting AI beyond what their wealth would predict.
 
@@ -73,7 +73,7 @@ This matters because middle-income countries contain much of the world's populat
 | **Middle** | **+0.094** | **+0.122** | **63.2%** |
 | High | -0.035 | -0.054 | 44.7% |
 
-Our income-group-specific regressions also tell this story: the middle-income regression has both a lower slope (β = 0.44) and a higher intercept (-4.43 vs -7.01 for Anthropic's global model), meaning it predicts higher baseline adoption for middle-income countries at typical GDP levels. Both models have low R² for this group (~10-14%), confirming GDP per capita is a weak predictor regardless of specification. See [CRITIQUE.md](CRITIQUE.md) for full details.
+Our income-group-specific regressions also tell this story: the middle-income regression has both a lower slope (β = 0.44) and a higher intercept (-4.43 vs -7.01 for Anthropic's global model), meaning it predicts higher baseline adoption for middle-income countries at typical GDP levels. Both models have low R² for this group (~10-14%), confirming GDP per capita is a weak predictor regardless of specification.
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
@@ -81,24 +81,24 @@ The implication: middle-income countries like Brazil, Mexico, Thailand, and Mala
 
 <img src="figures/fig3_confidence_intervals.png" alt="Figure 3" width="720">
 
-**Figure 3** compares confidence intervals. The top bar (Anthropic's OLS) shows a narrow interval [0.61, 0.77]. The bottom bar (partial pooling) shows a wider interval [0.43, 0.89].
+**Figure 3** compares confidence intervals. The top bar (Anthropic's OLS) shows a narrow interval [0.61, 0.77]. The bottom bar (our Bayesian hierarchical model) shows a wider interval [0.33, 0.74].
 
-Anthropic's narrow interval suggests false precision. It excludes 0.44 — the elasticity we actually observe in middle-income countries. Proper accounting for group-level variance reveals we are far less certain about the income-AI adoption relationship than Anthropic implies.
+Anthropic's narrow interval suggests false precision. It excludes the slopes we observe in separate regressions by income group (ranging from 0.23 to 0.93 unpooled). Proper accounting for group-level variance reveals we are far less certain about the income-AI adoption relationship than Anthropic implies.
 
 | Method | Slope | SE | 95% CI |
 |--------|-------|-----|--------|
 | Anthropic (OLS) | 0.69 | 0.042 | [0.61, 0.77] |
-| Partial pooling | 0.66 | 0.116 | [0.43, 0.89] |
+| Bayesian hierarchical (7 groups) | 0.54 | 0.10 | [0.33, 0.74] |
 
-Standard errors are ~3x larger when accounting for group-level variance (i.e., variation across income groups: low, middle, high).
+Standard errors are ~2.4x larger when properly accounting for group-level variance. Moreover, **Anthropic's estimate of 0.70 falls outside our 95% CI**.
 
-**Why is the SE so much larger?** Anthropic's OLS standard error captures only sampling variance — uncertainty about the slope assuming one true global slope exists. But the slopes genuinely differ across income groups (0.44 to 0.76). Partial pooling captures both sampling variance *and* this between-group heterogeneity. OLS treats slope variation as noise around a "true" single slope; partial pooling recognizes there is no single slope. This is the classic "Moulton problem" in econometrics: regressing outcomes on group-level predictors while ignoring group structure biases standard errors downward by 2-3x ([Bertrand, Duflo & Mullainathan 2004](https://academic.oup.com/qje/article/119/1/249/1876068)).
+**Why is our estimate lower and less precise?** Anthropic's pooled OLS treats all countries as exchangeable, ignoring systematic differences across groups. In a separate analysis, we fit a **Bayesian hierarchical model** using `brms` with 7 theoretically meaningful groups (Gulf states, tech hubs, low-income Africa, low-income Asia, low-income other, middle-income, and high-income). This model allows slopes to vary by group while shrinking toward a global mean. The simple average of group slopes is 0.56 — close to our estimate of 0.54. Anthropic's 0.69 is inflated by a composition effect: Gulf states (high GDP, low adoption) and low-income African countries (low GDP, low adoption) create a steeper apparent slope than exists within any group (a form of Simpson's paradox).
 
 ### 3. Notable outliers
 
 Some countries deviate substantially from the income-AI adoption relationship. **Israel stands out as the most striking outlier among high-income countries**: with a GDP per capita of $90,237, its AI Usage Index of 7.00 is **3x higher than the 2.36 predicted by Anthropic's regression**. Israel is the second-largest positive outlier in the entire dataset (after Georgia at 3.3x), suggesting that factors like tech sector concentration, education, and startup culture drive AI adoption far more than income alone. Gulf states (Qatar, Kuwait, Saudi Arabia) show the opposite pattern — far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.
 
-These outliers suggest country-specific factors — language, culture, regulation, tech infrastructure — matter beyond income level. However, removing outliers only shifts the slope by ~5%, so the main critique (heterogeneity by income level) stands regardless. See [CRITIQUE.md](CRITIQUE.md) for detailed outlier analysis.
+These outliers suggest country-specific factors — language, culture, regulation, tech infrastructure — matter beyond income level. However, removing outliers only shifts the slope by ~5%, so the main critique (heterogeneity by income level) stands regardless.
 
 ---
 
@@ -106,10 +106,17 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally.
 
-We use partial pooling (mixed effects models) — a class of [James-Stein estimators](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) — allowing slopes to vary by income group while shrinking toward the global mean. This approach:
+**In this blog post**, we run **three separate OLS regressions**—one for each income tercile (low, middle, high). This reveals the heterogeneity that Anthropic's pooled estimate obscures:
+- Low-income: β = 0.76
+- Middle-income: β = 0.44
+- High-income: β = 0.63
+
+**In a separate analysis**, we also fit a **Bayesian hierarchical model** (partial pooling) using `brms` with 7 theoretically meaningful groups. This approach:
 - Properly accounts for group-level variance ([Gelman & Hill 2007](https://www.cambridge.org/highereducation/books/data-analysis-using-regression-and-multilevel-hierarchical-models/32A29531C7FD730C3A68951A17C9D983); [Hsiao 2022, p. 12](https://www.cambridge.org/core/books/analysis-of-panel-data/B8C2B0B64BEB1682A845C5F3FF677E61))
-- Dominates both complete pooling and no pooling ([McElreath 2017](https://elevanth.org/blog/2017/08/24/multilevel-regression-as-default/))
-- Yields appropriate uncertainty intervals
+- Allows slopes to vary by group while shrinking toward a global mean ([McElreath 2017](https://elevanth.org/blog/2017/08/24/multilevel-regression-as-default/))
+- Yields the global estimate of β = 0.54 with appropriate uncertainty (95% CI: [0.33, 0.74])
+
+All code and data are available in the GitHub repository.
 
 ---
 

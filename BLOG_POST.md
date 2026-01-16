@@ -12,8 +12,6 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 **Using their own data, we show this is not true for middle-income countries — where much of the world's population resides.**
 
-**A striking example: South Korea vs USA.** The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, the USA should have dramatically higher adoption. It doesn't. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
-
 ## Why This Matters
 
 Anthropic's divergence scenario is less clear-cut than they suggest. The head of economics at Anthropic, Peter McCrory, told the *Financial Times*: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
@@ -43,6 +41,8 @@ Anthropic also finds that human education — the sophistication of user prompts
 **Figure 1** shows the relationship between GDP per capita (income level) and AI usage. Left panel: Anthropic's approach — one regression line through all countries. Right panel: separate lines by income tercile.
 
 The slopes differ substantially. Low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one. Anthropic's single line averages over this heterogeneity, obscuring that middle-income countries achieve AI adoption beyond what their income level alone would predict.
+
+**A striking example: South Korea vs USA.** The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, the USA should have dramatically higher adoption. It doesn't. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
 
 **Note on data coverage:** China is not included in Anthropic's dataset. India and Indonesia are included but classified as *low-income* based on GDP per working-age capita — they are not in the middle-income tercile. The 38 middle-income countries range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
 
@@ -90,9 +90,9 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally.
 
-We use partial pooling (mixed effects models), allowing slopes to vary by income group while shrinking toward the global mean. This approach:
+We use partial pooling (mixed effects models) — a class of [James-Stein estimators](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator) — allowing slopes to vary by income group while shrinking toward the global mean. This approach:
 - Properly accounts for group-level variance ([Gelman & Hill 2007](https://www.cambridge.org/highereducation/books/data-analysis-using-regression-and-multilevel-hierarchical-models/32A29531C7FD730C3A68951A17C9D983))
-- Dominates both complete pooling and no pooling ([Stein 1956](https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator); [McElreath 2017](https://elevanth.org/blog/2017/08/24/multilevel-regression-as-default/))
+- Dominates both complete pooling and no pooling ([McElreath 2017](https://elevanth.org/blog/2017/08/24/multilevel-regression-as-default/))
 - Yields appropriate uncertainty intervals
 
 ---

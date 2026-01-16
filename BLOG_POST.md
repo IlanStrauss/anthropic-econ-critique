@@ -80,6 +80,8 @@ Standard errors are ~3x larger when accounting for group-level variance (i.e., v
 
 Some countries deviate substantially from the income-AI adoption relationship. Israel has 3x the AI usage predicted by its income level. Gulf states (Qatar, Kuwait, Saudi Arabia) have far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.
 
+**A striking example: South Korea vs USA.** The United States has a GDP per capita of $132,532—**2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, the USA should have dramatically higher adoption. It doesn't. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
+
 These outliers suggest country-specific factors—language, culture, regulation, tech infrastructure—matter beyond income level. However, removing outliers only shifts the slope by ~5%, so the main critique (heterogeneity by income level) stands regardless. See [CRITIQUE.md](CRITIQUE.md) for detailed outlier analysis.
 
 ---

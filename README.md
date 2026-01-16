@@ -32,6 +32,8 @@ Using Anthropic's own data we estimate seperate regression estimates for differe
 
 The real question of divergence in economic growth between countries arising from AI investment requires a seperate analysis.
 
+![Their View vs Our View](figures/fig1_their_view_vs_ours.png)
+
 ## Key Findings
 
 See [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full write-up.

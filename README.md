@@ -1,5 +1,5 @@
 # Does Anthropic's Economic Index really show growing international divergence in AI adoption and impacts? 
-## A critique
+## A Critique
 
 **Authors**: Ilan Strauss
 **AI Disclosures Project**

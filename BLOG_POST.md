@@ -44,9 +44,9 @@ Elsewhere, Anthropic also finds that human education — the sophistication of u
 
 ![Figure 1](figures/fig1_their_view_vs_ours.png)
 
-**Figure 1** shows the relationship between GDP per capita (income level) and AI usage. Left panel: Anthropic's approach — one estimated OLS regression line (slope) through all countries. Right panel: separate OLS estimated regression lines (slop coefficients) by income tercile.
+**Figure 1** shows the estimated relationship between GDP per capita (income level) and AI usage from regressions. Left panel: Anthropic's regression approach — one estimated OLS regression line (slope) through all countries. Right panel: separate OLS estimated regression lines (slope coefficients) by income tercile.
 
-**The estimated slope relationships differ substantially by country income group**. Low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one. Anthropic's single line averages over this heterogeneity, obscuring that middle-income countries achieve AI adoption beyond what their income level alone would predict. 
+**The estimated slope relationships differ substantially by country income group in our regression**. Low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one. Anthropic's single line averages over this heterogeneity, obscuring that middle-income countries achieve AI adoption beyond what their income level alone would predict. 
 
 *But we can see considerable heterogeneity (i.e. differences) within other income groups too*. And we run a partial pooling regression elsewhere that recognizes this ([PARTIAL_POOLING.md](PARTIAL_POOLING.md)).
 

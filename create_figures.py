@@ -119,7 +119,6 @@ ax2.legend(loc='lower right', fontsize=11)
 plt.tight_layout()
 plt.savefig('figures/fig1_their_view_vs_ours.png', dpi=150, bbox_inches='tight')
 plt.close()
-print("Saved: fig1_their_view_vs_ours.png")
 
 # =============================================================
 # FIGURE 2: Slope comparison by income level
@@ -156,7 +155,6 @@ ax.annotate('Middle-income countries:\nGDP per capita barely predicts AI usage!'
 plt.tight_layout()
 plt.savefig('figures/fig2_slope_by_income.png', dpi=150, bbox_inches='tight')
 plt.close()
-print("Saved: fig2_slope_by_income.png")
 
 # =============================================================
 # FIGURE 3: Confidence interval comparison
@@ -199,7 +197,6 @@ ax.annotate('True CI includes\nvalues as low as 0.43',
 plt.tight_layout()
 plt.savefig('figures/fig3_confidence_intervals.png', dpi=150, bbox_inches='tight')
 plt.close()
-print("Saved: fig3_confidence_intervals.png")
 
 # =============================================================
 # FIGURE 4: Outliers and influential observations
@@ -239,7 +236,6 @@ ax.legend(handles=[red_patch, blue_patch], loc='lower right', fontsize=10)
 plt.tight_layout()
 plt.savefig('figures/fig4_outliers.png', dpi=150, bbox_inches='tight')
 plt.close()
-print("Saved: fig4_outliers.png")
 
 # =============================================================
 # FIGURE 5: Policy implications diagram
@@ -282,6 +278,4 @@ ax.set_title('Different Methods, Different Policy Implications', fontsize=15, fo
 plt.tight_layout()
 plt.savefig('figures/fig5_policy_implications.png', dpi=150, bbox_inches='tight')
 plt.close()
-print("Saved: fig5_policy_implications.png")
 
-print("\n✓ All figures saved to figures/ directory")

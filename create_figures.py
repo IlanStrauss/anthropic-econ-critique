@@ -191,7 +191,7 @@ ax.set_ylim(-0.5, 1.5)
 ax.set_yticks(y_pos)
 ax.set_yticklabels(methods, fontsize=12)
 ax.set_xlabel('GDP Elasticity (β)', fontsize=13)
-ax.set_title('Anthropic Underestimates Uncertainty and Overstates the Effect\nTheir estimate (0.69) falls outside our 95% CI', fontsize=14, fontweight='bold')
+ax.set_title('Accounting for Heterogeneity Widens the Confidence Interval\nTheir narrow CI [0.61, 0.77] excludes the middle-income estimate (0.44)', fontsize=14, fontweight='bold')
 
 # Annotation
 ax.annotate('Their narrow CI\ngives false precision',

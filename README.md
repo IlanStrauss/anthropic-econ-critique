@@ -22,15 +22,15 @@ Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/resea
 
 The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered this with Anthropic's head of economics warning: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
 
-**Using their own data, we show that a country's income levels (GDP per capita) does not drive AI adoption for middle-income countries in particular — where much of the world's population resides.** Moreover, no evidence on "productivity gains" are provided in Anthropic's report.
+**Using their own data, we show that a country's income level (GDP per capita) does not drive AI adoption for middle-income countries in particular — where much of the world's population resides.** Moreover, no evidence on "productivity gains" is provided in Anthropic's report.
 
-Using Anthropic's own data we estimate seperate regression estimates for different country groups and find that:
+Using Anthropic's own data we estimate separate regression estimates for different country groups and find that:
 1. **The income-AI adoption relationship varies dramatically by income level** — from 0.44 (middle-income) to 0.76 (low-income)
 2. **Middle-income countries adopt AI beyond what their income predicts** — education, infrastructure, and policy, for example, may drive adoption more
 3. **Their uncertainty is underestimated** (~3x) due to ignoring country-level heterogeneity
 4. **No evidence supporting divergence is provided** — their single (pooled) cross-sectional estimate does not imply growing divergence in AI adoption between countries (or resulting GDP growth). If anything, their data more closely supports convergence in AI adoption. 
 
-The real question of divergence in economic growth between countries arising from AI investment requires a seperate analysis.
+The real question of divergence in economic growth between countries arising from AI investment requires a separate analysis.
 
 ![Their View vs Our View](figures/fig1_their_view_vs_ours.png)
 
@@ -40,7 +40,7 @@ The real question of divergence in economic growth between countries arising fro
 
 | Method | GDP Elasticity (β) | Std. Error | 95% CI |
 |--------|-------------------|------------|--------|
-| Anthropic OLS | 0.70 | 0.042 | [0.61, 0.77] |
+| Anthropic OLS | 0.69 | 0.042 | [0.61, 0.77] |
 | Partial Pooling (7 groups) | 0.54 | 0.10 | [0.33, 0.74] |
 
 ### Slope Heterogeneity by Income Level (from separate OLS regressions)
@@ -60,7 +60,7 @@ Anthropic's analysis implies a simple story: **higher income → more AI adoptio
 | Anthropic's Claim | Our Finding | Implication |
 |-------------------|-------------|-------------|
 | "Worldwide, uneven [AI] adoption remains well-explained by GDP per capita" | Not true for middle-income countries (β = 0.44) | Most of the world's population does not fit their story |
-| Single global elasticity of 0.70 | Elasticity varies from 0.44 to 0.76 | One-size-fits-all policy is inappropriate |
+| Single global elasticity of 0.69 | Elasticity varies from 0.44 to 0.76 | One-size-fits-all policy is inappropriate |
 | Tight confidence interval [0.61, 0.77] | True interval is [0.33, 0.74] | We're far less certain about this relationship than they suggest |
 
 ### A Striking Example: South Korea vs USA

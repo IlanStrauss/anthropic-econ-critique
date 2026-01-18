@@ -43,6 +43,17 @@ Anthropic's head of economics told the [*Financial Times*](https://www.ft.com/co
 
 Anthropic pools all countries, assuming one relationship applies equally to Nigeria and Norway. We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex) and find this assumption is [biased](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) — different income groups show different relationships.
 
+**Why does pooled R² look good while group-level R²s are weak?** This reflects the difference between *between-group* and *within-group* variation. The pooled regression (R² = 0.56) captures the obvious fact that low-income countries cluster at low GDP + low AI usage while high-income countries cluster at high GDP + high AI usage. But *within* each income group, GDP explains far less:
+
+| Group | R² | Interpretation |
+|-------|-----|----------------|
+| Global (pooled) | 0.56 | Captures between-group variation |
+| Low-income | 0.37 | Within-group: moderate fit |
+| High-income | 0.33 | Within-group: moderate fit |
+| **Middle-income** | **0.17** | Within-group: GDP explains almost nothing |
+
+The global R² is inflated by between-group differences. Within middle-income countries — where much of the world lives — GDP per capita explains only 17% of the variation in AI adoption.
+
 **The relationship breaks down for middle-income countries.** In November 2025 data, the middle-income coefficient is not statistically significant (β = 0.73, SE = 0.44, p = 0.105). This matters because middle-income countries contain much of the world's population.
 
 **The implication:** Countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for GDP growth to drive AI adoption — and aren't. Education, infrastructure, and regulatory environment may matter more than income. These are actionable policy levers.

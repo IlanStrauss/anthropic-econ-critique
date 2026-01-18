@@ -37,9 +37,9 @@ The real question of divergence in economic growth between countries arising fro
 
 ## Key Findings
 
-### Temporal Instability: August vs November 2025
+### Weak and Highly Uncertain with Little Explanatory Power
 
-Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), we find the GDP-AI adoption relationship is unstable:
+Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *(we find the GDP-AI adoption relationship is weak and highly uncertain**, showing instability in estimation across periods:
 
 | Income Group | Period | Slope (β) | Std. Error | p-value | Significant? | R² | N |
 |--------------|--------|-----------|------------|---------|--------------|-----|---|
@@ -54,13 +54,13 @@ Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), w
 
 Key observations:
 - **Middle-income relationship is NOT statistically significant** in the November 2025 data (p = 0.105)
-- Standard error for middle-income more than doubled (0.18 → 0.44)
-- R² for middle-income fell from 14% to just 7% — GDP explains almost nothing
-- Sample composition barely changed (36 of 38 countries same in both periods)
+- Standard error for middle-income more than double between the two datasets (0.18 → 0.44)
+- R² for middle-income fell from 14% to just 7% — GDP per capita explains very little abotu relative AI adoption
+- Sample composition barely changes though (36 of 38 countries same in both periods)
 
 ## Why This Matters: Policy Implications
 
-Anthropic's analysis implies a simple story: **higher income → more AI adoption**. Our findings show this story does not hold for middle-income countries.
+Anthropic's analysis implies a simple story: **higher country income level → more AI adoption**. Our findings show this story does not hold for middle-income countries.
 
 ### Their Story vs. Our Story
 

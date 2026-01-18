@@ -23,7 +23,7 @@ The head of economics at Anthropic, Peter McCrory, told the [*Financial Times*](
 
 2) Anthropic's AI Usage Index (AUI)[^1] measures **relative usage intensity** — how countries rank against each other in their usage of Claude — not absolute adoption levels. The estimated regression coefficients from the GDP per capita-AI Adoption relationship can only tell us that income levels predicts that certain countries use Claude more *relative to other countries*, but says nothing about whether that usage is economically meaningful at all. A country could rank highly on AUI while still having negligible actual AI adoption.
 
-3) *Moreover, as we focus on in this note, Anthropic's data when analyzed properly shows more reason to predict convergence in AI adoption*: since **middle-income countries are adopting AI more than what their income level predicts**, when allowing for GDP per capita's impact on AI adoption to vary by a country's initial income level. Additionally, low-income countries have the largest coefficient (0.76 vs 0.63 for high-income), meaning a given percentage increase in their GDP per capita translates into greater AI adoption gains for these poorer countries than richer ones. This is the opposite of the divergence story.[^3]
+3) *Moreover, as we focus on in this note, Anthropic's data when analyzed properly shows more reason to predict convergence in AI adoption*: since **middle-income countries are adopting AI more than what their income level predicts**, when allowing for GDP per capita's impact on AI adoption to vary by a country's initial income level. In the November 2025 data, the middle-income relationship is highly uncertain (SE = 0.44, p = 0.105) with a very poor fit (R² = 0.07) — GDP per capita explains almost nothing about AI adoption for these countries.
 
 ### Do not pool data: all countries are not alike
 Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between how income level impacts AI adoption is the same everywhere — a single parameter represents the strength and nature of this relationship and applies equally to Nigeria and Norway alike. 
@@ -44,25 +44,20 @@ Elsewhere, Anthropic also finds that human education — the sophistication of u
 
 ![Figure 1](figures/fig1_their_view_vs_ours.png)
 
-**Figure 1** shows the estimated relationship between GDP per capita (income level) and AI usage from regressions. Left panel: Anthropic's regression approach — one estimated OLS regression line (slope) through all countries. Right panel: separate OLS estimated regression lines (slope coefficients) by income tercile.
+**Figure 1** shows separate OLS regression lines by income tercile using Anthropic's November 2025 data. Left panel: with all countries. Right panel: excluding Seychelles.
 
-**The estimated slope relationships differ substantially by country income group in our regression**. Low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one. Anthropic's single line averages over this heterogeneity, obscuring that middle-income countries achieve AI adoption beyond what their income level alone would predict. 
+**The key finding: one data anomaly is driving the high uncertainty in the middle-income relationship.** Seychelles has a usage index 488 times higher than the next highest middle-income country — almost certainly reflecting VPN/proxy traffic routed through this offshore jurisdiction rather than genuine local adoption. With Seychelles included (left panel), the middle-income relationship appears statistically insignificant (p = 0.105) with massive uncertainty (SE = 0.44). Without Seychelles (right panel), the relationship becomes significant but **weak** — the middle-income slope (β = 0.44) is much lower than the global slope (0.70).
 
-*We can see considerable heterogeneity (i.e. differences) within other income groups too*. The key finding is that for middle-income countries specifically, the relationship is weak and highly uncertain.
+This highlights two issues with Anthropic's analysis: (1) their usage data needs adjustment for VPN/proxy traffic to be meaningful for cross-country comparisons, and (2) even after removing the outlier, the GDP-AI adoption relationship is much weaker for middle-income countries than their pooled estimate suggests.
 
-**A striking example: South Korea vs USA**. The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, then the USA might be expected to have considerably higher adoption. It does not.
+| Income Group | With Seychelles | Without Seychelles |
+|--------------|-----------------|-------------------|
+| **Middle income β** | 0.73 | **0.44** |
+| **Std. Error** | 0.44 | **0.16** |
+| **p-value** | 0.105 (not sig.) | **0.011** |
+| **R²** | 0.07 | **0.17** |
 
-This also suggests that first-mover advantage in AI innovation does not necessarily translate into higher adoption, contrary to the divergence narrative in the [*Financial Times* article](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) cited above. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
-
-| Income Group | Period | Slope (β) | Std. Error | p-value | Significant? | N |
-|--------------|--------|-----------|------------|---------|--------------|---|
-| **Global** | Nov 2025 | 0.71 | 0.06 | <0.001 | Yes | 116 |
-| **Low income** | Nov 2025 | 0.85 | 0.18 | <0.001 | Yes | 39 |
-| **Middle income** | **Nov 2025** | **0.73** | **0.44** | **0.105** | **No** | **38** |
-| **High income** | Nov 2025 | 0.67 | 0.16 | <0.001 | Yes | 39 |
-| Middle income | Aug 2025 | 0.44 | 0.18 | 0.019 | Yes (weak) | 38 |
-
-**For middle-income countries, the relationship is not statistically significant** in the November 2025 data used in Anthropic's report (p = 0.105). The standard error (0.44) is 2-3x larger than other income groups, and GDP per capita explains only 7% of the variation (R² = 0.07).
+Notably, the middle-income results **without Seychelles** (β = 0.44, SE = 0.16, p = 0.011) are nearly identical to an earlier August 2025 data release (β = 0.44, SE = 0.18, p = 0.019) — before Seychelles entered the dataset. The apparent "instability" between periods was entirely driven by this single VPN-related outlier.
 
 <img src="figures/fig2_uncertainty_by_group.png" alt="Figure 2" width="720">
 
@@ -165,4 +160,3 @@ Code and data: [github.com/IlanStrauss/anthropic-econ-critique](https://github.c
 
 [^2]: **How Anthropic measures GDP per capita:** Anthropic uses GDP per working-age capita (ages 15-64) from the World Bank's World Development Indicators, in current US dollars (nominal). This differs from standard GDP per capita which divides by total population.
 
-[^3]: **Caveat on convergence interpretation:** This interpretation assumes comparable GDP growth rates across income groups. If high-income countries grow faster in percentage terms, absolute gaps in AI adoption could still widen despite poorer countries having a higher coefficient. However, historically, lower-income countries have often exhibited higher GDP growth rates (conditional convergence), which would reinforce the convergence dynamic suggested here.

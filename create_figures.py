@@ -23,35 +23,58 @@ import os
 os.makedirs('figures', exist_ok=True)
 
 # =============================================================
-# FIGURE 1: GDP vs AI Usage by Income Group (November 2025 data)
+# FIGURE 1: With vs Without Seychelles (November 2025 data)
 # =============================================================
 
-fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+# Create clean dataset without Seychelles
+df_clean = df[df['geo_id'] != 'SYC'].copy()
+
+# Global OLS for later use
+X = sm.add_constant(df_clean['log_gdp'])
+ols = sm.OLS(df_clean['log_usage'], X).fit()
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 7))
+
+# Add figure title with data source info
+fig.suptitle("Replicating Anthropic's Economic Index (January 2026 Report)\nData: November 13-20, 2025 from Anthropic's HuggingFace release",
+             fontsize=12, style='italic', y=0.98)
 
 # Colors for income terciles
 colors = {'Low': '#e74c3c', 'Mid': '#f39c12', 'High': '#27ae60'}
 
-# Left panel: Anthropic's view (single line)
+# Left panel: WITH Seychelles (showing the problem)
 ax1 = axes[0]
-ax1.scatter(df['log_gdp'], df['log_usage'], c='steelblue', alpha=0.6, s=60, edgecolor='white', linewidth=0.5)
-
-# OLS fit
-X = sm.add_constant(df['log_gdp'])
-ols = sm.OLS(df['log_usage'], X).fit()
-x_line = np.linspace(df['log_gdp'].min(), df['log_gdp'].max(), 100)
-ax1.plot(x_line, ols.params['const'] + ols.params['log_gdp'] * x_line,
-         'k-', linewidth=3, label=f'OLS: beta = {ols.params["log_gdp"]:.2f}')
-
-ax1.set_xlabel('ln(GDP per working-age capita)', fontsize=12)
-ax1.set_ylabel('ln(AI Usage Index)', fontsize=12)
-ax1.set_title("Anthropic's View: One Global Relationship\nbeta = 0.71, p < 0.001", fontsize=13, fontweight='bold')
-ax1.legend(loc='lower right', fontsize=11)
-
-# Right panel: Our view (separate lines by income)
-ax2 = axes[1]
 
 for tercile in ['Low', 'Mid', 'High']:
     subset = df[df['income_group'] == tercile]
+    ax1.scatter(subset['log_gdp'], subset['log_usage'], c=colors[tercile],
+                alpha=0.7, s=60, edgecolor='white', linewidth=0.5, label=f'{tercile} income')
+
+    # Fit line for each group
+    X_sub = sm.add_constant(subset['log_gdp'])
+    ols_sub = sm.OLS(subset['log_usage'], X_sub).fit()
+    x_sub = np.linspace(subset['log_gdp'].min(), subset['log_gdp'].max(), 50)
+    linestyle = '--' if tercile == 'Mid' else '-'
+    ax1.plot(x_sub, ols_sub.params['const'] + ols_sub.params['log_gdp'] * x_sub,
+             c=colors[tercile], linewidth=2.5, linestyle=linestyle)
+
+# Label Seychelles
+syc = df[df['geo_id'] == 'SYC']
+ax1.annotate('Seychelles\n(VPN anomaly)', (syc['log_gdp'].values[0], syc['log_usage'].values[0]),
+             fontsize=10, fontweight='bold', ha='center',
+             xytext=(-50, -20), textcoords='offset points',
+             arrowprops=dict(arrowstyle='->', color='black'))
+
+ax1.set_xlabel('ln(GDP per working-age capita)', fontsize=12)
+ax1.set_ylabel('ln(AI Usage Index)', fontsize=12)
+ax1.set_title("With Seychelles: Middle-Income NOT Significant\nMid: β=0.73, SE=0.44, p=0.105, R²=0.07", fontsize=13, fontweight='bold')
+ax1.legend(loc='upper left', fontsize=10)
+
+# Right panel: WITHOUT Seychelles (clean relationship)
+ax2 = axes[1]
+
+for tercile in ['Low', 'Mid', 'High']:
+    subset = df_clean[df_clean['income_group'] == tercile]
     ax2.scatter(subset['log_gdp'], subset['log_usage'], c=colors[tercile],
                 alpha=0.7, s=60, edgecolor='white', linewidth=0.5, label=f'{tercile} income')
 
@@ -59,20 +82,17 @@ for tercile in ['Low', 'Mid', 'High']:
     X_sub = sm.add_constant(subset['log_gdp'])
     ols_sub = sm.OLS(subset['log_usage'], X_sub).fit()
     x_sub = np.linspace(subset['log_gdp'].min(), subset['log_gdp'].max(), 50)
-
-    # Dashed line for non-significant (middle income)
-    linestyle = '--' if tercile == 'Mid' else '-'
     ax2.plot(x_sub, ols_sub.params['const'] + ols_sub.params['log_gdp'] * x_sub,
-             c=colors[tercile], linewidth=2.5, linestyle=linestyle)
+             c=colors[tercile], linewidth=2.5, linestyle='-')
 
 ax2.set_xlabel('ln(GDP per working-age capita)', fontsize=12)
 ax2.set_ylabel('ln(AI Usage Index)', fontsize=12)
-ax2.set_title("Our View: Middle-Income Relationship NOT Significant\nLow: 0.85*, Mid: 0.73 (p=0.105), High: 0.67*", fontsize=13, fontweight='bold')
-ax2.legend(loc='lower right', fontsize=11)
+ax2.set_title("Without Seychelles: Middle-Income Relationship is WEAK\nMid: β=0.44, SE=0.16, p=0.011, R²=0.17", fontsize=13, fontweight='bold')
+ax2.legend(loc='lower right', fontsize=10)
 
-# Add annotation for middle income
-ax2.annotate('Middle income:\nNOT significant\n(p = 0.105)',
-             xy=(10.5, 0.5), fontsize=10, ha='center',
+# Add annotation
+ax2.annotate('Middle income slope (0.44)\nis much lower than\nglobal slope (0.70)',
+             xy=(10.2, 0.0), fontsize=10, ha='center',
              bbox=dict(boxstyle='round', facecolor='#f39c12', alpha=0.3))
 
 plt.tight_layout()

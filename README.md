@@ -46,6 +46,8 @@ We take issue with two claims or inferences:
 
 Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *we show that the GDP per capita - AI adoption relationship is weak and highly uncertain*, across both time periods:
 
+**Table: Regression Results — Anthropic's Global Estimate vs. Our Country-Group Estimates**
+
 | Income Group | Period | Slope (β) | Std. Error | p-value | Significant? | R² | N |
 |--------------|--------|-----------|------------|---------|--------------|-----|---|
 | **Global** | Aug 4-11 | 0.69 | 0.04 | <0.001 | Yes | 0.71 | 114 |

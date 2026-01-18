@@ -82,12 +82,6 @@ The key finding: GDP per capita is a weak predictor for middle-income countries 
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for GDP growth to drive AI adoption. These other factors are actionable policy levers.
 
-### Adoption is growing across all income groups
-
-![Figure 3](figures/fig3_adoption_over_time.png)
-
-**Figure 3** compares AI adoption (Usage Index) between August and November 2025 for the same countries. Points above the diagonal indicate increased adoption. Notably, adoption grew across all income groups — low, middle, and high — over this three-month period. This suggests AI diffusion is occurring broadly, not just in wealthy countries.
-
 ### 2. The middle-income relationship is weak and highly uncertain
 
 Anthropic reports a single global estimate (0.71) with a narrow confidence interval. But when we disaggregate by income group, **the middle-income relationship is not statistically significant** and has very high uncertainty.
@@ -154,6 +148,21 @@ China is not included in Anthropic's dataset.
 India and Indonesia are included but classified as *low-income* by Anthropic, who simply take countries' GDP per working-age capita and divide all the countries in their sample into three equal groups. This is a clear classification error. Both Indonesia (upper-middle) and India (lower-middle) are middle-income economies according to the World Bank's definition.
 
 The 38 middle-income countries in Anthropic's sample (i.e. using their income group definition based on dividing their dataset into thirds and calling each third a distinct income group) range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
+
+---
+
+## Appendix: Change in Adoption Between Data Releases
+
+Comparing the August 2025 and November 2025 data releases, we observe increased adoption across all income groups. However, this is only two snapshots three months apart and should be interpreted cautiously.
+
+![Figure A1](figures/fig3_adoption_over_time.png)
+
+| Income Group | N | Median Aug | Median Nov | Median % Change | % Countries Increased |
+|--------------|---|------------|------------|-----------------|----------------------|
+| Low | 38 | 0.26 | 0.32 | +22% | 76% |
+| Mid | 37 | 0.91 | 1.08 | +14% | 84% |
+| High | 38 | 2.16 | 2.63 | +26% | 90% |
+| All | 113 | 0.85 | 1.08 | +21% | 83% |
 
 ---
 

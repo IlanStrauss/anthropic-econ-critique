@@ -160,7 +160,7 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 ## Appendix: Evidence from Residuals
 
-The apparent "over-adoption" by middle-income countries is driven entirely by the Seychelles outlier. With Seychelles included, 63% of middle-income countries appear above the regression line; without it, only 41% are above — below the 50% threshold that would indicate no systematic pattern.
+The apparent "over-adoption" by middle-income countries is driven entirely by the Seychelles outlier. With Seychelles included, 63% of middle-income countries appear above the regression line; without it, only 41% are above.
 
 | Income Group | Mean Residual | Median Residual | % Above Prediction |
 |--------------|---------------|-----------------|-------------------|

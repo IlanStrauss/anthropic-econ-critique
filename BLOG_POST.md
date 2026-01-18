@@ -77,44 +77,13 @@ The global R² is inflated by between-group differences. Within middle-income co
 
 This highlights two issues with Anthropic's analysis: (1) their usage data needs adjustment for VPN/proxy traffic to be meaningful for cross-country comparisons, and (2) even after removing the outlier, the GDP-AI adoption relationship is much weaker for middle-income countries than their pooled estimate suggests.
 
-| Income Group | With Seychelles | Without Seychelles |
-|--------------|-----------------|-------------------|
-| **β** | 0.73 | **0.44** |
-| **Std. Error** | 0.44 | **0.16** |
-| **p-value** | 0.105 (not sig.) | **0.011** |
-| **R²** | 0.07 | **0.17** |
-
 Notably, the middle-income results **without Seychelles** (β = 0.44, SE = 0.16, p = 0.011) are nearly identical to an earlier August 2025 data release (β = 0.44, SE = 0.18, p = 0.019) — before Seychelles entered the dataset. The apparent "instability" between periods was entirely driven by this single VPN-related outlier.
 
 <img src="figures/fig2_uncertainty_by_group.png" alt="Figure 2" width="720">
 
 **Figure 2** shows the regression coefficients (with standard errors) estimated from **separate OLS regressions** by income group using the November 2025 data. The middle-income coefficient has a much larger error bar, reflecting high uncertainty — the relationship is statistically indistinguishable from zero.
 
-This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption.
-
-The key finding: GDP per capita is a weak predictor for middle-income countries (β = 0.44 vs 0.71 global, R² = 0.17). Other factors — education, digital infrastructure, English proficiency, regulatory environment — likely matter more for this group.
-
-The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for GDP growth to drive AI adoption. These other factors are actionable policy levers.
-
-### 2. The middle-income relationship is weak and highly uncertain
-
-Anthropic reports a single global estimate (0.71) with a narrow confidence interval. But when we disaggregate by income group, **the middle-income relationship is not statistically significant** and has very high uncertainty.
-
-| Income Group | Slope (β) | SE | p-value | R² |
-|--------------|-----------|-----|---------|-----|
-| Low-income | 0.85 | 0.18 | <0.001 | 0.37 |
-| **Middle-income** | **0.73** | **0.44** | **0.105** | **0.07** |
-| High-income | 0.67 | 0.16 | <0.001 | 0.33 |
-| Global (pooled) | 0.71 | 0.06 | <0.001 | 0.56 |
-
-Key observations:
-- **Middle-income SE (0.44) is 2-3x larger** than other groups
-- **Middle-income R² = 7%** — GDP explains almost nothing
-- **p = 0.105** — the coefficient is statistically indistinguishable from zero
-
-The middle-income coefficient may look similar to the global estimate (0.73 vs 0.71), but the huge standard error means we cannot conclude there is any meaningful relationship. Anthropic's pooled estimate masks this uncertainty by averaging over heterogeneous groups.
-
-### 3. Adoption *growth* is weakest for middle-income countries (Aug–Nov 2025)
+### 2. Adoption *growth* is weakest for middle-income countries (Aug–Nov 2025)
 
 [Anthropic claims](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) that "the AUI concentration across countries was essentially unchanged between our last report and this report," based on a Gini coefficient measure. However, the Gini coefficient captures a static snapshot — it can miss differential growth rates that compound into widening gaps over time.
 
@@ -141,7 +110,7 @@ This heterogeneity could reflect:
 
 The pattern is suggestive but should be interpreted cautiously.
 
-### 4. Policy Implications
+### 3. Policy Implications
 
 | Income Level | Anthropic's Implication | Our Finding |
 |--------------|------------------------|-------------|
@@ -153,15 +122,17 @@ For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level a
 
 The "divergence in living standards" Anthropic warns of is not inevitable. It depends on policy — policy their analysis obscures by pooling heterogeneous relationships.
 
-### 5. Notable outliers
+---
+
+## Appendix
+
+### Notable Outliers
 
 Some countries deviate substantially from the income-AI adoption relationship. **Israel stands out as the most striking outlier among high-income countries**: with a GDP per capita of $90,237, its AI Usage Index of 7.00 is **3x higher than the 2.36 predicted by Anthropic's regression**. Israel is the second-largest positive outlier in the entire dataset (after Georgia at 3.3x), suggesting that factors like tech sector concentration, education, and startup culture drive AI adoption far more than income alone. Gulf states (Qatar, Kuwait, Saudi Arabia) show the opposite pattern — far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.
 
 These outliers suggest country-specific factors — language, culture, regulation, tech infrastructure — matter beyond income level. However, removing outliers only shifts the slope by ~5%, so the main critique (heterogeneity by income level) stands regardless.
 
----
-
-## Appendix: Evidence from Residuals
+### Evidence from Residuals
 
 The apparent "over-adoption" by middle-income countries is driven entirely by the Seychelles outlier. With Seychelles included, 63% of middle-income countries appear above the regression line; without it, only 41% are above.
 

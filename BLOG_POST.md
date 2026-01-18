@@ -100,7 +100,21 @@ Key observations:
 
 The middle-income coefficient may look similar to the global estimate (0.73 vs 0.71), but the huge standard error means we cannot conclude there is any meaningful relationship. Anthropic's pooled estimate masks this uncertainty by averaging over heterogeneous groups.
 
-### 3. Policy Implications
+### 3. Adoption growth is weakest for middle-income countries
+
+Comparing Anthropic's two data releases (August and November 2025), we find that adoption growth was **weakest for middle-income countries** and **strongest for high-income countries**. This pattern — if it persists — could point to growing inequality of AI adoption over time.
+
+**Table 1: Change in AI adoption between August and November 2025 (Seychelles excluded)**
+
+| Income Group | N | Median Aug | Median Nov | Median % Change | % Countries Increased |
+|--------------|---|------------|------------|-----------------|----------------------|
+| Low | 38 | 0.26 | 0.32 | +22% | 76% |
+| **Mid** | **37** | **0.91** | **1.08** | **+14%** | **84%** |
+| High | 38 | 2.16 | 2.63 | +26% | 89% |
+
+Middle-income countries saw the smallest median percentage increase (+14%) compared to low-income (+22%) and high-income (+26%). While 84% of middle-income countries increased adoption, the magnitude of growth lagged behind other groups. This is only two snapshots three months apart and should be interpreted cautiously — but it suggests the weak GDP-adoption relationship for middle-income countries may translate into slower adoption growth.
+
+### 4. Policy Implications
 
 | Income Level | Anthropic's Implication | Our Finding |
 |--------------|------------------------|-------------|
@@ -112,7 +126,7 @@ For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level a
 
 The "divergence in living standards" Anthropic warns of is not inevitable. It depends on policy — policy their analysis obscures by pooling heterogeneous relationships.
 
-### 4. Notable outliers
+### 5. Notable outliers
 
 Some countries deviate substantially from the income-AI adoption relationship. **Israel stands out as the most striking outlier among high-income countries**: with a GDP per capita of $90,237, its AI Usage Index of 7.00 is **3x higher than the 2.36 predicted by Anthropic's regression**. Israel is the second-largest positive outlier in the entire dataset (after Georgia at 3.3x), suggesting that factors like tech sector concentration, education, and startup culture drive AI adoption far more than income alone. Gulf states (Qatar, Kuwait, Saudi Arabia) show the opposite pattern — far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.
 
@@ -148,20 +162,6 @@ China is not included in Anthropic's dataset.
 India and Indonesia are included but classified as *low-income* by Anthropic, who simply take countries' GDP per working-age capita and divide all the countries in their sample into three equal groups. This is a clear classification error. Both Indonesia (upper-middle) and India (lower-middle) are middle-income economies according to the World Bank's definition.
 
 The 38 middle-income countries in Anthropic's sample (i.e. using their income group definition based on dividing their dataset into thirds and calling each third a distinct income group) range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
-
----
-
-## Appendix: Change in Adoption Between Data Releases
-
-Anthropic released two datasets: August 4-11, 2025 (in their September 2025 report) and November 13-20, 2025 (in their January 2026 report). Comparing these two snapshots, we observe increased adoption across all income groups. However, this is only two snapshots three months apart and should be interpreted cautiously. Seychelles is excluded.
-
-<img src="figures/fig3_adoption_over_time.png" alt="Figure A1" width="500">
-
-| Income Group | N | Median Aug | Median Nov | Median % Change | % Countries Increased |
-|--------------|---|------------|------------|-----------------|----------------------|
-| Low | 38 | 0.26 | 0.32 | +22% | 76% |
-| Mid | 37 | 0.91 | 1.08 | +14% | 84% |
-| High | 38 | 2.16 | 2.63 | +26% | 89% |
 
 ---
 

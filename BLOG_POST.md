@@ -37,6 +37,8 @@ The head of economics at Anthropic, Peter McCrory, told the [*Financial Times*](
 
 3) *Moreover, as we focus on in this note*, GDP per capita is a **weak predictor of AI adoption for middle-income countries**. In the November 2025 data, when excluding the Seychelles outlier (likely VPN traffic), the middle-income relationship is weak (β = 0.44, SE = 0.16, p = 0.011) with poor explanatory power (R² = 0.17) — much weaker than the global estimate of 0.71.
 
+4) **The geographic analysis captures only consumer usage, not enterprise adoption.** Anthropic's country-level data comes entirely from Claude.ai (consumer) — their API data (enterprise) is only available at the global level with no country breakdown. If productivity gains from AI stem primarily from enterprise adoption, the geographic analysis misses where economic impacts would actually occur. The "divergence in living standards" warning rests on consumer chatbot patterns, not business productivity use.
+
 ### Do not pool data: all countries are not alike
 Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between how income level impacts AI adoption is the same everywhere — a single parameter represents the strength and nature of this relationship and applies equally to Nigeria and Norway alike. 
 

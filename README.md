@@ -29,19 +29,18 @@
 
 ## Overview
 
-Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims "Worldwide, uneven [AI] adoption remains well-explained by GDP per capita." 
+We take issue with two claims or inferences:
 
-The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered this with Anthropic's head of economics warning: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards."
+1) CORE CLAIM 1: Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims **"Worldwide, uneven [AI] adoption remains well-explained by GDP per capita."** 
 
-**Using their own data, we show that a country's income level (GDP per capita) does not meaningfully predict AI adoption for middle-income countries — where much of the world's population resides.** Moreover, no evidence on "productivity gains" is provided in Anthropic's report.
+- We show that the data does not support this. When broken down by income-group the fit is substantailly weaker and non-existant for middle-income countries, roughly one-third of the country sample.
 
-Using Anthropic's own data (both the November 2025 data from their January 2026 report and an earlier August 2025 release) we estimate separate regression estimates for different country groups and find that:
+2) CORE CLAIM 2: The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered Anthropic's research with the headling: **"Rich countries’ greater use of AI risks deepening inequality, Anthropic warns".**
 
-1. **For middle-income countries, GDP does not meaningfully predict AI adoption** — in the November 2025 data (used in their report), the relationship is not statistically meaningful (β = 0.73, SE = 0.44, p = 0.105); in the August 2025 data, the relationship is weak (β = 0.44, SE = 0.18, p = 0.019). The relationship is weak and highly uncertain — GDP per capita explains only 7-14% of the variation (R²), and the coefficient swings dramatically between periods (0.44 to 0.73) while remaining statistically weak or insignificant (N = 38 countries in each period)
-2. **Middle-income countries adopt AI beyond what their income predicts** — education, infrastructure, and policy may drive adoption more than income
-3. **No evidence supporting divergence is provided** — their single cross-sectional estimate does not imply growing divergence in AI adoption between countries (or resulting GDP growth). If anything, for middle-income countries, the data supports convergence in AI adoption.
+- This is misleading since none of their research provides evidence on this claim. The head of economics at Anthropic warns in the article: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." 
 
-The real question of divergence in economic growth between countries arising from AI investment requires a separate analysis.
+It is unclear how this relates to the research they have conducted which analyzes adoption of Claude, focusing on consumer adoption not firm-level (API), and not attempting to assess if changing adoption patterns reflects greater usage of ChatGPT or competing products instead
+
 
 ![Their View vs Our View](figures/fig1_their_view_vs_ours.png)
 

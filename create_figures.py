@@ -140,8 +140,8 @@ ax.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
 
 # Add arrow showing the difference
 ax.annotate('', xy=(3, 0.44), xytext=(2, 0.73),
-            arrowprops=dict(arrowstyle='->', color='black', lw=2))
-ax.text(2.5, 0.58, 'Removing\nSeychelles', ha='center', fontsize=10, fontweight='bold')
+            arrowprops=dict(arrowstyle='->', color='gray', lw=1, alpha=0.5))
+ax.text(2.5, 0.58, 'Removing\nSeychelles', ha='center', fontsize=10, color='gray', alpha=0.6)
 
 # Annotation for middle income with Seychelles
 ax.annotate('VPN outlier drives\nhuge uncertainty\n(p = 0.105)',

@@ -39,7 +39,7 @@ We take issue with two claims or inferences:
 
 - This is misleading since none of the Anthropic research covered in the article in question provides evidence on this claim. The head of economics at Anthropic warns in the article: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." 
 
-It is unclear how this relates to the research they have conducted which analyzes adoption of Claude, focusing on consumer adoption not firm-level (API), and not attempting to assess if changing adoption patterns reflects greater usage of ChatGPT or competing products instead
+- It is unclear how this relates to the research they have conducted which analyzes adoption of Claude, focusing on consumer adoption not firm-level (API), and not attempting to assess if changing adoption patterns reflects greater usage of ChatGPT or competing products instead
 
 
 ![Their View vs Our View](figures/fig1_their_view_vs_ours.png)

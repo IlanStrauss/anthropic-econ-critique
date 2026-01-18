@@ -71,10 +71,6 @@ Anthropic's analysis implies a simple story: **higher country income level → m
 | Single global elasticity of 0.71 | For middle-income countries, GDP explains only 7% of variation (R² = 0.07) | One-size-fits-all policy is inappropriate |
 | Stable relationship | Coefficients and R² swing dramatically between August and November 2025 | Cross-sectional snapshots are unreliable for policy |
 
-### A Striking Example: South Korea vs USA
-
-The United States has a GDP per working-age capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per working-age capita were the primary driver of AI adoption, the USA should have dramatically higher adoption. It does not. Things like education, digital infrastructure, and cultural factors may drive AI adoption more than income level (to the extent that they are not correlated).
-
 ### What Should Policymakers Know?
 
 **For low-income countries (β = 0.85, p < 0.001):**

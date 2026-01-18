@@ -10,9 +10,9 @@
 
 | Anthropic's Claim | Critique | Our Evidence |
 |-------------------|--------------|--------------|
-| "Uneven [AI] adoption remains well-explained by GDP per capita" (global β=0.71) | GDP per capita explains little of middle-income country adoption | Middle-income β=0.44, R²=17% (excl. Seychelles outlier) |
-| AI usage concentration "essentially unchanged" (Aug–Nov 2025) | Gini captures a static snapshot; differential growth rates compound into widening gaps | Adoption growth rates show inequality: High-income +26%, Middle-income +14%, Low-income +22% |
-| "Divergence in living standards" possible (McCrory to FT) | Speculative: no second-order effects estimated (AI → productivity → growth) | Cross-country data is Claude front-end (closer to consumer) not API (closer to firm-level)|
+| ["Uneven [AI] adoption remains well-explained by GDP per capita"](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) (global β=0.71) | GDP per capita explains little of middle-income country adoption | Middle-income β=0.44, R²=17% (excl. Seychelles outlier) |
+| AI usage concentration ["essentially unchanged"](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) (Aug–Nov 2025) | Gini captures a static snapshot; differential growth rates compound into widening gaps | Adoption growth rates show inequality: High-income +26%, Middle-income +14%, Low-income +22% |
+| ["Divergence in living standards" possible](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) (McCrory to FT) | Speculative: no second-order effects estimated (AI → productivity → growth) | Cross-country data is Claude front-end (closer to consumer) not API (closer to firm-level)|
 | Implied by FT coverage: data reflects global AI adoption | Data only measures Claude usage, not total AI adoption broadly | Brazil and Thailand saw *decreased* Claude usage. But could be from competitive use of alternatives (ChatGPT), not reduced AI adoption |
 | Single global relationship applies to all countries | Different income groups have different relationships, making pooling biased (Hsiao 2022) | Separate regressions show relationships (slopes) and R² (fit) vary by income group |
 
@@ -37,7 +37,7 @@ We take issue with two claims or inferences:
 
 2) *CORE FINANCIAL TIMES CLAIM 2*: The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered Anthropic's research with the headline: **"Rich countries’ greater use of AI risks deepening inequality, Anthropic warns".**
 
-- This is misleading since none of the Anthropic research covered in the article in question provides evidence on this claim. The head of economics at Anthropic warns in the article: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." 
+- This is misleading since none of the Anthropic research covered in the article in question provides evidence on this claim. The head of economics at Anthropic [warns in the article](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4): "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." 
 
 - It is unclear how this relates to the research they have conducted which analyzes adoption of Claude, focusing on consumer adoption not firm-level (API), and not attempting to assess if changing adoption patterns reflects greater usage of ChatGPT or competing products instead
 

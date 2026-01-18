@@ -9,9 +9,9 @@
 
 | Anthropic's Claim | Critique | Our Evidence |
 |-------------------|--------------|--------------|
-| "Uneven [AI] adoption remains well-explained by GDP per capita" (global β=0.71) | GDP per capita explains little of middle-income country adoption | Middle-income β=0.44, R²=17% (excl. Seychelles outlier) |
-| AI usage concentration "essentially unchanged" (Aug–Nov 2025) | Gini captures a static snapshot; differential growth rates compound into widening gaps | Adoption growth rates show inequality: High-income +26%, Middle-income +14%, Low-income +22% |
-| "Divergence in living standards" possible (McCrory to FT) | Speculative: no second-order effects estimated (AI → productivity → growth) | Cross-country data is Claude front-end (closer to consumer) not API (closer to firm-level)|
+| ["Uneven [AI] adoption remains well-explained by GDP per capita"](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) (global β=0.71) | GDP per capita explains little of middle-income country adoption | Middle-income β=0.44, R²=17% (excl. Seychelles outlier) |
+| AI usage concentration ["essentially unchanged"](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) (Aug–Nov 2025) | Gini captures a static snapshot; differential growth rates compound into widening gaps | Adoption growth rates show inequality: High-income +26%, Middle-income +14%, Low-income +22% |
+| ["Divergence in living standards" possible](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) (McCrory to FT) | Speculative: no second-order effects estimated (AI → productivity → growth) | Cross-country data is Claude front-end (closer to consumer) not API (closer to firm-level)|
 | Implied by FT coverage: data reflects global AI adoption | Data only measures Claude usage, not total AI adoption broadly | Brazil and Thailand saw *decreased* Claude usage. But could be from competitive use of alternatives (ChatGPT), not reduced AI adoption |
 | Single global relationship applies to all countries | Different income groups have different relationships, making pooling biased (Hsiao 2022) | Separate regressions show relationships (slopes) and R² (fit) vary by income group |
 
@@ -113,7 +113,7 @@ The middle-income coefficient may look similar to the global estimate (0.73 vs 0
 
 ### 3. Adoption *growth* is weakest for middle-income countries (Aug–Nov 2025)
 
-Anthropic claims that "the AUI concentration across countries was essentially unchanged between our last report and this report," based on a Gini coefficient measure. However, the Gini coefficient captures a static snapshot — it can miss differential growth rates that compound into widening gaps over time.
+[Anthropic claims](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) that "the AUI concentration across countries was essentially unchanged between our last report and this report," based on a Gini coefficient measure. However, the Gini coefficient captures a static snapshot — it can miss differential growth rates that compound into widening gaps over time.
 
 Comparing Anthropic's two data releases (August and November 2025), we find that the *growth* in adoption was **weakest for middle-income countries** and **strongest for high-income countries**:
 

@@ -42,15 +42,9 @@ We take issue with two claims or inferences:
 - It is unclear how this relates to the research they have conducted which analyzes adoption of Claude, focusing on consumer adoption not firm-level (API), and not attempting to assess if changing adoption patterns reflects greater usage of ChatGPT or competing products instead
 
 
-![Their View vs Our View](figures/fig1_their_view_vs_ours.png)
+### Weak and Highly Uncertain Relationship with Little Explanatory Power
 
-![Uncertainty by Income Group](figures/fig2_uncertainty_by_group.png)
-
-## Key Findings
-
-### Weak and Highly Uncertain with Little Explanatory Power
-
-Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *we show that the GDP-AI adoption relationship is weak and highly uncertain in Anthropic's datasets**, across both time periods of data:
+Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *we show that the GDP-AI adoption relationship is weak and highly uncertain**, across both time periods:
 
 | Income Group | Period | Slope (β) | Std. Error | p-value | Significant? | R² | N |
 |--------------|--------|-----------|------------|---------|--------------|-----|---|
@@ -65,9 +59,13 @@ Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *
 | | Nov 13-20 | 0.67 | 0.16 | <0.001 | Yes | 0.33 | 39 |
 
 Key observations:
+
 - **Middle-income relationship is NOT statistically significant** in the November 2025 data (p = 0.105)
+
 - Standard error for middle-income more than double between the two datasets (0.18 → 0.44)
+
 - R² for middle-income fell from 14% to just 7% — GDP per capita explains very little abotu relative AI adoption
+
 - Sample composition barely changes though (36 of 38 countries same in both periods)
 
 ## Why This Matters: Policy Implications

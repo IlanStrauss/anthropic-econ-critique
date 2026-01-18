@@ -82,6 +82,12 @@ The key finding: GDP per capita is a weak predictor for middle-income countries 
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for GDP growth to drive AI adoption. These other factors are actionable policy levers.
 
+### Adoption is growing across all income groups
+
+![Figure 3](figures/fig3_adoption_over_time.png)
+
+**Figure 3** compares AI adoption (Usage Index) between August and November 2025 for the same countries. Points above the diagonal indicate increased adoption. Notably, adoption grew across all income groups — low, middle, and high — over this three-month period. This suggests AI diffusion is occurring broadly, not just in wealthy countries.
+
 ### 2. The middle-income relationship is weak and highly uncertain
 
 Anthropic reports a single global estimate (0.71) with a narrow confidence interval. But when we disaggregate by income group, **the middle-income relationship is not statistically significant** and has very high uncertainty.

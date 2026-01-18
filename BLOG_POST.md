@@ -76,19 +76,6 @@ Notably, the middle-income results **without Seychelles** (β = 0.44, SE = 0.16,
 
 This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption.
 
-**Evidence from residuals:** The apparent "over-adoption" by middle-income countries is driven entirely by the Seychelles outlier. With Seychelles, 63% of middle-income countries appear above the regression line; without it, only 41% are above — actually slightly below average.
-
-| Income Group | Mean Residual | Median Residual | % Above Prediction |
-|--------------|---------------|-----------------|-------------------|
-| Low | -0.059 | +0.042 | 50.0% |
-| High | -0.035 | -0.054 | 44.7% |
-
-| Middle Income Group | With Seychelles | Without Seychelles |
-|---------------------|-----------------|-------------------|
-| Mean Residual | **+0.094** | -0.030 |
-| Median Residual | **+0.122** | -0.063 |
-| % Above Prediction | **63.2%** | 40.5% |
-
 The key finding: GDP per capita is a weak predictor for middle-income countries (β = 0.44 vs 0.71 global, R² = 0.17). Other factors — education, digital infrastructure, English proficiency, regulatory environment — likely matter more for this group.
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for GDP growth to drive AI adoption. These other factors are actionable policy levers.
@@ -111,11 +98,11 @@ Key observations:
 
 The middle-income coefficient may look similar to the global estimate (0.73 vs 0.71), but the huge standard error means we cannot conclude there is any meaningful relationship. Anthropic's pooled estimate masks this uncertainty by averaging over heterogeneous groups.
 
-### 3. Adoption growth is weakest for middle-income countries
+### 3. Adoption *growth* is weakest for middle-income countries (Aug–Nov 2025)
 
-Anthropic claims that "the AUI concentration across countries was essentially unchanged between our last report and this report," based on a Gini coefficient measure. However, the Gini coefficient captures a static snapshot of inequality — it can miss differential growth rates that compound into widening gaps over time.
+Anthropic claims that "the AUI concentration across countries was essentially unchanged between our last report and this report," based on a Gini coefficient measure. However, the Gini coefficient captures a static snapshot — it can miss differential growth rates that compound into widening gaps over time.
 
-Comparing Anthropic's two data releases (August and November 2025), we find that adoption growth was **weakest for middle-income countries** and **strongest for high-income countries**:
+Comparing Anthropic's two data releases (August and November 2025), we find that the *growth* in adoption was **weakest for middle-income countries** and **strongest for high-income countries**:
 
 **Table 1: Change in AI adoption between August and November 2025 (Seychelles excluded)**
 
@@ -155,6 +142,23 @@ The "divergence in living standards" Anthropic warns of is not inevitable. It de
 Some countries deviate substantially from the income-AI adoption relationship. **Israel stands out as the most striking outlier among high-income countries**: with a GDP per capita of $90,237, its AI Usage Index of 7.00 is **3x higher than the 2.36 predicted by Anthropic's regression**. Israel is the second-largest positive outlier in the entire dataset (after Georgia at 3.3x), suggesting that factors like tech sector concentration, education, and startup culture drive AI adoption far more than income alone. Gulf states (Qatar, Kuwait, Saudi Arabia) show the opposite pattern — far less AI usage than their wealth predicts. Several African countries (Tanzania, Angola) also fall well below the regression line.
 
 These outliers suggest country-specific factors — language, culture, regulation, tech infrastructure — matter beyond income level. However, removing outliers only shifts the slope by ~5%, so the main critique (heterogeneity by income level) stands regardless.
+
+---
+
+## Appendix: Evidence from Residuals
+
+The apparent "over-adoption" by middle-income countries is driven entirely by the Seychelles outlier. With Seychelles included, 63% of middle-income countries appear above the regression line; without it, only 41% are above — below the 50% threshold that would indicate no systematic pattern.
+
+| Income Group | Mean Residual | Median Residual | % Above Prediction |
+|--------------|---------------|-----------------|-------------------|
+| Low | -0.059 | +0.042 | 50.0% |
+| High | -0.035 | -0.054 | 44.7% |
+
+| Middle Income Group | With Seychelles | Without Seychelles |
+|---------------------|-----------------|-------------------|
+| Mean Residual | **+0.094** | -0.030 |
+| Median Residual | **+0.122** | -0.063 |
+| % Above Prediction | **63.2%** | 40.5% |
 
 ---
 

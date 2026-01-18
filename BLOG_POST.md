@@ -52,7 +52,7 @@ Anthropic pools all countries, assuming one relationship applies equally to Nige
 | High-income | 0.33 | Within-group: moderate fit |
 | **Middle-income** | **0.17** | Within-group: GDP explains almost nothing |
 
-The global R² is inflated by between-group differences. Within middle-income countries — where much of the world lives — GDP per capita explains only 17% of the variation in AI adoption.
+The global R² is inflated by between-group differences. Within middle-income countries — where much of the world lives — GDP per capita explains only 17% of the variation in AI adoption. This is a form of **aggregation bias** (or the **ecological fallacy**): relationships observed at the aggregate level do not hold at the disaggregated level.
 
 **The relationship breaks down for middle-income countries.** In November 2025 data, the middle-income coefficient is not statistically significant (β = 0.73, SE = 0.44, p = 0.105). This matters because middle-income countries contain much of the world's population.
 

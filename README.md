@@ -44,7 +44,7 @@ We take issue with two claims or inferences:
 
 ### Weak and Highly Uncertain Relationship with Little Explanatory Power
 
-Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *we show that the GDP per capita - AI adoption relationship is weak and highly uncertain**, across both time periods:
+Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *we show that the GDP per capita - AI adoption relationship is weak and highly uncertain*, across both time periods:
 
 | Income Group | Period | Slope (β) | Std. Error | p-value | Significant? | R² | N |
 |--------------|--------|-----------|------------|---------|--------------|-----|---|

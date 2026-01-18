@@ -49,12 +49,13 @@ Anthropic pools all countries, assuming one relationship applies equally to Nige
 
 **Table: Regression Results — Anthropic's Global Estimate vs. Our Country-Group Estimates**
 
-| Group | R² | Interpretation |
-|-------|-----|----------------|
-| Global (pooled) | 0.56 | Captures between-group variation |
-| Low-income | 0.37 | Within-group: moderate fit |
-| High-income | 0.33 | Within-group: moderate fit |
-| **Middle-income** | **0.17** | Within-group: GDP explains almost nothing |
+| Income Group | Slope (β) | SE | p-value | R² |
+|--------------|-----------|-----|---------|-----|
+| Global (pooled) | 0.71 | 0.06 | <0.001 | 0.56 |
+| Low-income | 0.85 | 0.18 | <0.001 | 0.37 |
+| High-income | 0.67 | 0.16 | <0.001 | 0.33 |
+| **Middle-income (with Seychelles)** | **0.73** | **0.44** | **0.105** | **0.07** |
+| **Middle-income (excl. Seychelles)** | **0.44** | **0.16** | **0.011** | **0.17** |
 
 The global R² is inflated by between-group differences. Within middle-income countries — where much of the world lives — GDP per capita explains only 17% of the variation in AI adoption. This is a form of **aggregation bias** (or the **ecological fallacy**): relationships observed at the aggregate level do not hold at the disaggregated level.
 

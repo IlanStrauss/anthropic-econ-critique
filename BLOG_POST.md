@@ -52,7 +52,7 @@ This highlights two issues with Anthropic's analysis: (1) their usage data needs
 
 | Income Group | With Seychelles | Without Seychelles |
 |--------------|-----------------|-------------------|
-| **Middle income β** | 0.73 | **0.44** |
+| **β** | 0.73 | **0.44** |
 | **Std. Error** | 0.44 | **0.16** |
 | **p-value** | 0.105 (not sig.) | **0.011** |
 | **R²** | 0.07 | **0.17** |

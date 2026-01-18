@@ -45,6 +45,8 @@ Anthropic pools all countries, assuming one relationship applies equally to Nige
 
 **Why does pooled R² look good while group-level R²s are weak?** This reflects the difference between *between-group* and *within-group* variation. The pooled regression (R² = 0.56) captures the obvious fact that low-income countries cluster at low GDP + low AI usage while high-income countries cluster at high GDP + high AI usage. But *within* each income group, GDP explains far less:
 
+**Table: Regression Results — Anthropic's Global Estimate vs. Our Country-Group Estimates**
+
 | Group | R² | Interpretation |
 |-------|-----|----------------|
 | Global (pooled) | 0.56 | Captures between-group variation |

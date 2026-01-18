@@ -28,9 +28,9 @@ The head of economics at Anthropic, Peter McCrory, told the [*Financial Times*](
 ### Do not pool data: all countries are not alike
 Anthropic uses GDP per capita to predict AI adoption. They "pool" across all countries, meaning they assume the relationship between how income level impacts AI adoption is the same everywhere — a single parameter represents the strength and nature of this relationship and applies equally to Nigeria and Norway alike. 
 
-We reanalyzed Anthropic's [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex). The 0.7 elasticity coefficient representing the impact that GDP per capita has on AI adoption does not hold universally across countries. Their analysis is [biased](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) by assuming a single relationship when in fact different ones exist for different income-level groups (see [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full analysis).
+We reanalyzed Anthropic's [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex), including both the November 2025 data used in their January 2026 report and an earlier August 2025 release. The 0.7 elasticity coefficient representing the impact that GDP per capita has on AI adoption does not hold universally across countries. Their analysis is [biased](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) by assuming a single relationship when in fact different ones exist for different income-level groups.
 
-We find the relationship breaks down mostly for middle-income countries. This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — and in fact are adopting AI more than their wealth would predict.
+We find **the relationship breaks down for middle-income countries**. In the November 2025 data (used in their report), the relationship is not statistically significant (β = 0.73, SE = 0.44, p = 0.105); in the August 2025 data, the relationship is weak (β = 0.44, SE = 0.18, p = 0.019). This matters because middle-income countries contain much of the world's population. For them, income level is a weak and uncertain predictor of AI adoption — and in fact they are adopting AI more than their wealth would predict.
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving greater adoption. These are actionable policy levers.
 
@@ -48,24 +48,25 @@ Elsewhere, Anthropic also finds that human education — the sophistication of u
 
 **The estimated slope relationships differ substantially by country income group in our regression**. Low-income countries (red) show a steep relationship; middle-income countries (orange) show a shallow one. Anthropic's single line averages over this heterogeneity, obscuring that middle-income countries achieve AI adoption beyond what their income level alone would predict. 
 
-*But we can see considerable heterogeneity (i.e. differences) within other income groups too*. So we run a partial pooling regression in a seperate document that tries to estimate this heterogeneity directly ([PARTIAL_POOLING.md](PARTIAL_POOLING.md)).
+*We can see considerable heterogeneity (i.e. differences) within other income groups too*. The key finding is that for middle-income countries specifically, the relationship is weak and highly uncertain.
 
 **A striking example: South Korea vs USA**. The United States has a GDP per capita of $132,532 — **2.6 times** South Korea's $51,496. Yet South Korea's AI Usage Index (3.73) is actually *slightly higher* than the USA's (3.62). If GDP per capita were the primary driver of AI adoption, as Anthropic's headline implies, then the USA might be expected to have considerably higher adoption. It does not.
 
 This also suggests that first-mover advantage in AI innovation does not necessarily translate into higher adoption, contrary to the divergence narrative in the [*Financial Times* article](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) cited above. Education, digital infrastructure, and cultural factors clearly matter more than income alone.
 
-| Income Level | GDP Per Capita (β coefficient) | N |
-|--------------|-------------------|---|
-| Low income | 0.76 | 38 |
-| **Middle income** | **0.44** | **38** |
-| High income | 0.63 | 38 |
-| Anthropic (pooled) | 0.70 | 114 |
+| Income Group | Period | Slope (β) | Std. Error | p-value | Significant? | N |
+|--------------|--------|-----------|------------|---------|--------------|---|
+| **Global** | Nov 2025 | 0.71 | 0.06 | <0.001 | Yes | 116 |
+| **Low income** | Nov 2025 | 0.85 | 0.18 | <0.001 | Yes | 39 |
+| **Middle income** | **Nov 2025** | **0.73** | **0.44** | **0.105** | **No** | **38** |
+| **High income** | Nov 2025 | 0.67 | 0.16 | <0.001 | Yes | 39 |
+| Middle income | Aug 2025 | 0.44 | 0.18 | 0.019 | Yes (weak) | 38 |
 
-Middle-income countries show a 37% weaker relationship between their GDP per capita and their AI usage than Anthropic's global estimate.
+**For middle-income countries, the relationship is not statistically significant** in the November 2025 data used in Anthropic's report (p = 0.105). The standard error (0.44) is 2-3x larger than other income groups, and GDP per capita explains only 7% of the variation (R² = 0.07).
 
-<img src="figures/fig2_slope_by_income.png" alt="Figure 2" width="720">
+<img src="figures/fig2_uncertainty_by_group.png" alt="Figure 2" width="720">
 
-**Figure 2** shows the regression coefficients (with standard errors) estimated from **three separate OLS regressions** — one for each income tercile. Each dot represents the coefficient on log GDP per capita from that group's regression; error bars show standard errors. The dashed blue line marks Anthropic's pooled global estimate (0.69); the dotted line marks the middle-income coefficient (0.44). The middle-income coefficient is notably smaller than Anthropic's pooled estimate.
+**Figure 2** shows the regression coefficients (with standard errors) estimated from **separate OLS regressions** by income group using the November 2025 data. The middle-income coefficient has a much larger error bar, reflecting high uncertainty — the relationship is statistically indistinguishable from zero.
 
 This matters because middle-income countries contain much of the world's population. For them, income level is a weak predictor of AI adoption — they are adopting AI beyond what their wealth would predict.
 
@@ -81,29 +82,23 @@ Our income-group-specific regressions also tell this story: the middle-income re
 
 The implication: middle-income countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for more GDP growth in order to get more AI adoption — and aren't. Selective investments in education, digital infrastructure, English proficiency, and regulatory environment may be driving adoption. These are actionable policy levers.
 
-### 2. Anthropic's single estimate masks real heterogeneity
+### 2. The middle-income relationship is weak and highly uncertain
 
-Anthropic reports a single global estimate (0.69) with a narrow confidence interval [0.61, 0.77]. But this interval is misleading because it assumes the relationship is constant across all countries.
+Anthropic reports a single global estimate (0.71) with a narrow confidence interval. But when we disaggregate by income group, **the middle-income relationship is not statistically significant** and has very high uncertainty.
 
-**Separate regressions by income group** show slopes range from 0.44 to 0.76:
+| Income Group | Slope (β) | SE | p-value | R² |
+|--------------|-----------|-----|---------|-----|
+| Low-income | 0.85 | 0.18 | <0.001 | 0.37 |
+| **Middle-income** | **0.73** | **0.44** | **0.105** | **0.07** |
+| High-income | 0.67 | 0.16 | <0.001 | 0.33 |
+| Global (pooled) | 0.71 | 0.06 | <0.001 | 0.56 |
 
-| Income Group | Slope (β) | SE | 95% CI |
-|--------------|-----------|-----|--------|
-| Low-income | 0.76 | 0.19 | [0.39, 1.14] |
-| **Middle-income** | **0.44** | **0.18** | **[0.09, 0.79]** |
-| High-income | 0.63 | 0.20 | [0.23, 1.03] |
-| Anthropic (pooled) | 0.69 | 0.04 | [0.61, 0.77] |
+Key observations:
+- **Middle-income SE (0.44) is 2-3x larger** than other groups
+- **Middle-income R² = 7%** — GDP explains almost nothing
+- **p = 0.105** — the coefficient is statistically indistinguishable from zero
 
-Anthropic's confidence interval excludes the middle-income slope (0.44) entirely — their interval reflects false precision because it ignores this heterogeneity.
-
-**Bayesian hierarchical model** (see [PARTIAL_POOLING.md](PARTIAL_POOLING.md) for full analysis): When we properly account for group-level variance using partial pooling with 7 country groups, we estimate a global slope of **β = 0.54** with 95% CI **[0.33, 0.74]**. Anthropic's estimate of 0.69 falls outside this interval.
-
-| Method | Slope (β) | SE | 95% CI |
-|--------|-----------|-----|--------|
-| Anthropic (pooled OLS) | 0.69 | 0.04 | [0.61, 0.77] |
-| Bayesian hierarchical (7 groups) | 0.54 | 0.10 | [0.33, 0.74] |
-
-The Bayesian model's lower estimate (0.54 vs 0.69) reflects a composition effect: Gulf states (high GDP, low adoption) and low-income African countries (low GDP, low adoption) create a steeper apparent slope in pooled regression than exists within any group (Simpson's paradox).
+The middle-income coefficient may look similar to the global estimate (0.73 vs 0.71), but the huge standard error means we cannot conclude there is any meaningful relationship. Anthropic's pooled estimate masks this uncertainty by averaging over heterogeneous groups.
 
 ### 3. Policy Implications
 
@@ -129,16 +124,18 @@ These outliers suggest country-specific factors — language, culture, regulatio
 
 Anthropic uses OLS on log-transformed data, pooling all countries. This assumes a constant slope globally. But as [Hsiao (2022, p. 12)](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) notes in *Analysis of Panel Data*, pooled regression "implicitly assumes that the average values of variables and the relationships between variables are constant over time and across all cross-sectional units" — an assumption we test and find wanting.
 
-We run **three separate OLS regressions** — one for each income tercile (low, middle, high):
+We run **separate OLS regressions** for each income tercile (low, middle, high):
 
 $$\ln(\text{AUI}) = \alpha + \beta \times \ln(\text{GDP per capita}) + \varepsilon$$
 
-This highlights the heterogeneity that Anthropic's pooled estimate obscures:
-- Low-income: β = 0.76 (SE = 0.19)
-- Middle-income: β = 0.44 (SE = 0.18)
-- High-income: β = 0.63 (SE = 0.20)
+Using the November 2025 data from Anthropic's January 2026 report:
+- Low-income: β = 0.85 (SE = 0.18, p < 0.001, R² = 0.37)
+- **Middle-income: β = 0.73 (SE = 0.44, p = 0.105, R² = 0.07)** — NOT significant
+- High-income: β = 0.67 (SE = 0.16, p < 0.001, R² = 0.33)
 
-For a more rigorous analysis using Bayesian hierarchical models with partial pooling (which allows slopes to vary by group while shrinking toward a global mean), see [PARTIAL_POOLING.md](PARTIAL_POOLING.md).
+We also compared with earlier August 2025 data, finding the middle-income relationship was weak then too (β = 0.44, SE = 0.18, p = 0.019).
+
+**Note:** GDP per capita data is the same across both periods (2024 World Bank data). Only Claude adoption patterns changed between August and November 2025. The dramatic shift in the middle-income coefficient (0.44 → 0.73) and its standard error (0.18 → 0.44) reflects changes in adoption, not income — highlighting the instability and uncertainty of this relationship.
 
 All code and data are available in the GitHub repository.
 

@@ -34,7 +34,7 @@ The real question of divergence in economic growth between countries arising fro
 
 ![Their View vs Our View](figures/fig1_their_view_vs_ours.png)
 
-![Temporal Instability](figures/fig2_temporal_instability.png)
+![Uncertainty by Income Group](figures/fig2_uncertainty_by_group.png)
 
 ## Key Findings
 

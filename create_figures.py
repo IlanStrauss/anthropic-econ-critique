@@ -80,62 +80,52 @@ plt.savefig('figures/fig1_their_view_vs_ours.png', dpi=150, bbox_inches='tight')
 plt.close()
 
 # =============================================================
-# FIGURE 2: Temporal Instability - Slope comparison
+# FIGURE 2: Uncertainty by Income Group (November 2025 data)
 # =============================================================
 
-fig, ax = plt.subplots(figsize=(12, 7))
+fig, ax = plt.subplots(figsize=(10, 6))
 
-# Data for both periods
+# November 2025 data only
 groups = ['Global', 'Low\nIncome', 'Middle\nIncome', 'High\nIncome']
 x_pos = np.arange(len(groups))
-width = 0.35
 
-# August 2025 data
-slopes_aug = [0.69, 0.76, 0.44, 0.63]
-errors_aug = [0.04, 0.19, 0.18, 0.20]
+slopes = [0.71, 0.85, 0.73, 0.67]
+errors = [0.06, 0.18, 0.44, 0.16]
+significant = [True, True, False, True]  # Middle income NOT significant
 
-# November 2025 data
-slopes_nov = [0.71, 0.85, 0.73, 0.67]
-errors_nov = [0.06, 0.18, 0.44, 0.16]
+# Colors: highlight middle income in orange
+colors = ['#3498db', '#27ae60', '#e74c3c', '#27ae60']
 
-# Significance (at 5% level)
-sig_aug = [True, True, True, True]
-sig_nov = [True, True, False, True]  # Middle income NOT significant
-
-# Plot bars
-bars1 = ax.bar(x_pos - width/2, slopes_aug, width, label='Aug 4-11, 2025',
-               color='#3498db', alpha=0.8, yerr=errors_aug, capsize=5, error_kw={'linewidth': 2})
-bars2 = ax.bar(x_pos + width/2, slopes_nov, width, label='Nov 13-20, 2025',
-               color='#e74c3c', alpha=0.8, yerr=errors_nov, capsize=5, error_kw={'linewidth': 2})
+# Plot bars with error bars
+bars = ax.bar(x_pos, slopes, width=0.6, color=colors, alpha=0.8,
+              yerr=errors, capsize=8, error_kw={'linewidth': 2, 'capthick': 2})
 
 # Add significance markers
-for i, (s_aug, s_nov) in enumerate(zip(sig_aug, sig_nov)):
-    if s_aug:
-        ax.text(x_pos[i] - width/2, slopes_aug[i] + errors_aug[i] + 0.05, '*',
-                ha='center', fontsize=16, fontweight='bold')
-    if s_nov:
-        ax.text(x_pos[i] + width/2, slopes_nov[i] + errors_nov[i] + 0.05, '*',
-                ha='center', fontsize=16, fontweight='bold')
+for i, (sig, slope, err) in enumerate(zip(significant, slopes, errors)):
+    if sig:
+        ax.text(x_pos[i], slope + err + 0.05, '*', ha='center', fontsize=18, fontweight='bold')
     else:
-        ax.text(x_pos[i] + width/2, slopes_nov[i] + errors_nov[i] + 0.05, 'n.s.',
-                ha='center', fontsize=10, color='red', fontweight='bold')
+        ax.text(x_pos[i], slope + err + 0.05, 'n.s.', ha='center', fontsize=11, color='red', fontweight='bold')
 
-ax.set_ylabel('GDP Elasticity (beta)', fontsize=13)
-ax.set_title('GDP-AI Adoption Relationship is Temporally Unstable\n(* = significant at 5%, n.s. = not significant)',
+# Add value labels
+for i, (slope, err) in enumerate(zip(slopes, errors)):
+    ax.text(x_pos[i], slope/2, f'β={slope:.2f}\nSE={err:.2f}', ha='center', va='center',
+            fontsize=10, fontweight='bold', color='white')
+
+ax.set_ylabel('GDP Elasticity (β) with Standard Error', fontsize=13)
+ax.set_title('Middle-Income Relationship is Weak and Highly Uncertain\n(November 2025 data; * = p < 0.05, n.s. = not significant)',
              fontsize=14, fontweight='bold')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(groups, fontsize=12)
-ax.legend(loc='upper right', fontsize=11)
 ax.set_ylim(0, 1.4)
 
-# Highlight middle income instability
-ax.axvspan(1.5, 2.5, alpha=0.1, color='orange')
-ax.annotate('Middle income:\nCoefficient changed\nbut still NOT significant',
-            xy=(2, 1.25), ha='center', fontsize=10,
-            bbox=dict(boxstyle='round', facecolor='orange', alpha=0.3))
+# Annotation for middle income
+ax.annotate('SE is 2-3x larger\nthan other groups\n(p = 0.105)',
+            xy=(2, 1.2), ha='center', fontsize=10,
+            bbox=dict(boxstyle='round', facecolor='#e74c3c', alpha=0.2))
 
 plt.tight_layout()
-plt.savefig('figures/fig2_temporal_instability.png', dpi=150, bbox_inches='tight')
+plt.savefig('figures/fig2_uncertainty_by_group.png', dpi=150, bbox_inches='tight')
 plt.close()
 
 # =============================================================

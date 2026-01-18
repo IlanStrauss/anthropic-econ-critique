@@ -91,7 +91,7 @@ Anthropic's analysis implies a simple story: **higher country income level → m
 
 ### The Middle-Income Story
 
-Our most striking finding: for middle-income countries, GDP per capita does not significantly predict AI adoption. The relationship is statistically indistinguishable from zero (p = 0.105) and GDP explains only 7% of the variation.
+Our most striking finding: for middle-income countries, GDP per capita does not significantly predict AI adoption. The relationship is only significant at the 10% level (p = 0.105) and GDP explains only 7% of the variation (R² = 0.07).
 
 This contrasts with low-income countries (where income level does strongly predict adoption) and high-income countries (where the relationship is also significant). Middle-income nations appear to be finding other pathways to AI adoption.
 

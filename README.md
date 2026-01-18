@@ -25,7 +25,7 @@ The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb23
 
 Using Anthropic's own data (both the November 2025 data from their January 2026 report and an earlier August 2025 release) we estimate separate regression estimates for different country groups and find that:
 
-1. **For middle-income countries, GDP does not significantly predict AI adoption** — in the November 2025 data (used in their report), the relationship is not statistically significant even at the 10% level (p = 0.105)
+1. **For middle-income countries, GDP does not meaningfully predict AI adoption** — in the November 2025 data (used in their report), the relationship is not statistically meaningful (β = 0.73, SE = 0.44, p = 0.105); in the August 2025 data, the relationship is weak (β = 0.44, SE = 0.18, p = 0.019)
 2. **The relationship is temporally unstable** — comparing August and November 2025 data shows dramatic swings in coefficients, while R² for middle-income countries fell from 14% to just 7%
 3. **Middle-income countries adopt AI beyond what their income predicts** — education, infrastructure, and policy may drive adoption more than income
 4. **No evidence supporting divergence is provided** — their single cross-sectional estimate does not imply growing divergence in AI adoption between countries (or resulting GDP growth). If anything, for middle-income countries, the data supports convergence in AI adoption.

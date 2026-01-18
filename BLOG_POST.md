@@ -112,7 +112,16 @@ Comparing Anthropic's two data releases (August and November 2025), we find that
 | **Mid** | **37** | **0.91** | **1.08** | **+14%** | **84%** |
 | High | 38 | 2.16 | 2.63 | +26% | 89% |
 
-Middle-income countries saw the smallest median percentage increase (+14%) compared to low-income (+22%) and high-income (+26%). While 84% of middle-income countries increased adoption, the magnitude of growth lagged behind other groups. This is only two snapshots three months apart and should be interpreted cautiously — but it suggests the weak GDP-adoption relationship for middle-income countries may translate into slower adoption growth.
+Middle-income countries saw the smallest median percentage increase (+14%) compared to low-income (+22%) and high-income (+26%). While 84% of middle-income countries increased adoption, the magnitude of growth lagged behind other groups.
+
+**Important caveat:** This data measures *Claude* usage specifically, not AI adoption broadly. Six middle-income countries actually saw *decreased* Claude adoption: Armenia (-24%), Thailand (-23%), Guatemala (-15%), Brazil (-9%), Paraguay (-1%), and Turkey (-1%). Meanwhile, Peru (+71%), Kazakhstan (+64%), and Dominican Republic (+55%) grew rapidly.
+
+This heterogeneity could reflect:
+- **Competition from ChatGPT or local alternatives** — Claude usage declining in Brazil or Thailand may indicate users switching to other AI tools, not reduced AI adoption overall
+- **Language barriers** — Claude's relative strength in English may disadvantage non-English markets
+- **Measurement noise** — only three months of data
+
+The pattern is suggestive but should be interpreted cautiously.
 
 ### 4. Policy Implications
 

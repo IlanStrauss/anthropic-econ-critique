@@ -78,10 +78,10 @@ Anthropic's analysis implies a simple story: **higher country income level → m
 - Economic development may be a necessary precondition
 - Possible focus: basic infrastructure, connectivity, economic fundamentals
 
-**For middle-income countries (β = 0.73, p = 0.105 — NOT significant):**
-- **GDP does not significantly predict AI adoption** — this is the critical finding
-- The relationship is noisy and unstable (R² = 7%, SE = 0.44)
-- Education, English proficiency, digital literacy, tech infrastructure, and regulatory environment may be driving adoption instead. Need for extended estimation.
+**For middle-income countries (with Seychelles: β = 0.73, p = 0.105; excl. Seychelles: β = 0.44, p = 0.011):**
+- **GDP does not significantly predict AI adoption** when including the Seychelles VPN outlier
+- Even excluding Seychelles, the relationship is weak (β = 0.44 vs global 0.71, R² = 17%)
+- Education, English proficiency, digital literacy, tech infrastructure, and regulatory environment may be driving adoption instead
 - Examples: Brazil, Mexico, Thailand, Malaysia don't need to wait to get richer
 
 **For high-income countries (β = 0.67, p < 0.001):**

@@ -1,8 +1,21 @@
-# Does Anthropic's Economic Index really show growing international divergence in AI adoption and impacts? 
+# Does Anthropic's Economic Index really show growing international divergence in AI adoption and impacts?
 # A Critique
 
 **Authors**: Ilan Strauss
 **AI Disclosures Project**
+
+---
+
+## Summary: Anthropic's Claims vs. Our Critique
+
+| Anthropic's Claim | Our Evidence | Our Critique |
+|-------------------|--------------|--------------|
+| "Uneven adoption remains well-explained by GDP per capita" (β=0.71) | Middle-income: β=0.44, R²=17% (excl. Seychelles) | GDP explains almost nothing for middle-income countries where most people live |
+| AUI concentration "essentially unchanged" (Aug–Nov 2025) | High-income +26%, Middle +14%, Low +22% | Gini misses differential growth rates; this trajectory implies *growing* divergence |
+| "Divergence in living standards" possible (McCrory to FT) | No productivity impact estimates provided | Speculative — no second-order effects estimated |
+| Single global relationship applies to all countries | Pooled regression masks heterogeneity | Different income groups have different relationships; pooling is biased (Hsiao 2022) |
+| Data reflects AI adoption patterns | Claude-specific; Brazil/Thailand saw declines | Measures Claude usage, not AI adoption — competition from ChatGPT/local alternatives ignored |
+| — | Seychelles: 488x higher than next middle-income country | VPN/proxy outlier distorts middle-income estimates |
 
 ---
 

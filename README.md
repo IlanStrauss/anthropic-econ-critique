@@ -2,7 +2,7 @@
 # A Critique
 
 **Authors**: Ilan Strauss
-**AI Disclosures Project**
+**AI Disclosures Project** (v.2)
 
 ---
 

@@ -37,7 +37,9 @@ Anthropic's head of economics told the [*Financial Times*](https://www.ft.com/co
 
 3. **GDP is a weak predictor for middle-income countries.** Excluding the Seychelles outlier (likely VPN traffic), the middle-income relationship is weak: β = 0.44, R² = 0.17 — much weaker than the global estimate of 0.71.
 
-4. **Consumer data only.** Country-level data comes from Claude.ai (consumer), not API (enterprise). If productivity gains stem from business adoption, the geographic analysis misses where impacts would occur.
+4. **Consumer data only, Claude only.** Country-level data comes from Claude.ai (consumer), not API (enterprise). If productivity gains stem from business adoption, the geographic analysis misses where impacts would occur. Moreover, the data measures Claude usage, not AI adoption broadly — declining Claude usage in a country (e.g., Brazil, Thailand) could reflect users switching to ChatGPT or local alternatives, not reduced AI adoption overall.
+
+**Bottom line:** Convergence or divergence claims cannot be supported by consumer-only, Claude-only, cross-sectional data that measures relative rankings rather than absolute adoption or productivity impacts.
 
 ### Pooling masks heterogeneity
 

@@ -7,14 +7,13 @@
 
 ## Summary: Anthropic's Claims vs. Our Critique
 
-| Anthropic's Claim | Our Evidence | Our Critique |
+| Anthropic's Claim | Our Critique | Our Evidence |
 |-------------------|--------------|--------------|
-| "Uneven adoption remains well-explained by GDP per capita" (β=0.71) | Middle-income: β=0.44, R²=17% (excl. Seychelles) | GDP explains almost nothing for middle-income countries where most people live |
-| AUI concentration "essentially unchanged" (Aug–Nov 2025) | High-income +26%, Middle +14%, Low +22% | Gini misses differential growth rates; this trajectory implies *growing* divergence |
-| "Divergence in living standards" possible (McCrory to FT) | No productivity impact estimates provided | Speculative — no second-order effects estimated |
-| Single global relationship applies to all countries | Pooled regression masks heterogeneity | Different income groups have different relationships; pooling is biased (Hsiao 2022) |
-| Data reflects AI adoption patterns | Claude-specific; Brazil/Thailand saw declines | Measures Claude usage, not AI adoption — competition from ChatGPT/local alternatives ignored |
-| — | Seychelles: 488x higher than next middle-income country | VPN/proxy outlier distorts middle-income estimates |
+| "Uneven adoption remains well-explained by GDP per capita" (global β=0.71) | GDP explains almost nothing for middle-income countries — where most people live | Middle-income β=0.44, R²=17% (excl. Seychelles outlier) |
+| AUI concentration "essentially unchanged" (Aug–Nov 2025) | Gini captures a static snapshot; differential growth rates compound into widening gaps | Adoption growth rates: High-income +26%, Middle-income +14%, Low-income +22% |
+| "Divergence in living standards" possible (McCrory to FT) | Speculative — no second-order effects (AI → productivity → growth) estimated | No cross-country productivity impact estimates in report |
+| Single global relationship applies to all countries | Different income groups have different relationships; pooling is biased (Hsiao 2022) | Separate regressions show heterogeneous slopes and R² values by income group |
+| Data reflects global AI adoption | Measures Claude usage, not AI adoption broadly — ignores ChatGPT and local alternatives | Brazil and Thailand saw *decreased* Claude usage; likely competition, not reduced AI adoption |
 
 ---
 

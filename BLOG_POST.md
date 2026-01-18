@@ -153,7 +153,7 @@ The 38 middle-income countries in Anthropic's sample (i.e. using their income gr
 
 ## Appendix: Change in Adoption Between Data Releases
 
-Comparing the August 2025 and November 2025 data releases, we observe increased adoption across all income groups. However, this is only two snapshots three months apart and should be interpreted cautiously.
+Anthropic released two datasets: August 4-11, 2025 (in their September 2025 report) and November 13-20, 2025 (in their January 2026 report). Comparing these two snapshots, we observe increased adoption across all income groups. However, this is only two snapshots three months apart and should be interpreted cautiously. Seychelles is excluded.
 
 ![Figure A1](figures/fig3_adoption_over_time.png)
 
@@ -161,8 +161,7 @@ Comparing the August 2025 and November 2025 data releases, we observe increased 
 |--------------|---|------------|------------|-----------------|----------------------|
 | Low | 38 | 0.26 | 0.32 | +22% | 76% |
 | Mid | 37 | 0.91 | 1.08 | +14% | 84% |
-| High | 38 | 2.16 | 2.63 | +26% | 90% |
-| All | 113 | 0.85 | 1.08 | +21% | 83% |
+| High | 38 | 2.16 | 2.63 | +26% | 89% |
 
 ---
 

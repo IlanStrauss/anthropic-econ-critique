@@ -66,51 +66,7 @@ Key observations:
 
 - Standard error for middle-income more than double between the two datasets (0.18 → 0.44)
 
-- R² for middle-income fell from 14% to just 7% — GDP per capita explains very little abotu relative AI adoption
-
-- Sample composition barely changes though (36 of 38 countries same in both periods)
-
-## Why This Matters: Policy Implications
-
-Anthropic's analysis implies a simple story: **higher country income level → more AI adoption**. Our findings show this story does not hold for middle-income countries.
-
-### Their Story vs. Our Story
-
-| Anthropic's Claim | Our Finding | Implication |
-|-------------------|-------------|-------------|
-| "Worldwide, uneven [AI] adoption remains well-explained by GDP per capita" | Not true for middle-income countries — relationship is not statistically significant (p = 0.105) | Most of the world's population does not fit their story |
-| Single global elasticity of 0.71 | For middle-income countries, GDP explains only 7% of variation (R² = 0.07) | One-size-fits-all policy is inappropriate |
-| Stable relationship | Coefficients and R² swing dramatically between August and November 2025 | Cross-sectional snapshots are unreliable for policy |
-
-### What Should Policymakers Know?
-
-**For low-income countries (β = 0.85, p < 0.001):**
-- Income level *is* strongly associated with AI adoption
-- Economic development may be a necessary precondition
-- Possible focus: basic infrastructure, connectivity, economic fundamentals
-
-**For middle-income countries (with Seychelles: β = 0.73, p = 0.105; excl. Seychelles: β = 0.44, p = 0.011):**
-- **GDP does not significantly predict AI adoption** when including the Seychelles VPN outlier
-- Even excluding Seychelles, the relationship is weak (β = 0.44 vs global 0.71, R² = 17%)
-- Education, English proficiency, digital literacy, tech infrastructure, and regulatory environment may be driving adoption instead
-- Examples: Brazil, Mexico, Thailand, Malaysia don't need to wait to get richer
-
-**For high-income countries (β = 0.67, p < 0.001):**
-- Significant relationship, but still substantial variation unexplained by income
-- Israel is a notable over-adopter; Gulf states are under-adopters despite wealth
-- Cultural, linguistic, and policy factors may dominate
-
-### The Middle-Income Story
-
-Our most striking finding: for middle-income countries, GDP per capita does not significantly predict AI adoption. The relationship is only significant at the 10% level (p = 0.105) and GDP explains only 7% of the variation (R² = 0.07).
-
-This contrasts with low-income countries (where income level does strongly predict adoption) and high-income countries (where the relationship is also significant). Middle-income nations appear to be finding other pathways to AI adoption.
-
-This is potentially good news: these countries may not need to wait to get richer. Education, infrastructure, and policy could drive adoption now — though this requires further investigation.
-
-### No Evidence Supporting Divergence Is Provided
-
-Anthropic warns of "divergence in living standards." But a cross-sectional income-AI elasticity does not imply divergence. Divergence requires a dynamic feedback loop: GDP growth → AI adoption growth → productivity growth → more GDP growth. Anthropic only estimates the first link (income levels → AI adoption levels). The divergence claim is speculation beyond their data.
+- R² for middle-income fell from 14% to just 7%: in other words GDP per capita explains very little about relative AI adoption
 
 ## Repository Structure
 

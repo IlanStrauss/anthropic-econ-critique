@@ -39,7 +39,7 @@ The real question of divergence in economic growth between countries arising fro
 
 ### Weak and Highly Uncertain with Little Explanatory Power
 
-Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *(we find the GDP-AI adoption relationship is weak and highly uncertain**, showing instability in estimation across periods:
+Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *we show that the GDP-AI adoption relationship is weak and highly uncertain in Anthropic's datasets**, across both time periods of data:
 
 | Income Group | Period | Slope (β) | Std. Error | p-value | Significant? | R² | N |
 |--------------|--------|-----------|------------|---------|--------------|-----|---|

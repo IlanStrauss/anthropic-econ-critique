@@ -70,9 +70,13 @@ This matters because middle-income countries contain much of the world's populat
 | Income Group | Mean Residual | Median Residual | % Above Prediction |
 |--------------|---------------|-----------------|-------------------|
 | Low | -0.059 | +0.042 | 50.0% |
-| **Middle (with Seychelles)** | **+0.094** | **+0.122** | **63.2%** |
-| Middle (excl. Seychelles) | -0.030 | -0.063 | 40.5% |
 | High | -0.035 | -0.054 | 44.7% |
+
+| Middle Income Group | With Seychelles | Without Seychelles |
+|---------------------|-----------------|-------------------|
+| Mean Residual | **+0.094** | -0.030 |
+| Median Residual | **+0.122** | -0.063 |
+| % Above Prediction | **63.2%** | 40.5% |
 
 Our income-group-specific regressions also tell this story: the middle-income regression has both a lower slope (β = 0.44) and a higher intercept (-4.43 vs -7.01 for Anthropic's global model), meaning it predicts higher baseline adoption for middle-income countries at typical GDP levels. Our middle-income regression has R² = 0.14, confirming GDP per capita is a weak predictor for this group.
 

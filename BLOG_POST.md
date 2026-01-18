@@ -1,5 +1,5 @@
 # Does GDP per Capita Really Predict AI Adoption? Adjusting Anthropic's Estimates
-*Why Anthropic's data does not support claims about divergence in AI adoption between countries*
+*The GDP-AI adoption relationship is weak for middle-income countries — where most of the world lives*
 
 **Ilan Strauss | [AI Disclosures Project](https://www.ssrc.org/programs/ai-disclosures-project/) | January 2026**
 

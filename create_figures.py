@@ -100,48 +100,58 @@ plt.savefig('figures/fig1_their_view_vs_ours.png', dpi=150, bbox_inches='tight')
 plt.close()
 
 # =============================================================
-# FIGURE 2: Uncertainty by Income Group (November 2025 data)
+# FIGURE 2: Middle-Income With vs Without Seychelles (Dot Plot)
 # =============================================================
 
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(12, 6))
 
-# November 2025 data only
-groups = ['Global', 'Low\nIncome', 'Middle\nIncome', 'High\nIncome']
+# Groups: show middle income with and without Seychelles
+groups = ['Global', 'Low\nIncome', 'Middle Income\n(with Seychelles)', 'Middle Income\n(without Seychelles)', 'High\nIncome']
 x_pos = np.arange(len(groups))
 
-slopes = [0.71, 0.85, 0.73, 0.67]
-errors = [0.06, 0.18, 0.44, 0.16]
-significant = [True, True, False, True]  # Middle income NOT significant
+slopes = [0.71, 0.85, 0.73, 0.44, 0.67]
+errors = [0.06, 0.18, 0.44, 0.16, 0.16]
+significant = [True, True, False, True, True]  # Middle with Seychelles NOT significant
 
-# Colors: highlight middle income in orange
-colors = ['#3498db', '#27ae60', '#e74c3c', '#27ae60']
+# Colors: red for problematic (with Seychelles), others in different colors
+colors_dots = ['#3498db', '#27ae60', '#e74c3c', '#f39c12', '#27ae60']
 
-# Plot bars with error bars
-bars = ax.bar(x_pos, slopes, width=0.6, color=colors, alpha=0.8,
-              yerr=errors, capsize=8, error_kw={'linewidth': 2, 'capthick': 2})
+# Plot dots with error bars
+for i, (slope, err, color) in enumerate(zip(slopes, errors, colors_dots)):
+    ax.errorbar(x_pos[i], slope, yerr=err, fmt='o', markersize=14,
+                color=color, ecolor=color, elinewidth=3, capsize=8, capthick=3)
 
 # Add significance markers
 for i, (sig, slope, err) in enumerate(zip(significant, slopes, errors)):
     if sig:
-        ax.text(x_pos[i], slope + err + 0.05, '*', ha='center', fontsize=18, fontweight='bold')
+        ax.text(x_pos[i], slope + err + 0.08, '*', ha='center', fontsize=18, fontweight='bold')
     else:
-        ax.text(x_pos[i], slope + err + 0.05, 'n.s.', ha='center', fontsize=11, color='red', fontweight='bold')
+        ax.text(x_pos[i], slope + err + 0.08, 'n.s.', ha='center', fontsize=11, color='red', fontweight='bold')
 
-# Add value labels
+# Add value labels next to dots
 for i, (slope, err) in enumerate(zip(slopes, errors)):
-    ax.text(x_pos[i], slope/2, f'β={slope:.2f}\nSE={err:.2f}', ha='center', va='center',
-            fontsize=10, fontweight='bold', color='white')
+    ax.text(x_pos[i] + 0.25, slope, f'β={slope:.2f}', ha='left', va='center',
+            fontsize=11, fontweight='bold')
 
 ax.set_ylabel('GDP Elasticity (β) with Standard Error', fontsize=13)
-ax.set_title('Middle-Income Relationship is Weak and Highly Uncertain\n(November 2025 data; * = p < 0.05, n.s. = not significant)',
+ax.set_title('Seychelles Outlier Inflates Middle-Income Uncertainty\n(November 2025 data; * = p < 0.05, n.s. = not significant)',
              fontsize=14, fontweight='bold')
 ax.set_xticks(x_pos)
-ax.set_xticklabels(groups, fontsize=12)
-ax.set_ylim(0, 1.4)
+ax.set_xticklabels(groups, fontsize=11)
+ax.set_ylim(0, 1.5)
+ax.set_xlim(-0.5, 4.7)
 
-# Annotation for middle income
-ax.annotate('SE is 2-3x larger\nthan other groups\n(p = 0.105)',
-            xy=(2, 1.2), ha='center', fontsize=10,
+# Add horizontal line at zero for reference
+ax.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
+
+# Add arrow showing the difference
+ax.annotate('', xy=(3, 0.44), xytext=(2, 0.73),
+            arrowprops=dict(arrowstyle='->', color='black', lw=2))
+ax.text(2.5, 0.58, 'Removing\nSeychelles', ha='center', fontsize=10, fontweight='bold')
+
+# Annotation for middle income with Seychelles
+ax.annotate('VPN outlier drives\nhuge uncertainty\n(p = 0.105)',
+            xy=(2, 1.25), ha='center', fontsize=10,
             bbox=dict(boxstyle='round', facecolor='#e74c3c', alpha=0.2))
 
 plt.tight_layout()

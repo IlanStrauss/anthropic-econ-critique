@@ -31,11 +31,11 @@
 
 We take issue with two claims or inferences:
 
-1) CORE CLAIM 1: Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims **"Worldwide, uneven [AI] adoption remains well-explained by GDP per capita."** 
+1) *CORE ANTHROPIC CLAIM 1*: Anthropic's [Economic Index January 2026 Report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) claims **"Worldwide, uneven [AI] adoption remains well-explained by GDP per capita."** 
 
 - We show that the data does not support this. When broken down by income-group the fit is substantailly weaker and non-existant for middle-income countries, roughly one-third of the country sample.
 
-2) CORE CLAIM 2: The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered Anthropic's research with the headling: **"Rich countries’ greater use of AI risks deepening inequality, Anthropic warns".**
+2) *CORE FINANCIAL TIMES CLAIM 2*: The [*Financial Times*](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) covered Anthropic's research with the headling: **"Rich countries’ greater use of AI risks deepening inequality, Anthropic warns".**
 
 - This is misleading since none of their research provides evidence on this claim. The head of economics at Anthropic warns in the article: "If the productivity gains...materialise in places that have early adoption, you could see a divergence in living standards." 
 

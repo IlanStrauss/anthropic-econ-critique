@@ -52,7 +52,7 @@ Elsewhere, Anthropic also finds that human education — the sophistication of u
 
 ## Results
 
-### 1. The relationship varies by income level
+### 1. The Relationship Between Income-Level (GDP per capita) and AI Adoption Varies by Country Group
 
 ![Figure 1](figures/fig1_their_view_vs_ours.png)
 

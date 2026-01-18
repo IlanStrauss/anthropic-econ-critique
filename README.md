@@ -60,7 +60,7 @@ Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *
 
 Key observations:
 
-- **Middle-income relationship is NOT statistically significant** in the November 2025 data (p = 0.105)
+- **Middle-income relationship is weak when the huge outlier of the Seychelles is excluded and not statistically significant** in the November 2025 data (p = 0.105). A similiar estimate holds for Anthropic's previous data release. 
 
 - Standard error for middle-income more than double between the two datasets (0.18 → 0.44)
 

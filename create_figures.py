@@ -121,12 +121,6 @@ for i, (slope, err, color) in enumerate(zip(slopes, errors, colors_dots)):
     ax.errorbar(x_pos[i], slope, yerr=err, fmt='o', markersize=14,
                 color=color, ecolor=color, elinewidth=3, capsize=8, capthick=3)
 
-# Add significance markers
-for i, (sig, slope, err) in enumerate(zip(significant, slopes, errors)):
-    if sig:
-        ax.text(x_pos[i], slope + err + 0.08, '*', ha='center', fontsize=18, fontweight='bold')
-    else:
-        ax.text(x_pos[i], slope + err + 0.08, 'n.s.', ha='center', fontsize=11, color='red', fontweight='bold')
 
 # Add value labels next to dots
 for i, (slope, err) in enumerate(zip(slopes, errors)):
@@ -134,7 +128,7 @@ for i, (slope, err) in enumerate(zip(slopes, errors)):
             fontsize=11, fontweight='bold')
 
 ax.set_ylabel('GDP Elasticity (β) with Standard Error', fontsize=13)
-ax.set_title('Seychelles Outlier Inflates Middle-Income Uncertainty\n(November 2025 data; * = p < 0.05, n.s. = not significant)',
+ax.set_title('Seychelles Outlier Inflates Middle-Income Uncertainty\n(November 2025 data)',
              fontsize=14, fontweight='bold')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(groups, fontsize=11)

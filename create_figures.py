@@ -144,7 +144,7 @@ ax.annotate('', xy=(3, 0.44), xytext=(2, 0.73),
 ax.text(2.5, 0.58, 'Removing\nSeychelles', ha='center', fontsize=10, color='gray', alpha=0.6)
 
 # Annotation for middle income with Seychelles
-ax.annotate('VPN outlier drives\nhuge uncertainty\n(p = 0.105)',
+ax.annotate('Seychelles outlier drives\nhuge uncertainty (p = 0.105)',
             xy=(2, 1.25), ha='center', fontsize=10,
             bbox=dict(boxstyle='round', facecolor='#e74c3c', alpha=0.2))
 

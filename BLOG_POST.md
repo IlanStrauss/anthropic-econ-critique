@@ -102,7 +102,9 @@ The middle-income coefficient may look similar to the global estimate (0.73 vs 0
 
 ### 3. Adoption growth is weakest for middle-income countries
 
-Comparing Anthropic's two data releases (August and November 2025), we find that adoption growth was **weakest for middle-income countries** and **strongest for high-income countries**. This pattern — if it persists — could point to growing inequality of AI adoption over time.
+Anthropic claims that "the AUI concentration across countries was essentially unchanged between our last report and this report," based on a Gini coefficient measure. However, the Gini coefficient captures a static snapshot of inequality — it can miss differential growth rates that compound into widening gaps over time.
+
+Comparing Anthropic's two data releases (August and November 2025), we find that adoption growth was **weakest for middle-income countries** and **strongest for high-income countries**:
 
 **Table 1: Change in AI adoption between August and November 2025 (Seychelles excluded)**
 
@@ -112,7 +114,9 @@ Comparing Anthropic's two data releases (August and November 2025), we find that
 | **Mid** | **37** | **0.91** | **1.08** | **+14%** | **84%** |
 | High | 38 | 2.16 | 2.63 | +26% | 89% |
 
-Middle-income countries saw the smallest median percentage increase (+14%) compared to low-income (+22%) and high-income (+26%). While 84% of middle-income countries increased adoption, the magnitude of growth lagged behind other groups.
+High-income countries grew nearly twice as fast as middle-income countries (+26% vs +14%). If this pattern persists, concentration will *increase*, not remain "unchanged" as Anthropic suggests. The Gini may appear stable in a short window while differential growth rates set the stage for future divergence.
+
+Middle-income countries saw the smallest median percentage increase compared to both low-income (+22%) and high-income (+26%) groups. While 84% of middle-income countries increased adoption, the magnitude of growth lagged behind.
 
 **Important caveat:** This data measures *Claude* usage specifically, not AI adoption broadly. Six middle-income countries actually saw *decreased* Claude adoption: Armenia (-24%), Thailand (-23%), Guatemala (-15%), Brazil (-9%), Paraguay (-1%), and Turkey (-1%). Meanwhile, Peru (+71%), Kazakhstan (+64%), and Dominican Republic (+55%) grew rapidly.
 

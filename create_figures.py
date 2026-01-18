@@ -1,5 +1,6 @@
 """
-Create figures for Anthropic Economic Index critique blog post
+Create figures for Anthropic Economic Index critique
+Updated to show temporal instability and middle-income insignificance
 """
 
 import pandas as pd
@@ -14,7 +15,7 @@ plt.rcParams['figure.facecolor'] = 'white'
 plt.rcParams['axes.facecolor'] = 'white'
 plt.rcParams['font.size'] = 11
 
-# Load data
+# Load November 2025 analysis results
 df = pd.read_csv("/Users/ilanstrauss/anthropic-econ-critique/analysis_results.csv")
 
 # Create figures directory
@@ -22,7 +23,7 @@ import os
 os.makedirs('figures', exist_ok=True)
 
 # =============================================================
-# FIGURE 1: Their story vs Our story - Main scatter plot
+# FIGURE 1: GDP vs AI Usage by Income Group (November 2025 data)
 # =============================================================
 
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
@@ -39,16 +40,11 @@ X = sm.add_constant(df['log_gdp'])
 ols = sm.OLS(df['log_usage'], X).fit()
 x_line = np.linspace(df['log_gdp'].min(), df['log_gdp'].max(), 100)
 ax1.plot(x_line, ols.params['const'] + ols.params['log_gdp'] * x_line,
-         'k-', linewidth=3, label=f'OLS: β = 0.69')
+         'k-', linewidth=3, label=f'OLS: beta = {ols.params["log_gdp"]:.2f}')
 
-# Confidence band (narrow - their view)
-y_pred = ols.predict(sm.add_constant(x_line))
-se = 0.042 * np.sqrt(1 + (x_line - df['log_gdp'].mean())**2 / df['log_gdp'].var())
-ax1.fill_between(x_line, y_pred - 1.96*se*2, y_pred + 1.96*se*2, alpha=0.2, color='steelblue')
-
-ax1.set_xlabel('ln(GDP per capita)', fontsize=12)
+ax1.set_xlabel('ln(GDP per working-age capita)', fontsize=12)
 ax1.set_ylabel('ln(AI Usage Index)', fontsize=12)
-ax1.set_title("Anthropic's View: One Global Relationship\nβ = 0.70, CI = [0.61, 0.77]", fontsize=13, fontweight='bold')
+ax1.set_title("Anthropic's View: One Global Relationship\nbeta = 0.71, p < 0.001", fontsize=13, fontweight='bold')
 ax1.legend(loc='lower right', fontsize=11)
 
 # Right panel: Our view (separate lines by income)
@@ -63,162 +59,178 @@ for tercile in ['Low', 'Mid', 'High']:
     X_sub = sm.add_constant(subset['log_gdp'])
     ols_sub = sm.OLS(subset['log_usage'], X_sub).fit()
     x_sub = np.linspace(subset['log_gdp'].min(), subset['log_gdp'].max(), 50)
+
+    # Dashed line for non-significant (middle income)
+    linestyle = '--' if tercile == 'Mid' else '-'
     ax2.plot(x_sub, ols_sub.params['const'] + ols_sub.params['log_gdp'] * x_sub,
-             c=colors[tercile], linewidth=2.5, linestyle='-')
+             c=colors[tercile], linewidth=2.5, linestyle=linestyle)
 
-# Label key outliers: India, China, Israel, USA
-outlier_labels = {'IND': 'India', 'CHN': 'China', 'ISR': 'Israel', 'USA': 'USA'}
-for geo_id, label in outlier_labels.items():
-    if geo_id in df['geo_id'].values:
-        row = df[df['geo_id'] == geo_id].iloc[0]
-        ax2.annotate(label, (row['log_gdp'], row['log_usage']),
-                    fontsize=8, fontweight='bold', color='black',
-                    xytext=(3, 3), textcoords='offset points')
-
-# Label key middle-income countries
-mid_income_labels = {'BRA': 'Brazil', 'MEX': 'Mexico', 'THA': 'Thailand', 'TUR': 'Turkey', 'ZAF': 'S. Africa', 'ARG': 'Argentina'}
-for geo_id, label in mid_income_labels.items():
-    if geo_id in df['geo_id'].values:
-        row = df[df['geo_id'] == geo_id].iloc[0]
-        ax2.annotate(label, (row['log_gdp'], row['log_usage']),
-                    fontsize=8, fontweight='bold', color='black',
-                    xytext=(3, 3), textcoords='offset points')
-
-# Label extreme high AI usage outliers (above trend)
-high_outliers = {'GEO': 'Georgia', 'KOR': 'S. Korea', 'MNE': 'Montenegro'}
-for geo_id, label in high_outliers.items():
-    if geo_id in df['geo_id'].values:
-        row = df[df['geo_id'] == geo_id].iloc[0]
-        ax2.annotate(label, (row['log_gdp'], row['log_usage']),
-                    fontsize=8, fontweight='bold', color='black',
-                    xytext=(3, 3), textcoords='offset points')
-
-# Label extreme low AI usage outliers (below trend)
-low_outliers = {'TZA': 'Tanzania', 'AGO': 'Angola', 'KWT': 'Kuwait', 'SAU': 'Saudi Arabia', 'QAT': 'Qatar'}
-for geo_id, label in low_outliers.items():
-    if geo_id in df['geo_id'].values:
-        row = df[df['geo_id'] == geo_id].iloc[0]
-        ax2.annotate(label, (row['log_gdp'], row['log_usage']),
-                    fontsize=8, fontweight='bold', color='black',
-                    xytext=(3, -10), textcoords='offset points')
-
-# Label high-income countries with low AI usage (after Gulf states)
-high_income_low_usage = {'PRI': 'Puerto Rico', 'SVK': 'Slovakia'}
-for geo_id, label in high_income_low_usage.items():
-    if geo_id in df['geo_id'].values:
-        row = df[df['geo_id'] == geo_id].iloc[0]
-        ax2.annotate(label, (row['log_gdp'], row['log_usage']),
-                    fontsize=8, fontweight='bold', color='black',
-                    xytext=(3, -10), textcoords='offset points')
-
-ax2.set_xlabel('ln(GDP per capita)', fontsize=12)
+ax2.set_xlabel('ln(GDP per working-age capita)', fontsize=12)
 ax2.set_ylabel('ln(AI Usage Index)', fontsize=12)
-ax2.set_title("Our View: Relationship Varies by Income Level\nSlopes: 0.76 (Low), 0.44 (Mid), 0.63 (High)", fontsize=13, fontweight='bold')
+ax2.set_title("Our View: Middle-Income Relationship NOT Significant\nLow: 0.85*, Mid: 0.73 (p=0.105), High: 0.67*", fontsize=13, fontweight='bold')
 ax2.legend(loc='lower right', fontsize=11)
+
+# Add annotation for middle income
+ax2.annotate('Middle income:\nNOT significant\n(p = 0.105)',
+             xy=(10.5, 0.5), fontsize=10, ha='center',
+             bbox=dict(boxstyle='round', facecolor='#f39c12', alpha=0.3))
 
 plt.tight_layout()
 plt.savefig('figures/fig1_their_view_vs_ours.png', dpi=150, bbox_inches='tight')
 plt.close()
 
 # =============================================================
-# FIGURE 2: Slope comparison by income level (Gelman-style dot plot)
+# FIGURE 2: Temporal Instability - Slope comparison
+# =============================================================
+
+fig, ax = plt.subplots(figsize=(12, 7))
+
+# Data for both periods
+groups = ['Global', 'Low\nIncome', 'Middle\nIncome', 'High\nIncome']
+x_pos = np.arange(len(groups))
+width = 0.35
+
+# August 2025 data
+slopes_aug = [0.69, 0.76, 0.44, 0.63]
+errors_aug = [0.04, 0.19, 0.18, 0.20]
+
+# November 2025 data
+slopes_nov = [0.71, 0.85, 0.73, 0.67]
+errors_nov = [0.06, 0.18, 0.44, 0.16]
+
+# Significance (at 5% level)
+sig_aug = [True, True, True, True]
+sig_nov = [True, True, False, True]  # Middle income NOT significant
+
+# Plot bars
+bars1 = ax.bar(x_pos - width/2, slopes_aug, width, label='Aug 4-11, 2025',
+               color='#3498db', alpha=0.8, yerr=errors_aug, capsize=5, error_kw={'linewidth': 2})
+bars2 = ax.bar(x_pos + width/2, slopes_nov, width, label='Nov 13-20, 2025',
+               color='#e74c3c', alpha=0.8, yerr=errors_nov, capsize=5, error_kw={'linewidth': 2})
+
+# Add significance markers
+for i, (s_aug, s_nov) in enumerate(zip(sig_aug, sig_nov)):
+    if s_aug:
+        ax.text(x_pos[i] - width/2, slopes_aug[i] + errors_aug[i] + 0.05, '*',
+                ha='center', fontsize=16, fontweight='bold')
+    if s_nov:
+        ax.text(x_pos[i] + width/2, slopes_nov[i] + errors_nov[i] + 0.05, '*',
+                ha='center', fontsize=16, fontweight='bold')
+    else:
+        ax.text(x_pos[i] + width/2, slopes_nov[i] + errors_nov[i] + 0.05, 'n.s.',
+                ha='center', fontsize=10, color='red', fontweight='bold')
+
+ax.set_ylabel('GDP Elasticity (beta)', fontsize=13)
+ax.set_title('GDP-AI Adoption Relationship is Temporally Unstable\n(* = significant at 5%, n.s. = not significant)',
+             fontsize=14, fontweight='bold')
+ax.set_xticks(x_pos)
+ax.set_xticklabels(groups, fontsize=12)
+ax.legend(loc='upper right', fontsize=11)
+ax.set_ylim(0, 1.4)
+
+# Highlight middle income instability
+ax.axvspan(1.5, 2.5, alpha=0.1, color='orange')
+ax.annotate('Middle income:\nCoefficient changed\nbut still NOT significant',
+            xy=(2, 1.25), ha='center', fontsize=10,
+            bbox=dict(boxstyle='round', facecolor='orange', alpha=0.3))
+
+plt.tight_layout()
+plt.savefig('figures/fig2_temporal_instability.png', dpi=150, bbox_inches='tight')
+plt.close()
+
+# =============================================================
+# FIGURE 3: R-squared comparison - GDP explains little for middle income
 # =============================================================
 
 fig, ax = plt.subplots(figsize=(10, 6))
 
-categories = ['Low\nIncome', 'Middle\nIncome', 'High\nIncome', 'Global\n(Anthropic)']
-x_pos = [0, 1, 2, 3]
-slopes = [0.76, 0.44, 0.63, 0.69]
-errors = [0.19, 0.18, 0.20, 0.042]
+groups = ['Global', 'Low Income', 'Middle Income', 'High Income']
+r2_aug = [0.71, 0.30, 0.14, 0.21]
+r2_nov = [0.56, 0.37, 0.07, 0.33]
 
-# Gelman-style: dots with error bars
-ax.errorbar(x_pos, slopes, yerr=errors, fmt='none', ecolor='black', elinewidth=2, capsize=0)
-ax.scatter(x_pos, slopes, s=400, c='tomato', alpha=0.85, edgecolor='black', linewidth=1.5, zorder=5)
+x_pos = np.arange(len(groups))
+width = 0.35
 
-# Reference lines (more visible)
-ax.axhline(0.69, color='#3498db', linestyle='--', linewidth=2.5, alpha=0.8, label="Anthropic's global estimate (0.69)")
-ax.axhline(0.44, color='gray', linestyle=':', linewidth=2, alpha=0.7, label="Middle-income estimate (0.44)")
+bars1 = ax.bar(x_pos - width/2, r2_aug, width, label='Aug 4-11, 2025', color='#3498db', alpha=0.8)
+bars2 = ax.bar(x_pos + width/2, r2_nov, width, label='Nov 13-20, 2025', color='#e74c3c', alpha=0.8)
 
+# Add value labels
+for bar in bars1:
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height + 0.02, f'{height:.2f}',
+            ha='center', va='bottom', fontsize=10)
+for bar in bars2:
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height + 0.02, f'{height:.2f}',
+            ha='center', va='bottom', fontsize=10)
+
+ax.set_ylabel('R-squared (variance explained)', fontsize=13)
+ax.set_title('GDP Explains Almost Nothing for Middle-Income Countries\nR-squared fell from 14% to just 7%',
+             fontsize=14, fontweight='bold')
 ax.set_xticks(x_pos)
-ax.set_xticklabels(categories, fontsize=12)
-ax.set_ylabel('Regression Coefficient on ln(GDP per capita)', fontsize=13)
-ax.set_title('Regression Coefficients by Income Group\n(from three separate OLS regressions, one per income tercile)', fontsize=14, fontweight='bold')
-ax.set_ylim(0, 1.1)
-ax.set_xlim(-0.5, 3.5)
+ax.set_xticklabels(groups, fontsize=11)
+ax.legend(loc='upper right', fontsize=11)
+ax.set_ylim(0, 0.85)
 
-# Add value labels above error bars (mid-income to the right of dot to avoid blue line)
-for i, (x, slope, err) in enumerate(zip(x_pos, slopes, errors)):
-    if i == 1:  # Mid-income: place to the right of dot
-        ax.text(x + 0.25, slope, f'{slope:.2f}', ha='left', va='center', fontsize=15, fontweight='bold')
-    else:
-        ax.text(x, slope + err + 0.05, f'{slope:.2f}', ha='center', va='bottom', fontsize=15, fontweight='bold')
-
-# Annotation
-ax.annotate('Middle-income countries:\nGDP per capita barely predicts AI usage!',
-            xy=(1, 0.44), xytext=(1.8, 0.15),
-            fontsize=11, ha='left',
-            arrowprops=dict(arrowstyle='->', color='gray', lw=1, alpha=0.5))
-
-# Legend for reference lines
-ax.legend(loc='upper right', fontsize=10)
+# Highlight middle income
+ax.axvspan(1.5, 2.5, alpha=0.1, color='orange')
 
 plt.tight_layout()
-plt.savefig('figures/fig2_slope_by_income.png', dpi=150, bbox_inches='tight')
+plt.savefig('figures/fig3_r_squared.png', dpi=150, bbox_inches='tight')
 plt.close()
 
 # =============================================================
-# FIGURE 3: Confidence interval comparison
+# FIGURE 4: Standard Errors - Middle income has huge uncertainty
 # =============================================================
 
-fig, ax = plt.subplots(figsize=(10, 5))
+fig, ax = plt.subplots(figsize=(10, 6))
 
-methods = ['Anthropic\n(OLS)', 'Our Model\n(7 groups)']
-point_estimates = [0.69, 0.54]
-ci_lower = [0.61, 0.33]
-ci_upper = [0.77, 0.74]
+groups = ['Global', 'Low Income', 'Middle Income', 'High Income']
+se_aug = [0.04, 0.19, 0.18, 0.20]
+se_nov = [0.06, 0.18, 0.44, 0.16]
 
-y_pos = [1, 0]
-colors = ['#3498db', '#9b59b6']
+x_pos = np.arange(len(groups))
+width = 0.35
 
-for i, (method, est, low, high, c) in enumerate(zip(methods, point_estimates, ci_lower, ci_upper, colors)):
-    ax.plot([low, high], [y_pos[i], y_pos[i]], color=c, linewidth=8, solid_capstyle='round', alpha=0.6)
-    ax.plot(est, y_pos[i], 'o', color=c, markersize=15, markeredgecolor='white', markeredgewidth=2)
-    ax.text(high + 0.02, y_pos[i], f'[{low:.2f}, {high:.2f}]', va='center', fontsize=11)
+bars1 = ax.bar(x_pos - width/2, se_aug, width, label='Aug 4-11, 2025', color='#3498db', alpha=0.8)
+bars2 = ax.bar(x_pos + width/2, se_nov, width, label='Nov 13-20, 2025', color='#e74c3c', alpha=0.8)
 
-ax.axvline(0.5, color='gray', linestyle=':', alpha=0.5)
-ax.set_xlim(0.3, 1.05)
-ax.set_ylim(-0.5, 1.5)
-ax.set_yticks(y_pos)
-ax.set_yticklabels(methods, fontsize=12)
-ax.set_xlabel('GDP Elasticity (β)', fontsize=13)
-ax.set_title('Accounting for Heterogeneity Widens the Confidence Interval\nTheir narrow CI [0.61, 0.77] excludes the middle-income estimate (0.44)', fontsize=14, fontweight='bold')
+# Add value labels
+for bar in bars1:
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height + 0.01, f'{height:.2f}',
+            ha='center', va='bottom', fontsize=10)
+for bar in bars2:
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height + 0.01, f'{height:.2f}',
+            ha='center', va='bottom', fontsize=10)
 
-# Annotation
-ax.annotate('Their narrow CI\ngives false precision',
-            xy=(0.69, 1), xytext=(0.85, 1.3),
-            fontsize=10, ha='center',
-            arrowprops=dict(arrowstyle='->', color='gray', lw=1.5))
+ax.set_ylabel('Standard Error', fontsize=13)
+ax.set_title('Middle-Income Standard Error More Than Doubled\n(0.18 to 0.44 - relationship is essentially noise)',
+             fontsize=14, fontweight='bold')
+ax.set_xticks(x_pos)
+ax.set_xticklabels(groups, fontsize=11)
+ax.legend(loc='upper right', fontsize=11)
+ax.set_ylim(0, 0.55)
 
-ax.annotate('Our estimate: 0.54\n95% CI: [0.33, 0.74]',
-            xy=(0.54, 0), xytext=(0.40, -0.3),
-            fontsize=10, ha='center',
-            arrowprops=dict(arrowstyle='->', color='#9b59b6', lw=1.5))
+# Highlight middle income
+ax.axvspan(1.5, 2.5, alpha=0.1, color='orange')
 
 plt.tight_layout()
-plt.savefig('figures/fig3_confidence_intervals.png', dpi=150, bbox_inches='tight')
+plt.savefig('figures/fig4_standard_errors.png', dpi=150, bbox_inches='tight')
 plt.close()
 
 # =============================================================
-# FIGURE 4: Outliers and influential observations
+# FIGURE 5: Outliers and influential observations (November data)
 # =============================================================
 
 fig, ax = plt.subplots(figsize=(12, 7))
 
 # Color by residual direction
-colors = ['#e74c3c' if r > 0 else '#3498db' for r in df['ols_resid']]
+colors_resid = ['#e74c3c' if r > 0 else '#3498db' for r in df['ols_resid']]
 sizes = 50 + 500 * df['cooks_d']  # Size by influence
 
-scatter = ax.scatter(df['log_gdp'], df['log_usage'], c=colors, s=sizes,
+scatter = ax.scatter(df['log_gdp'], df['log_usage'], c=colors_resid, s=sizes,
                      alpha=0.6, edgecolor='white', linewidth=0.5)
 
 # OLS line
@@ -233,9 +245,9 @@ for _, row in influential.iterrows():
                 fontsize=10, fontweight='bold',
                 xytext=(5, 5), textcoords='offset points')
 
-ax.set_xlabel('ln(GDP per capita)', fontsize=12)
+ax.set_xlabel('ln(GDP per working-age capita)', fontsize=12)
 ax.set_ylabel('ln(AI Usage Index)', fontsize=12)
-ax.set_title('Outliers Highlight Missing Explanatory Factors\nPoint size = influence (Cook\'s D), Red = above prediction, Blue = below prediction',
+ax.set_title('Outliers Highlight Factors Beyond GDP\nPoint size = influence, Red = above prediction, Blue = below',
              fontsize=13, fontweight='bold')
 
 # Legend
@@ -244,48 +256,12 @@ blue_patch = mpatches.Patch(color='#3498db', label='Under-adopter (below line)')
 ax.legend(handles=[red_patch, blue_patch], loc='lower right', fontsize=10)
 
 plt.tight_layout()
-plt.savefig('figures/fig4_outliers.png', dpi=150, bbox_inches='tight')
+plt.savefig('figures/fig5_outliers.png', dpi=150, bbox_inches='tight')
 plt.close()
 
-# =============================================================
-# FIGURE 5: Policy implications diagram
-# =============================================================
-
-fig, ax = plt.subplots(figsize=(12, 6))
-ax.axis('off')
-
-# Create text boxes
-anthropic_box = dict(boxstyle='round,pad=0.5', facecolor='#3498db', alpha=0.3)
-our_box = dict(boxstyle='round,pad=0.5', facecolor='#9b59b6', alpha=0.3)
-
-# Anthropic side
-ax.text(0.25, 0.85, "ANTHROPIC'S STORY", fontsize=14, fontweight='bold', ha='center',
-        transform=ax.transAxes, bbox=anthropic_box)
-ax.text(0.25, 0.65, "Income → AI Adoption\n(β = 0.70)", fontsize=12, ha='center', transform=ax.transAxes)
-ax.text(0.25, 0.45, "Story: Richer countries\nadopt more AI", fontsize=11, ha='center',
-        transform=ax.transAxes, style='italic')
-ax.text(0.25, 0.25, "✓ Low-income: Correct\n✗ Mid-income: WRONG\n~ High-income: Varies",
-        fontsize=11, ha='center', transform=ax.transAxes)
-
-# Our side
-ax.text(0.75, 0.85, "OUR FINDINGS", fontsize=14, fontweight='bold', ha='center',
-        transform=ax.transAxes, bbox=our_box)
-ax.text(0.75, 0.65, "GDP → AI varies by context\n(β = 0.44 to 0.76)", fontsize=12, ha='center', transform=ax.transAxes)
-ax.text(0.75, 0.45, "Policy: Context-specific\ninterventions needed", fontsize=11, ha='center',
-        transform=ax.transAxes, style='italic')
-ax.text(0.75, 0.25, "Low: Economic development first\nMid: Education, infrastructure\nHigh: Cultural/policy factors",
-        fontsize=11, ha='center', transform=ax.transAxes)
-
-# Arrow
-ax.annotate('', xy=(0.55, 0.5), xytext=(0.45, 0.5),
-            arrowprops=dict(arrowstyle='->', lw=3, color='gray'),
-            transform=ax.transAxes)
-ax.text(0.5, 0.55, 'Same data,\ndifferent story', fontsize=10, ha='center',
-        transform=ax.transAxes, style='italic', color='gray')
-
-ax.set_title('Different Methods, Different Policy Implications', fontsize=15, fontweight='bold', y=0.98)
-
-plt.tight_layout()
-plt.savefig('figures/fig5_policy_implications.png', dpi=150, bbox_inches='tight')
-plt.close()
-
+print("Figures generated successfully!")
+print("- fig1_their_view_vs_ours.png")
+print("- fig2_temporal_instability.png")
+print("- fig3_r_squared.png")
+print("- fig4_standard_errors.png")
+print("- fig5_outliers.png")

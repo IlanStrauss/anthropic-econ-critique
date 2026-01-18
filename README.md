@@ -54,9 +54,9 @@ Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *
 | | Nov 13-20 | 0.71 | 0.06 | <0.001 | Yes | 0.56 | 116 |
 | **Low income** | Aug 4-11 | 0.76 | 0.19 | <0.001 | Yes | 0.30 | 38 |
 | | Nov 13-20 | 0.85 | 0.18 | <0.001 | Yes | 0.37 | 39 |
-| **Middle income** | Aug 4-11 | 0.44 | 0.18 | 0.019 | Yes | 0.14 | 38 |
+| **Middle income** | Aug 4-11 | 🔴 0.44 | 0.18 | 0.019 | Yes | 0.14 | 38 |
 | | **Nov 13-20 (with Seychelles)** | **0.73** | **0.44** | **0.105** | **No** | **0.07** | 38 |
-| | Nov 13-20 (excl. Seychelles) | 0.44 | 0.16 | 0.011 | Yes | 0.17 | 37 |
+| | Nov 13-20 (excl. Seychelles) | 🔴 0.44 | 0.16 | 0.011 | Yes | 0.17 | 37 |
 | **High income** | Aug 4-11 | 0.63 | 0.20 | 0.004 | Yes | 0.21 | 38 |
 | | Nov 13-20 | 0.67 | 0.16 | <0.001 | Yes | 0.33 | 39 |
 

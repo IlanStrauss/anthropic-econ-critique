@@ -9,7 +9,7 @@
 
 | Anthropic's Claim | Critique | Our Evidence |
 |-------------------|--------------|--------------|
-| ["Uneven [AI] adoption remains well-explained by GDP per capita"](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) (global β=0.71) | GDP per capita explains little of middle-income country adoption | Middle-income group: R²=7% (with Seychelles), R²=17% (without Seychelles) |
+| ["Uneven [AI] adoption remains well-explained by GDP per capita"](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) (global β=0.71) | GDP per capita explains little of middle-income country adoption | Middle-income group: B = 0.71 and R²=7% (with the Seychelles), B=0.44 and R²=17% (without the Seychelles) |
 | Single global relationship applies to all countries | Different income groups have different relationships, making pooling biased (Hsiao 2022) | Estimating separate regressions for each income group show relationships (slopes) and R² (fit) vary by income group |
 | AI usage concentration ["essentially unchanged"](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report) (Aug–Nov 2025) | Gini captures a static snapshot; differential growth rates compound into widening gaps | Adoption growth rates show potential inequality emerging: High-income +26%, Middle-income +14%, Low-income +22% |
 | ["Divergence in living standards" possible](https://www.ft.com/content/3ad44e30-c738-4356-91fb-8bb2368685c4) (McCrory to FT) | Speculative: no second-order effects estimated (AI → productivity → growth) | Cross-country data used is a snapshot from Claude front-end usage (closer to consumer), not the API (closer to firm-level), and not panel (countries over time)|

@@ -187,7 +187,13 @@ Code and data: [github.com/IlanStrauss/anthropic-econ-critique](https://github.c
 
 ---
 
+---
+
+**[AI Disclosures Project](https://www.ssrc.org/programs/ai-disclosures-project/)** at the Social Science Research Council
+
 *Contact: ilan@aidisclosures.org*
+
+[SSRC Project Page](https://www.ssrc.org/programs/ai-disclosures-project/) | [Asimov's Addendum (Substack)](https://asimovaddendum.substack.com/) | [GitHub Repository](https://github.com/IlanStrauss/anthropic-econ-critique)
 
 ---
 

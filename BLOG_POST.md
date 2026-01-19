@@ -36,7 +36,7 @@ Anthropic's head of economics told the [*Financial Times*](https://www.ft.com/co
 
 2. **Relative rankings, not absolute adoption.** Their AI Usage Index (AUI)[^1] measures how countries rank against each other in Claude usage, not whether usage is economically meaningful. A country could rank highly while having negligible actual adoption.
 
-3. **GDP per capita (income level) is a weak predictor for middle-income countries.** Excluding the Seychelles outlier (likely VPN traffic), the middle-income relationship is weak: β = 0.44, R² = 0.17 — much weaker than the global estimate of 0.71.
+3. **GDP per capita (income level) is a weak predictor for middle-income countries.** Excluding the Seychelles outlier (likely VPN traffic), the middle-income relationship is weak: β = 0.44, R² = 0.17 — much weaker than the global estimate of B=0.71.
 
 4. **Consumer data only, Claude only.** Country-level data comes from Claude.ai (consumer), not API (enterprise). If productivity gains stem from business adoption, the geographic analysis misses where impacts would occur. Moreover, the data measures Claude usage, not AI adoption broadly — declining Claude usage in a country (e.g., Brazil, Thailand) could reflect users switching to ChatGPT or local alternatives, not reduced AI adoption overall.
 

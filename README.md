@@ -64,7 +64,7 @@ Key observations:
 
 - **Middle-income relationship for the latest data release (Nov 13-20) is highly uncertain / not statistically significant** (p = 0.105). 
 
-- **Middle-income relationship weakens greatly when the huge outlier of the Seychelles is excluded ** (B = 0.44). The same estimate holds for Anthropic's previous data release (Aug 4-11).  
+- **Middle-income relationship weakens greatly when the huge outlier of the Seychelles is excluded** (B = 0.44). The same estimate holds for Anthropic's previous data release (Aug 4-11).  
 
 - **R² (goodness of fit) for middle-income fall from 17% to just 7% when the Seychelles is excluded**: in other words GDP per capita explains very little about relative AI adoption
 

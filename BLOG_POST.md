@@ -1,5 +1,5 @@
 # Does GDP per Capita Really Predict AI Adoption? Adjusting Anthropic's Estimates
-*The GDP-AI adoption relationship is in fact weak for middle-income countries when one analyzes Anthropic's own data properly*
+*The GDP per Capita-AI adoption relationship is in fact weak for middle-income countries when one analyzes Anthropic's own data properly*
 
 **Ilan Strauss | [AI Disclosures Project](https://www.ssrc.org/programs/ai-disclosures-project/) | January 2026** (v.2)
 
@@ -36,7 +36,7 @@ Anthropic's head of economics told the [*Financial Times*](https://www.ft.com/co
 
 2. **Relative rankings, not absolute adoption.** Their AI Usage Index (AUI)[^1] measures how countries rank against each other in Claude usage, not whether usage is economically meaningful. A country could rank highly while having negligible actual adoption.
 
-3. **GDP is a weak predictor for middle-income countries.** Excluding the Seychelles outlier (likely VPN traffic), the middle-income relationship is weak: β = 0.44, R² = 0.17 — much weaker than the global estimate of 0.71.
+3. **GDP per capita (income level) is a weak predictor for middle-income countries.** Excluding the Seychelles outlier (likely VPN traffic), the middle-income relationship is weak: β = 0.44, R² = 0.17 — much weaker than the global estimate of 0.71.
 
 4. **Consumer data only, Claude only.** Country-level data comes from Claude.ai (consumer), not API (enterprise). If productivity gains stem from business adoption, the geographic analysis misses where impacts would occur. Moreover, the data measures Claude usage, not AI adoption broadly — declining Claude usage in a country (e.g., Brazil, Thailand) could reflect users switching to ChatGPT or local alternatives, not reduced AI adoption overall.
 
@@ -46,7 +46,7 @@ Anthropic's head of economics told the [*Financial Times*](https://www.ft.com/co
 
 Anthropic pools all countries, assuming one relationship applies equally to Nigeria and Norway. We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex) and find this assumption is [biased](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) — different income groups show different relationships.
 
-**Why does pooled R² look good while group-level R²s are weak?** This reflects the difference between *between-group* and *within-group* variation. The pooled regression (R² = 0.56) captures the obvious fact that low-income countries cluster at low GDP and low AI usage, while high-income countries cluster at high GDP and high AI usage. But *within* each income group, GDP per capita explains far less:
+**Why does pooled R² look good while group-level R²s are weak?** This reflects the difference between *between-group* and *within-group* variation. The pooled regression (R² = 0.56) captures the obvious fact that low-income countries cluster at low GDP per capita and low AI usage, while high-income countries cluster at high GDP per capita and high AI usage. But *within* each income group, GDP per capita explains far less:
 
 **Table: Regression Results — Anthropic's Global Estimate vs. Our Country-Group Estimates**
 
@@ -76,7 +76,7 @@ The global R² is inflated by between-group differences. Within middle-income co
 
 **The key finding: one data anomaly is driving the high uncertainty in the middle-income relationship.** Seychelles has a usage index 488 times higher than the next highest middle-income country — almost certainly reflecting VPN/proxy traffic routed through this offshore jurisdiction rather than genuine local adoption. With Seychelles included (left panel), the middle-income relationship appears statistically insignificant (p = 0.105) with massive uncertainty (SE = 0.44). Without Seychelles (right panel), the relationship becomes significant but **weak** — the middle-income slope (β = 0.44) is much lower than the global slope (0.70).
 
-This highlights two issues with Anthropic's analysis: (1) their usage data needs adjustment for VPN/proxy traffic to be meaningful for cross-country comparisons, and (2) even after removing the outlier, the GDP-AI adoption relationship is much weaker for middle-income countries than their pooled estimate suggests.
+This highlights two issues with Anthropic's analysis: (1) their usage data needs adjustment for VPN/proxy traffic to be meaningful for cross-country comparisons, and (2) even after removing the outlier, the GDP per capita-AI adoption relationship is much weaker for middle-income countries than their pooled estimate suggests.
 
 Notably, the middle-income results **without Seychelles** (β = 0.44, SE = 0.16, p = 0.011) are nearly identical to an earlier August 2025 data release (β = 0.44, SE = 0.18, p = 0.019) — before Seychelles entered the dataset. The apparent "instability" between periods was entirely driven by this single VPN-related outlier.
 
@@ -177,7 +177,7 @@ China is not included in Anthropic's dataset.
 
 India and Indonesia are included but classified as *low-income* by Anthropic, who simply take countries' GDP per working-age capita and divide all the countries in their sample into three equal groups. This is a clear classification error. Both Indonesia (upper-middle) and India (lower-middle) are middle-income economies according to the World Bank's definition.
 
-The 38 middle-income countries in Anthropic's sample (i.e. using their income group definition based on dividing their dataset into thirds and calling each third a distinct income group) range from South Africa ($9,273 GDP/capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
+The 38 middle-income countries in Anthropic's sample (i.e. using their income group definition based on dividing their dataset into thirds and calling each third a distinct income group) range from South Africa ($9,273 GDP per capita) to Poland ($38,209), and include Brazil, Mexico, Thailand, Malaysia, Colombia, Argentina, Turkey, Chile, Peru, and Romania.
 
 ---
 

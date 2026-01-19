@@ -124,17 +124,18 @@ for i, (slope, err, color) in enumerate(zip(slopes, errors, colors_dots)):
 
 # Add value labels next to dots
 for i, (slope, err) in enumerate(zip(slopes, errors)):
-    ax.text(x_pos[i] + 0.25, slope, f'β={slope:.2f}', ha='left', va='center',
-            fontsize=14, fontweight='bold')
+    ax.text(x_pos[i] + 0.22, slope, f'β = {slope:.2f}', ha='left', va='center',
+            fontsize=18, fontweight='bold',
+            bbox=dict(boxstyle='round,pad=0.3', facecolor='white', edgecolor='none', alpha=0.8))
 
-ax.set_ylabel('GDP Elasticity (β) with Standard Error', fontsize=16, fontweight='bold')
+ax.set_ylabel('GDP Elasticity (β) with Standard Error', fontsize=18, fontweight='bold')
 ax.set_title('Seychelles Outlier Inflates Middle-Income Uncertainty\n(November 2025 data)',
-             fontsize=18, fontweight='bold')
+             fontsize=20, fontweight='bold')
 ax.set_xticks(x_pos)
-ax.set_xticklabels(groups, fontsize=13, fontweight='bold')
+ax.set_xticklabels(groups, fontsize=15, fontweight='bold')
 ax.set_ylim(0, 1.5)
-ax.set_xlim(-0.5, 4.9)
-ax.tick_params(axis='y', labelsize=12)
+ax.set_xlim(-0.5, 5.3)
+ax.tick_params(axis='y', labelsize=14)
 
 # Add horizontal line at zero for reference
 ax.axhline(y=0, color='gray', linestyle='--', alpha=0.5)

@@ -1,5 +1,5 @@
-# Does Anthropic's Economic Index really show growing international divergence in AI adoption and impacts?
-# A Critique
+# Does GDP per Capita Really Predict AI Adoption? Adjusting Anthropic's Estimates
+## A Critique
 
 **Authors**: Ilan Strauss
 **AI Disclosures Project** (v.2)

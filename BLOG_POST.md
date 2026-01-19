@@ -78,7 +78,7 @@ The global R² is inflated by between-group differences. Within middle-income co
 
 This highlights two issues with Anthropic's analysis: (1) their usage data needs adjustment for VPN/proxy traffic to be meaningful for cross-country comparisons, and (2) even after removing the outlier, the GDP per capita-AI adoption relationship is much weaker for middle-income countries than their pooled estimate suggests.
 
-Notably, the middle-income results **without Seychelles** (β = 0.44, SE = 0.16, p = 0.011) are nearly identical to an earlier August 2025 data release (β = 0.44, SE = 0.18, p = 0.019) — before Seychelles entered the dataset. The apparent "instability" between periods was entirely driven by this single VPN-related outlier.
+Notably, the middle-income results **without Seychelles** (β = 0.44, SE = 0.16, p = 0.011) are nearly identical to an earlier August 2025 data release (β = 0.44, SE = 0.18, p = 0.019) — before Seychelles entered the dataset. 
 
 <img src="figures/fig2_uncertainty_by_group.png" alt="Figure 2" width="720">
 

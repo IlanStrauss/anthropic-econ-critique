@@ -80,7 +80,7 @@ This highlights two issues with Anthropic's analysis: (1) their usage data needs
 
 Notably, the middle-income results **without Seychelles** (β = 0.44, SE = 0.16, p = 0.011) are nearly identical to an earlier August 2025 data release (β = 0.44, SE = 0.18, p = 0.019) — before Seychelles entered the dataset. 
 
-<img src="figures/fig2_uncertainty_by_group.png" alt="Figure 2" width="720">
+<img src="figures/fig2_uncertainty_by_group.png" alt="Figure 2" width="900">
 
 **Figure 2** shows the regression coefficients (with standard errors) estimated from **separate OLS regressions** by income group using the November 2025 data. The middle-income coefficient has a much larger error bar, reflecting high uncertainty — the relationship is statistically indistinguishable from zero.
 

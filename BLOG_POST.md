@@ -119,9 +119,9 @@ The pattern is suggestive but should be interpreted cautiously.
 | Middle | Higher income → more AI adoption | Weak link (β = 0.44) — adopting beyond wealth |
 | High | Higher income → more AI adoption | Variable; outliers dominate |
 
-For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level alone does not determine AI adoption. Education, infrastructure, and language access are already driving adoption beyond what wealth predicts.
+For middle-income countries (Brazil, Mexico, Thailand, Malaysia), income level alone does not determine AI adoption. Education, infrastructure, and language access may already driving adoption beyond what income-level predicts.
 
-The "divergence in living standards" Anthropic warns of is not inevitable. It depends on policy — policy their analysis obscures by pooling heterogeneous relationships.
+The "divergence in living standards" Anthropic warns of is not inevitable or based on evidence and will depend on policy -- which their analysis obscures by pooling heterogeneous relationships.
 
 ---
 

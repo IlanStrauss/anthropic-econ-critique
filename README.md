@@ -62,11 +62,11 @@ Using two data releases from Anthropic (August 4-11 and November 13-20, 2025), *
 
 Key observations:
 
-- **Middle-income relationship is weak when the huge outlier of the Seychelles is excluded and not statistically significant** in the November 2025 data (p = 0.105). A similiar estimate holds for Anthropic's previous data release. 
+- **Middle-income relationship for the latest data release (Nov 13-20) is highly uncertain / not statistically significant** (p = 0.105). 
 
-- Standard error for middle-income more than double between the two datasets (0.18 → 0.44)
+- **Middle-income relationship weakens greatly when the huge outlier of the Seychelles is excluded ** (B = 0.44). The same estimate holds for Anthropic's previous data release (Aug 4-11).  
 
-- R² for middle-income fell from 14% to just 7%: in other words GDP per capita explains very little about relative AI adoption
+- **R² (goodness of fit) for middle-income fall from 17% to just 7% when the Seychelles is excluded**: in other words GDP per capita explains very little about relative AI adoption
 
 ## Repository Structure
 

@@ -46,7 +46,7 @@ Anthropic's head of economics told the [*Financial Times*](https://www.ft.com/co
 
 Anthropic pools all countries, assuming one relationship applies equally to Nigeria and Norway. We reanalyzed their [public data](https://huggingface.co/datasets/Anthropic/EconomicIndex) and find this assumption is [biased](https://rodorigo.wordpress.com/wp-content/uploads/2020/02/cheng-hsiao-analysis-of-panel-dataz-lib.org_.pdf) — different income groups show different relationships.
 
-**Why does pooled R² look good while group-level R²s are weak?** This reflects the difference between *between-group* and *within-group* variation. The pooled regression (R² = 0.56) captures the obvious fact that low-income countries cluster at low GDP and low AI usage, while high-income countries cluster at high GDP and high AI usage. But *within* each income group, GDP explains far less:
+**Why does pooled R² look good while group-level R²s are weak?** This reflects the difference between *between-group* and *within-group* variation. The pooled regression (R² = 0.56) captures the obvious fact that low-income countries cluster at low GDP and low AI usage, while high-income countries cluster at high GDP and high AI usage. But *within* each income group, GDP per capita explains far less:
 
 **Table: Regression Results — Anthropic's Global Estimate vs. Our Country-Group Estimates**
 

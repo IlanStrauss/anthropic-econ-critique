@@ -66,7 +66,7 @@ Key observations:
 
 - **Middle-income relationship weakens greatly when the huge outlier of the Seychelles is excluded** (B = 0.44). The same estimate holds for Anthropic's previous data release (Aug 4-11).  
 
-- **R² (goodness of fit) for middle-income fall from 17% to just 7% when the Seychelles is excluded**: in other words GDP per capita explains very little about relative AI adoption among  middle-income countries.
+- **R² (goodness of fit) for middle-income fall is just 7%, or 17% when the Seychelles is excluded**: in other words GDP per capita explains very little about relative AI adoption among  middle-income countries in either case.
 
 ## Repository Structure
 

@@ -97,4 +97,4 @@ Original data from Anthropic's HuggingFace repository:
 ## Contact
 
 - Ilan Strauss: ilan@aidisclosures.org
-- AI Disclosures Project: https://aidisclosures.org
+- AI Disclosures Project: https://www.ssrc.org/programs/ai-disclosures-project/

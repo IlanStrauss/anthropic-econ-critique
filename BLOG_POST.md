@@ -62,7 +62,7 @@ The global R² is inflated by between-group differences. Within middle-income co
 
 **The relationship breaks down for middle-income countries.** In November 2025 data, the middle-income coefficient is not statistically significant (β = 0.73, SE = 0.44, p = 0.105). Removing the outlier of the Seychelles has the effects of reducing the estimated uncertainty (making it statistically significant) but now the coefficients falls to 0.44.
 
-**The implication:** Countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for GDP growth to drive AI adoption — and aren't. Education, infrastructure, and regulatory environment may matter more than income. These are actionable policy levers.
+**The implication:** Countries like Brazil, Mexico, Thailand, and Malaysia do not need to wait for GDP growth to drive AI adoption — and aren't. Education, infrastructure, and regulatory environment may matter more than whatever income level is capturing (to the extent that these metrics are not strongly correlated). These are actionable policy levers.
 
 ---
 

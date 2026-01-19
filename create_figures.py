@@ -103,7 +103,7 @@ plt.close()
 # FIGURE 2: Middle-Income With vs Without Seychelles (Dot Plot)
 # =============================================================
 
-fig, ax = plt.subplots(figsize=(12, 6))
+fig, ax = plt.subplots(figsize=(14, 8))
 
 # Groups: show middle income with and without Seychelles
 groups = ['Global', 'Low\nIncome', 'Middle Income\n(with Seychelles)', 'Middle Income\n(without Seychelles)', 'High\nIncome']
@@ -118,34 +118,35 @@ colors_dots = ['#3498db', '#27ae60', '#e74c3c', '#f39c12', '#27ae60']
 
 # Plot dots with error bars
 for i, (slope, err, color) in enumerate(zip(slopes, errors, colors_dots)):
-    ax.errorbar(x_pos[i], slope, yerr=err, fmt='o', markersize=14,
-                color=color, ecolor=color, elinewidth=3, capsize=8, capthick=3)
+    ax.errorbar(x_pos[i], slope, yerr=err, fmt='o', markersize=18,
+                color=color, ecolor=color, elinewidth=4, capsize=10, capthick=4)
 
 
 # Add value labels next to dots
 for i, (slope, err) in enumerate(zip(slopes, errors)):
     ax.text(x_pos[i] + 0.25, slope, f'β={slope:.2f}', ha='left', va='center',
-            fontsize=11, fontweight='bold')
+            fontsize=14, fontweight='bold')
 
-ax.set_ylabel('GDP Elasticity (β) with Standard Error', fontsize=13)
+ax.set_ylabel('GDP Elasticity (β) with Standard Error', fontsize=16, fontweight='bold')
 ax.set_title('Seychelles Outlier Inflates Middle-Income Uncertainty\n(November 2025 data)',
-             fontsize=14, fontweight='bold')
+             fontsize=18, fontweight='bold')
 ax.set_xticks(x_pos)
-ax.set_xticklabels(groups, fontsize=11)
+ax.set_xticklabels(groups, fontsize=13, fontweight='bold')
 ax.set_ylim(0, 1.5)
-ax.set_xlim(-0.5, 4.7)
+ax.set_xlim(-0.5, 4.9)
+ax.tick_params(axis='y', labelsize=12)
 
 # Add horizontal line at zero for reference
 ax.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
 
 # Add arrow showing the difference
 ax.annotate('', xy=(3, 0.44), xytext=(2, 0.73),
-            arrowprops=dict(arrowstyle='->', color='gray', lw=1, alpha=0.5))
-ax.text(2.5, 0.58, 'Removing\nSeychelles', ha='center', fontsize=10, color='gray', alpha=0.6)
+            arrowprops=dict(arrowstyle='->', color='gray', lw=2, alpha=0.7))
+ax.text(2.5, 0.58, 'Removing\nSeychelles', ha='center', fontsize=13, fontweight='bold', color='gray', alpha=0.8)
 
 # Annotation for middle income with Seychelles
 ax.annotate('Seychelles outlier drives\nhuge uncertainty (p = 0.105)',
-            xy=(2, 1.25), ha='center', fontsize=10,
+            xy=(2, 1.25), ha='center', fontsize=13, fontweight='bold',
             bbox=dict(boxstyle='round', facecolor='#e74c3c', alpha=0.2))
 
 plt.tight_layout()

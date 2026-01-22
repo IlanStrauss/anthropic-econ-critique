@@ -70,7 +70,7 @@ The global R² is inflated by between-group differences. Within middle-income co
 
 ### 1. The Relationship Between Income-Level (GDP per capita) and AI Adoption Varies by Country Group
 
-![Figure 1](figures/fig1_their_view_vs_ours.png)
+![Figure 1](analysis/output/figures/fig1_their_view_vs_ours.png)
 
 **Figure 1** shows separate OLS regression lines by income tercile using Anthropic's November 2025 data. Left panel: with all countries. Right panel: excluding Seychelles.
 
@@ -80,7 +80,7 @@ This highlights two issues with Anthropic's analysis: (1) their usage data needs
 
 Notably, the middle-income results **without Seychelles** (β = 0.44, SE = 0.16, p = 0.011) are nearly identical to an earlier August 2025 data release (β = 0.44, SE = 0.18, p = 0.019) — before Seychelles entered the dataset. 
 
-<img src="figures/fig2_uncertainty_by_group.png" alt="Figure 2" width="900">
+<img src="analysis/output/figures/fig2_uncertainty_by_group.png" alt="Figure 2" width="900">
 
 **Figure 2** shows the regression coefficients (with standard errors) estimated from **separate OLS regressions** by income group using the November 2025 data. The middle-income coefficient has a much larger error bar, reflecting high uncertainty — the relationship is statistically indistinguishable from zero.
 

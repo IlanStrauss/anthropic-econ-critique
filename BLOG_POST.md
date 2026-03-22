@@ -1,7 +1,7 @@
 # Does GDP per Capita Really Predict AI Adoption? Adjusting Anthropic's Estimates
 *The GDP per Capita-AI adoption relationship is in fact weak for middle-income countries when one analyzes Anthropic's own data properly*
 
-**Ilan Strauss | [AI Disclosures Project](https://www.ssrc.org/programs/ai-disclosures-project/) | January 2026** (v.2)
+**Ilan Strauss | [AI Disclosures Project](https://ai-disclosures.org/) | January 2026** (v.2)
 
 ---
 
@@ -189,11 +189,11 @@ Code and data: [github.com/IlanStrauss/anthropic-econ-critique](https://github.c
 
 ---
 
-**[AI Disclosures Project](https://www.ssrc.org/programs/ai-disclosures-project/)** at the Social Science Research Council
+**[AI Disclosures Project](https://ai-disclosures.org/)** at the CS&S
 
 *Contact: ilan@aidisclosures.org*
 
-[AI Disclosures Project](https://www.ssrc.org/programs/ai-disclosures-project/) | [Asimov's Addendum (Substack)](https://asimovaddendum.substack.com/) | [GitHub Repository](https://github.com/IlanStrauss/anthropic-econ-critique)
+[AI Disclosures Project](https://ai-disclosures.org/) | [Asimov's Addendum (Substack)](https://asimovaddendum.substack.com/) | [GitHub Repository](https://github.com/IlanStrauss/anthropic-econ-critique)
 
 ---
 
